@@ -1,0 +1,23 @@
+[
+    {
+        "Crime id":1,
+        "offender id": 1,
+        "crime committed": "assault",
+        "crime location": "Columbia, SC",
+        "crime date": "2/18/2021",
+        "criminal": "Captain Price",
+        "criminal custody": false,
+        "evidence": "surveillance camera",
+        "solved": true
+    },{
+        "Crime id":2,
+        "offender id": 2,
+        "crime committed": "trespassing",
+        "crime location": "LaVergne, TN",
+        "crime date": "9/1/2015",
+        "criminal": "Luke Skywalker",
+        "criminal custody": true,
+        "evidence": "witnesses",
+        "solved": true
+    }
+]
