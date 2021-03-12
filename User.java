@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class User {
     
     private String name;
@@ -7,6 +8,7 @@ public class User {
     private String address;
     private int password;
     private String username;
+    private ArrayList<User> users;
 
     public User(String name, String title, String race, String dob, String address, int password, String username) {
         this.name = name;
@@ -17,4 +19,26 @@ public class User {
         this.password = password;
         this.username = username;
     }
+
+    public void addUser(User user) {
+        if(users.contains(user)) {
+            System.out.print("Error User Already Exist");
+        }
+        else {
+            users.add(user);
+        }
+    }
+
+    public void editUser(User user) {
+        int index = users.indexOf(user);
+        if(index != -1) {
+            deleteUser(users.get(index));
+            users.add(index, user);
+        }
+    }
+
+    public void deleteUser(User user) {
+        users.remove(user);
+    }
+
 }
