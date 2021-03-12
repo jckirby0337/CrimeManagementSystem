@@ -1,3 +1,4 @@
+package CrimeManagementSystem;
 public class Crime {
 
 	private String crimeCommited;

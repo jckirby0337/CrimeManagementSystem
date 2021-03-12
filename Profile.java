@@ -1,3 +1,5 @@
+package CrimeManagementSystem;
+
 import java.util.Scanner;
 public class Profile {
 
@@ -22,6 +24,6 @@ public class Profile {
 		else
 			System.out.println("Incorrect log in information");
 	
-	
-}
+		input.close();
+	}
 }
