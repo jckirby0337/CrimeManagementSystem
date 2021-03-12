@@ -1,11 +1,9 @@
+package CrimeManagementSystem;
 import java.util.ArrayList;
 public class Suspect extends Details{
     private Boolean tattoos;
-    private int crimeID;
-    private int offenderID;
     private String vehicle;
     private String licensePlate;
-    private int crimeLevels;
     private String address;
     private boolean bankAccount;
     private boolean creditCard;
@@ -15,17 +13,11 @@ public class Suspect extends Details{
     private String mentalState;
     private String housingLocation;
     private String educationLevel;
-    public POI(String name, int age, char sex, String race) {
-        
-    }
     public Suspect(String name, int age, char sex, String race, Boolean tattoos,
                    String vehicle, String licensePlate, String address, Boolean bankAccount,
                    Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
                    String mentalState, String housingLocation, String educationLevel) {
-        this.name = Details.getName();
-        this.age = Details.getAge();
-        this.sex = Details.getSex();
-        this.race = Details.getRace();
+        super();
         this.tattoos = tattoos;
         this.vehicle = vehicle;
         this.licensePlate = licensePlate;
@@ -45,14 +37,20 @@ public class Suspect extends Details{
     public String getVehicle() {
         return vehicle;
     }
+    public void setVehicle(String vehicle) {
+        this.vehicle = vehicle;
+    }
     public String getLicensePlate() {
         return licensePlate;
     }
-    public String getCrimeLevel() {
-        return address;
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
     }
     public String getAddress() {
         return address;
+    }
+    public void setAddress(String address) {
+        this.address = address;
     }
     public boolean hasBankAccount() {
        return bankAccount; 
@@ -69,13 +67,25 @@ public class Suspect extends Details{
     public String getNicknames() {
         return nickNames;
     }
+    public void setNicknames(String nicknames) {
+        this.nickNames = nicknames;
+    }
     public String getMentalState() {
         return mentalState;
+    }
+    public void setMentalState(String mentalstate) {
+        this.mentalState = mentalstate;
     }
     public String getHousingLocation() {
         return housingLocation;
     }
+    public void setHousingLocation(String housinglocation) {
+        this.housingLocation = housinglocation;
+    }
     public String getEducationLevel() {
         return educationLevel;
+    }
+    public void setEducationLevel(String educationlevel) {
+        this.educationLevel = educationlevel;
     }
 }
