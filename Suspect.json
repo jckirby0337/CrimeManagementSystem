@@ -1,0 +1,44 @@
+[
+    {
+     "CrimeID": 4,
+     "SuspectID": 4,
+     "VictimID":4,
+     "Name": "Leeroy Jenkins",
+     "Age": 20,
+     "Sex": "M",
+     "Race": "White",
+     "Tattoos": true,
+     "Vehicle": "2001 BMW Sedan",
+     "License-Plate": "BMT658",
+     "Address": "316 S. Armfield rd",
+     "Bank-Account": true,
+     "Credit-Card": false,
+     "Armed": false,
+     "Public-Risk": false,
+     "Nicknames": "Leeroooooy Jenkiiiinnssss",
+     "Mental-State": "Any Mental Illness",
+     "House-Location": "South Carolina",
+     "Education-Level": "High School"
+    }, {
+     "CrimeID": 5,
+     "SuspectID": 5,
+     "VictimID": [1,2,3],
+     "Name": "Noneya Business",
+     "Age": 35,
+     "Sex": "M",
+     "Race": "Mystery",
+     "Tattoos": true,
+     "Vehicle": "2001 Saab",
+     "License-Plate": "BMT881",
+     "Address": "235 W. Legfield rd",
+     "Bank-Account": true,
+     "Credit-Card": false,
+     "Armed": false,
+     "Public-Risk": false,
+     "Nicknames": "Anonymous",
+     "Mental-State": "N/A",
+     "House-Location": "Tennessee",
+     "Education-Level": "Middle School"
+     
+    }
+]
