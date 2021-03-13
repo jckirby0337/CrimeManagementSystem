@@ -4,6 +4,7 @@ public class Crime {
 	private String crimeCommited;
 	private String crimeLocation;
 	private int crimeDate;
+	private String criminal;
 	private boolean criminalInCustody;
 	private String evidence;
 	private boolean isSolved;
@@ -26,6 +27,12 @@ public class Crime {
 	}
 	public void setCrimeDate(int crimeDate) {
 		this.crimeDate = crimeDate;
+	}
+    public String getCriminal() {
+        return criminal;
+    }
+	public void setCriminal(String criminal) {
+		this.criminal = criminal;
 	}
 	public boolean isCriminalInCustody() {
 		return criminalInCustody;
