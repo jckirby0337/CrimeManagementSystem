@@ -7,7 +7,7 @@ public abstract class DataConstants {
     protected static final String CRIME_COMMITTED = "crime committed";
     protected static final String CRIME_LOCATION = "crime location";
     protected static final String CRIME_DATE = "crime date";
-    protected static final String CRIMINAL = "Captain Price";
+    protected static final String CRIMINAL = "criminal";
     protected static final String CRIMINAL_CUSTODY = "criminal custody";
     protected static final String EVIDENCE = "evidence";
     protected static final String SOLVED = "solved";
