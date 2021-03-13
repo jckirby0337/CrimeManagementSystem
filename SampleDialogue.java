@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+package CrimeManagementSystem;
+>>>>>>> c11e48cf90180078f2f7e0831db56f58553a01c4
 import java.util.Scanner;
 public class SampleDialogue {
     public static void main (String[] args) {
