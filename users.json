@@ -1,0 +1,14 @@
+[
+    {
+     "UserID": 1,
+     "name": "The Rock",
+     "title": "Administrator",
+     "Race": "Austrailian",
+     "DOB": "11/21/1995",
+     "Address": "516 Rainbow Rd",
+     "UserPW": "1234abcd",
+     "Username": "trock"
+    }, {
+        
+    }
+]
