@@ -9,6 +9,13 @@
      "UserPW": "1234abcd",
      "Username": "trock"
     }, {
-        
+        "UserID": 2,
+        "name": "Sasuke Uchiha",
+        "title": "Official",
+        "Race": "Mongolian",
+        "DOB": "11/21/1991",
+        "Address": "727 Leaf Village Pike",
+        "UserPW": "sharingan",
+        "Username": "suchiha"
     }
 ]
