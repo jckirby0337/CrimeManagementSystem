@@ -53,7 +53,7 @@ public abstract class DataConstants {
     protected static final String OFFENDER_EDUCATION_LEVEL = "educationLevel";
     
 // User Fields 
-    protected static final String USER_FILE_NAME = "CrimeManagementSystem/user.json";
+    protected static final String USER_FILE_NAME = "CrimeManagementSystem/User.json";
     protected static final String USER_USER_ID = "UserID";
     protected static final String USER_NAME = "name";
     protected static final String USER_TITLE = "title";
