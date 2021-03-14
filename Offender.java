@@ -20,9 +20,10 @@ public class Offender extends Details{
     private String educationLevel;
     private ArrayList<String> family;
 
-    public Offender(boolean tattoos, int crimeId, int offenderID, String vehicle, String licensePlate, int crimeLevels, 
+    public Offender(String name, int age, char sex, String race, boolean tattoos, int crimeId, int offenderID, String vehicle, String licensePlate, int crimeLevels, 
                     String address, boolean bankAccount, boolean creditCard, boolean armed, boolean publicRisk,
                     String nicknames, String mentalState, String housingLocations, String educationLevel, ArrayList<String> family) {
+         super(name, age, sex, race);
          this.tattoos = tattoos;
          this.crimeID = crimeId;
          this.offenderID = offenderID;

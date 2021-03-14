@@ -6,11 +6,11 @@ public class Details {
     private char sex;
     private String race;
 
-    public Details() {
-        name = "";
-        age = 0;
-        sex = "";
-        race = "";
+    public Details(String name, int age, char sex, String race) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.race = race;
     }
 
     public String getName() {
