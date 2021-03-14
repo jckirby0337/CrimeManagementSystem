@@ -115,26 +115,45 @@ public class DataWriter extends DataConstants {
 		suspectDetails.put(SUSPECT_CRIME_ID_, crime.getId().toString());
         suspectDetails.put(SUSPECT_ID, offender.getId().toString());
         suspectDetails.put(SUSPECT_VICTIM_ID, crime.getCrimeCommited());
-        suspectDetails.put(SUSPECT_NAME, crime.getCrimeLocation());
-        suspectDetails.put(CRIME_DATE, crime.getCrimeDate());
-        suspectDetails.put(CRIMINAL, crime.getCriminal());
-        suspectDetails.put(CRIMINAL_CUSTODY, crime.isCriminalInCustody());
-		suspectDetails.put(EVIDENCE, crime.getEvidence());
-        suspectDetails.put(SOLVED, crime.isSolved());
+        suspectDetails.put(SUSPECT_NAME, suspect.getName());
+        suspectDetails.put(SUSPECT_AGE, suspect.getAge());
+        suspectDetails.put(SUSPECT_SEX, suspect.getSex());
+        suspectDetails.put(SUSPECT_RACE, suspect.getRace());
+		suspectDetails.put(SUSPECT_TATTOOS, suspect.hasTattoos());
+        suspectDetails.put(SUSPECT_VEHICLE, suspect.getVehicle());
+		suspectDetails.put(SUSPECT_LICENSE_PLATE, suspect.getLicensePlate());
+		suspectDetails.put(SUSPECT_ADDRESS, suspect.getAddress());
+		suspectDetails.put(SUSPECT_BANK_ACCOUNT, suspect.hasBankAccount());
+		suspectDetails.put(SUSPECT_CREDIT_CARD, suspect.hasCreditCard());
+		suspectDetails.put(SUSPECT_ARMED, suspect.isArmed());
+		suspectDetails.put(SUSPECT_PUBLIC_RISK, suspect.publicRisk());
+		suspectDetails.put(SUSPECT_NICKNAMES, suspect.getNicknames());
+		suspectDetails.put(SUSPECT_MENTAL_STATE, suspect.getMentalState());
+		suspectDetails.put(SUSPECT_HOUSE_LOCATION, suspect.getHousingLocation());
+		suspectDetails.put(SUSPECT_EDUCATION_LEVEL, suspect.getEducationLevel());
         return suspectDetails;
 	}
 
     public static JSONObject getOffenderJSON(Offender offender) {
 		JSONObject offenderDetails = new JSONObject();
-		offenderDetails.put(CRIME_ID, crime.getId().toString());
-        offenderDetails.put(OFFENDER_ID, offender.getId().toString());
-        offenderDetails.put(CRIME_COMMITTED, crime.getCrimeCommited());
-        offenderDetails.put(CRIME_LOCATION, crime.getCrimeLocation());
-        offenderDetails.put(CRIME_DATE, crime.getCrimeDate());
-        offenderDetails.put(CRIMINAL, crime.getCriminal());
-        offenderDetails.put(CRIMINAL_CUSTODY, crime.isCriminalInCustody());
-		offenderDetails.put(EVIDENCE, crime.getEvidence());
-        offenderDetails.put(SOLVED, crime.isSolved());
+		offenderDetails.put(OFFENDER_CRIME_ID, offender.getCrimeID().toString()); // ????
+        offenderDetails.put(OFFENDER_OFFENDER_ID, offender.getOffenderID().toString()); // ????
+        offenderDetails.put(OFFENDER_VICTIM_ID, crime.getVictimID()); // ????
+		offenderDetails.put(OFFENDER_TATTOOS, offender.hasTattoos());
+		offenderDetails.put(OFFENDER_VEHICLE, offender.getVehicle());
+		offenderDetails.put(OFFENDER_LICENSE_PLATE, offender.getLicensePlate());
+		offenderDetails.put(OFFENDER_CRIME_LEVEL, offender.getCrimeLevels());
+		offenderDetails.put(OFFENDER_ADDRESS, offender.getAddress());
+		offenderDetails.put(OFFENDER_BANK_ACCOUNT, offender.hasBankAccount());
+		offenderDetails.put(OFFENDER_CREDIT_CARD, offender.hasCreditCard());
+		offenderDetails.put(OFFENDER_ARMED, offender.hasArmed()); 
+		offenderDetails.put(OFFENDER_PUBLIC_RISK, offender.hasPublicRisk());
+		offenderDetails.put(OFFENDER_NICKNAMES, offender.getNicknames());
+		offenderDetails.put(OFFENDER_MENTAL_STATE, offender.getMentalState());
+		offenderDetails.put(OFFENDER_HOUSING_LOCATIONS, offender.getHousingLocations());
+		offenderDetails.put(OFFENDER_EDUCATION_LEVEL, offender.getEducationLevel());
+
+
         return offenderDetails;
 	}
 
