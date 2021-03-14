@@ -96,8 +96,7 @@ public class DataWriter extends DataConstants {
             e.printStackTrace();
         }
 	}
-
-    public static JSONObject getCrimeJSON(Crime crime) {
+	public static JSONObject getCrimeJSON(Crime crime) {
 		JSONObject crimeDetails = new JSONObject();
 		crimeDetails.put(CRIME_ID, crime.getId().toString());
         crimeDetails.put(OFFENDER_ID, offender.getId().toString());
@@ -111,15 +110,48 @@ public class DataWriter extends DataConstants {
         return crimeDetails;
 	}
 
+	public static JSONObject getSuspectJSON(Suspect suspect) {
+		JSONObject suspectDetails = new JSONObject();
+		suspectDetails.put(SUSPECT_CRIME_ID_, crime.getId().toString());
+        suspectDetails.put(SUSPECT_ID, offender.getId().toString());
+        suspectDetails.put(SUSPECT_VICTIM_ID, crime.getCrimeCommited());
+        suspectDetails.put(SUSPECT_NAME, crime.getCrimeLocation());
+        suspectDetails.put(CRIME_DATE, crime.getCrimeDate());
+        suspectDetails.put(CRIMINAL, crime.getCriminal());
+        suspectDetails.put(CRIMINAL_CUSTODY, crime.isCriminalInCustody());
+		suspectDetails.put(EVIDENCE, crime.getEvidence());
+        suspectDetails.put(SOLVED, crime.isSolved());
+        return suspectDetails;
+	}
+
+    public static JSONObject getOffenderJSON(Offender offender) {
+		JSONObject offenderDetails = new JSONObject();
+		offenderDetails.put(CRIME_ID, crime.getId().toString());
+        offenderDetails.put(OFFENDER_ID, offender.getId().toString());
+        offenderDetails.put(CRIME_COMMITTED, crime.getCrimeCommited());
+        offenderDetails.put(CRIME_LOCATION, crime.getCrimeLocation());
+        offenderDetails.put(CRIME_DATE, crime.getCrimeDate());
+        offenderDetails.put(CRIMINAL, crime.getCriminal());
+        offenderDetails.put(CRIMINAL_CUSTODY, crime.isCriminalInCustody());
+		offenderDetails.put(EVIDENCE, crime.getEvidence());
+        offenderDetails.put(SOLVED, crime.isSolved());
+        return offenderDetails;
+	}
+
     public static JSONObject getUserJSON(User user) {
 		JSONObject userDetails = new JSONObject();
-		userDetails.put(USER_ID, user.getId().toString());
-		userDetails.put(USER_USER_NAME, user.getUserName());
-		userDetails.put(USER_FIRST_NAME, user.getFirstName());
+		userDetails.put(USER_USER_ID, user.getId().toString());
+		userDetails.put(USER_NAME, user.getUsername());
+		userDetails.put(USER_USER_PASSWORD, user.getPassword());
+		userDetails.put(USER_TITLE, user.getTitle());
+		userDetails.put(USER_RACE, user.getRace());
+		userDetails.put(USER_DATE_OF_BIRTH, user.getDateOfBirth());
+		userDetails.put(USER_ADDRESS, user.getAddress());
+		/*userDetails.put(USER_FIRST_NAME, user.getFirstName());
 		userDetails.put(USER_LAST_NAME, user.getLastName());
 		userDetails.put(USER_AGE, user.getAge());
 		userDetails.put(USER_PHONE_NUMBER, user.getPhoneNumber());
-        
+        */
         return userDetails;
 	}
 }
