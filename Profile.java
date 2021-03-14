@@ -17,12 +17,9 @@ public class Profile {
 		System.out.println("Password: ");
 		pass = input.nextLine();
 		
-		Account verify = new Account(user,pass); 
+		Account verify = new Account(user,pass);
 		
-		if(verify.verifyPass())
-			System.out.println("Welcome "+user);
-		else
-			System.out.println("Incorrect log in information");
+		
 	
 		input.close();
 	}
