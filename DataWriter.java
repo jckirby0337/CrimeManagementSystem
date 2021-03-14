@@ -5,12 +5,10 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import CrimeManagementSystem.Crime;
-import CrimeManagementSystem.Offender;
 public class DataWriter extends DataConstants {
 
     public static void saveCrimes() {
-		Crime crimes = crimes.getInstance(); 
+		Crimes crimes = Crimes.getInstance(); 
 		ArrayList<Crime> crimeList = crimes.getCrimes();
 		JSONArray jsonCrimes = new JSONArray();
 		
@@ -32,7 +30,7 @@ public class DataWriter extends DataConstants {
 	} 
 
     public static void saveSuspects() {
-		Suspect suspects = suspects.getInstance(); 
+		Suspects suspects = Suspects.getInstance(); 
 		ArrayList<Suspect> suspectList = suspects.getSuspects();
 		JSONArray jsonSuspects = new JSONArray();
 		
@@ -54,7 +52,7 @@ public class DataWriter extends DataConstants {
 	}
 
     public static void saveOffenders() {
-		Offender offenders = offenders.getInstance(); 
+		Offenders offenders = Offenders.getInstance(); 
 		ArrayList<Offender> offenderList = offenders.getOffenders();
 		JSONArray jsonOffenders = new JSONArray();
 		
@@ -76,7 +74,7 @@ public class DataWriter extends DataConstants {
 	}
 
     public static void saveUsers() {
-		User users = users.getInstance(); 
+		Users users = Users.getInstance(); 
 		ArrayList<User> userList = users.getUsers();
 		JSONArray jsonUsers = new JSONArray();
 		

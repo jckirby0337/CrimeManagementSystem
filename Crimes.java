@@ -35,7 +35,7 @@ public class Crimes {
         return null;
     }
 
-    public ArrayList<Crime> getCrime() {
+    public ArrayList<Crime> getCrimes() {
         return crimeList;
     }
 
