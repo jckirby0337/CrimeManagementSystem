@@ -7,11 +7,10 @@ import org.json.simple.JSONObject;
 
 import CrimeManagementSystem.Crime;
 import CrimeManagementSystem.Offender;
-
 public class DataWriter extends DataConstants {
 
     public static void saveCrimes() {
-		Crimes crimes = Crimes.getInstance(); 
+		Crime crimes = crimes.getInstance(); 
 		ArrayList<Crime> crimeList = crimes.getCrimes();
 		JSONArray jsonCrimes = new JSONArray();
 		
@@ -33,7 +32,7 @@ public class DataWriter extends DataConstants {
 	} 
 
     public static void saveSuspects() {
-		Suspects suspects = Suspects.getInstance(); 
+		Suspect suspects = suspects.getInstance(); 
 		ArrayList<Suspect> suspectList = suspects.getSuspects();
 		JSONArray jsonSuspects = new JSONArray();
 		
@@ -55,7 +54,7 @@ public class DataWriter extends DataConstants {
 	}
 
     public static void saveOffenders() {
-		Offenders offenders = Offenders.getInstance(); 
+		Offender offenders = offenders.getInstance(); 
 		ArrayList<Offender> offenderList = offenders.getOffenders();
 		JSONArray jsonOffenders = new JSONArray();
 		
@@ -77,7 +76,7 @@ public class DataWriter extends DataConstants {
 	}
 
     public static void saveUsers() {
-		Users users = Users.getInstance(); 
+		User users = users.getInstance(); 
 		ArrayList<User> userList = users.getUsers();
 		JSONArray jsonUsers = new JSONArray();
 		
