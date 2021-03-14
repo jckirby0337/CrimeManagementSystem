@@ -1,5 +1,3 @@
-package CrimeManagementSystem;
-
 public class Details {
     private String name;
     private int age;

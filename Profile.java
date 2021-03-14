@@ -1,5 +1,3 @@
-package CrimeManagementSystem;
-
 import java.util.Scanner;
 public class Profile {
 

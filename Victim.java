@@ -1,5 +1,3 @@
-package CrimeManagementSystem;
-
 public class Victim {
     private String name;
     private int age;
