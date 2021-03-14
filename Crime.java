@@ -9,6 +9,16 @@ public class Crime {
 	private String evidence;
 	private boolean isSolved;
 	
+	public Crime(String crimeCommited, String crimeLocation, int crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+		this.crimeCommited = crimeCommited;
+		this.crimeLocation = crimeLocation;
+		this.crimeDate = crimeDate;
+		this.criminal = criminal;
+		this.criminalInCustody = criminalInCustody;
+		this.evidence = evidence;
+		this.isSolved = isSolved;
+	}
+
 	//Setters and getters
 	public String getCrimeCommited() {
 		return crimeCommited;

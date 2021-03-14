@@ -38,4 +38,15 @@ public class Crimes {
     public ArrayList<Crime> getCrime() {
         return crimeList;
     }
+
+    public boolean addCrime(String crimeCommited, String crimeLocation, int crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+        if(haveCrime(criminal)) return false;
+
+        crimeList.add(new Crime(crimeCommited, crimeLocation, crimeDate, criminal, criminalInCustody, evidence, isSolved));
+        return true;
+    }
+
+    public void saveCrime() {
+        DataWriter.saveCrime();
+    }
 }
