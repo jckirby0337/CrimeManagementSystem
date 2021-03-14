@@ -6,6 +6,13 @@ public class Details {
     private char sex;
     private String race;
 
+    public Details() {
+        name = "";
+        age = 0;
+        sex = "";
+        race = "";
+    }
+
     public String getName() {
         return this.name;
     }
