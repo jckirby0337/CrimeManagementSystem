@@ -47,6 +47,6 @@ public class Crimes {
     }
 
     public void saveCrime() {
-        DataWriter.saveCrime();
+        DataWriter.saveCrimes();
     }
 }

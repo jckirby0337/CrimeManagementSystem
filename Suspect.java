@@ -17,7 +17,7 @@ public class Suspect extends Details{
                    String vehicle, String licensePlate, String address, Boolean bankAccount,
                    Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
                    String mentalState, String housingLocation, String educationLevel) {
-        super();
+        super(name, age, sex, race);
         this.tattoos = tattoos;
         this.vehicle = vehicle;
         this.licensePlate = licensePlate;
