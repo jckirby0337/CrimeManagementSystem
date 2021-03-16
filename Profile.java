@@ -19,7 +19,21 @@ public class Profile {
 		
 		Account verify = new Account(user,pass);
 		
-		
+		if(verify.verifyPass()){
+			System.out.println("Welcome "+ user);
+			if(user=="trock")
+			{
+
+			}
+			else if(user=="suchiha")
+			{
+				
+			}
+
+		}
+		else{
+			System.out.println("Incorrect log-in info");
+		}
 	
 		input.close();
 	}
