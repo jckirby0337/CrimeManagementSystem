@@ -151,5 +151,16 @@ public class DataLoader extends DataConstants{
 		}
 		
 		return null;
+
+	}
+
+	public static void main(String[] args) {
+		ArrayList<User> users = DataLoader.getUsers();
+		for(User user: users) {
+			System.out.println(user);
+		}
+		
+
+		System.out.println(UUID.randomUUID());
 	}
 }

@@ -74,8 +74,8 @@ public class DataWriter extends DataConstants {
 	}
 
     public static void saveUsers() {
-		Users users = Users.getInstance(); 
-		ArrayList<User> userList = users.getUsers();
+		//Users users = Users.getInstance(); 
+		//ArrayList<User> userList = users.getUsers();
 		JSONArray jsonUsers = new JSONArray();
 		
 		//creating all the json objects
@@ -170,5 +170,9 @@ public class DataWriter extends DataConstants {
 		userDetails.put(USER_PHONE_NUMBER, user.getPhoneNumber());
         */
         return userDetails;
+	}
+
+	public static void main(String[] args) {
+		DataWriter.saveUsers();
 	}
 }

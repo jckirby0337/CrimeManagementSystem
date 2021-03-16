@@ -1,6 +1,6 @@
 [
     {
-     "UserID": 1,
+     "UserID": "281da16e-825f-4eaf-8493-8705ac749f8c",
      "name": "The Rock",
      "title": "Administrator",
      "Race": "Austrailian",
@@ -9,7 +9,7 @@
      "UserPW": "1234abcd",
      "Username": "trock"
     }, {
-        "UserID": 2,
+        "UserID": "281da16e-825f-4eaf-8493-8705ac749f8c",
         "name": "Sasuke Uchiha",
         "title": "Official",
         "Race": "Mongolian",
