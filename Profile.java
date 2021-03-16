@@ -7,7 +7,6 @@ public class Profile {
 		Scanner input = new Scanner(System.in);
 		String user;
 		String pass;
-		
 		 
 		System.out.println("Welcome to Columbia PD\n\n" + "Please enter your username and password:\n" + "Username: ");
 		user = input.nextLine();
@@ -25,7 +24,7 @@ public class Profile {
 			}
 			else if(user=="suchiha")
 			{
-				
+
 			}
 
 		}
