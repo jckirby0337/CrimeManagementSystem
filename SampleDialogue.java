@@ -1,4 +1,3 @@
-package CrimeManagementSystem;
 import java.util.Scanner;
 public class SampleDialogue {
     public static void main (String[] args) {

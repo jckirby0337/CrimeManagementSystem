@@ -14,7 +14,7 @@ public abstract class DataConstants {
 
 // Suspect Fields    
     protected static final String SUSPECT_FILE_NAME = "CrimeManagementSystem/Suspect.json";
-    protected static final String SUSPECT_CRIME_ID_ = "CrimeID"; 
+    protected static final String SUSPECT_CRIME_ID = "CrimeID"; 
     protected static final String SUSPECT_ID = "SuspectID";
     protected static final String SUSPECT_VICTIM_ID = "VictimID";
     protected static final String SUSPECT_NAME = "Name";

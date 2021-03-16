@@ -1,4 +1,3 @@
-package CrimeManagementSystem;
 public class Officials {
 
 	private String title;

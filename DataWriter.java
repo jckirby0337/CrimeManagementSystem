@@ -110,7 +110,7 @@ public class DataWriter extends DataConstants {
 
 	public static JSONObject getSuspectJSON(Suspect suspect) {
 		JSONObject suspectDetails = new JSONObject();
-		suspectDetails.put(SUSPECT_CRIME_ID_, crime.getId().toString());
+		suspectDetails.put(SUSPECT_CRIME_ID, crime.getId().toString());
         suspectDetails.put(SUSPECT_ID, offender.getId().toString());
         suspectDetails.put(SUSPECT_VICTIM_ID, crime.getCrimeCommited());
         suspectDetails.put(SUSPECT_NAME, suspect.getName());
