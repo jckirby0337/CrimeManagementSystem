@@ -132,7 +132,7 @@ public class DataLoader extends DataConstants{
 			
 			for(int i=0; i < usersJSON.size(); i++) {
 				JSONObject userJSON = (JSONObject)usersJSON.get(i);
-				String userID = (String)userJSON.get(USER_USER_ID);
+				UUID userID = (UUID)userJSON.get(USER_USER_ID);
 				String name = (String)userJSON.get(USER_NAME);
 				String title = (String)userJSON.get(USER_TITLE);
 				String race = (String)userJSON.get(USER_RACE);
@@ -151,5 +151,16 @@ public class DataLoader extends DataConstants{
 		}
 		
 		return null;
+
+	}
+
+	public static void main(String[] args) {
+		ArrayList<User> users = DataLoader.getUsers();
+		for(User user: users) {
+			System.out.println(user);
+		}
+		
+
+		System.out.println(UUID.randomUUID());
 	}
 }

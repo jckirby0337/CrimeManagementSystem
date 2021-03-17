@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 public class Suspect extends Details{
     private Boolean tattoos;
     private String vehicle;

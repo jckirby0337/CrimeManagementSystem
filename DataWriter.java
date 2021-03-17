@@ -2,6 +2,8 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.UUID;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -74,8 +76,10 @@ public class DataWriter extends DataConstants {
 	}
 
     public static void saveUsers() {
-		Users users = Users.getInstance(); 
-		ArrayList<User> userList = users.getUsers();
+		//Users users = Users.getInstance(); 
+		//ArrayList<User> userList = users.getUsers();
+		ArrayList<User> userList = new ArrayList();
+		userList.add(new User(UUID.randomUUID(), "Bob", "Official", "White", "9/21/71", "205", "123", "billybob"));
 		JSONArray jsonUsers = new JSONArray();
 		
 		//creating all the json objects
@@ -94,7 +98,7 @@ public class DataWriter extends DataConstants {
             e.printStackTrace();
         }
 	}
-	public static JSONObject getCrimeJSON(Crime crime) {
+	/*public static JSONObject getCrimeJSON(Crime crime) {
 		JSONObject crimeDetails = new JSONObject();
 		crimeDetails.put(CRIME_ID, crime.getId().toString());
         crimeDetails.put(OFFENDER_ID, offender.getId().toString());
@@ -154,15 +158,15 @@ public class DataWriter extends DataConstants {
 
         return offenderDetails;
 	}
-
+*/
     public static JSONObject getUserJSON(User user) {
 		JSONObject userDetails = new JSONObject();
-		userDetails.put(USER_USER_ID, user.getId().toString());
+		userDetails.put(USER_USER_ID, user.getUserID().toString());
 		userDetails.put(USER_NAME, user.getUsername());
 		userDetails.put(USER_USER_PASSWORD, user.getPassword());
 		userDetails.put(USER_TITLE, user.getTitle());
 		userDetails.put(USER_RACE, user.getRace());
-		userDetails.put(USER_DATE_OF_BIRTH, user.getDateOfBirth());
+		userDetails.put(USER_DATE_OF_BIRTH, user.getDOB());
 		userDetails.put(USER_ADDRESS, user.getAddress());
 		/*userDetails.put(USER_FIRST_NAME, user.getFirstName());
 		userDetails.put(USER_LAST_NAME, user.getLastName());
@@ -170,5 +174,10 @@ public class DataWriter extends DataConstants {
 		userDetails.put(USER_PHONE_NUMBER, user.getPhoneNumber());
         */
         return userDetails;
+	}
+
+	public static void main(String[] args) {
+		DataWriter.saveUsers();
+
 	}
 }

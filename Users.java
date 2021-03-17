@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.UUID;
 public class Users {
 	private static Users users;
 	private ArrayList<User> userList;
@@ -40,7 +40,7 @@ public class Users {
 		return userList;
 	}
 	
-	public boolean addUser(String userID, String name, String title, String race, String dob, String address, String password, String username) {
+	public boolean addUser(UUID userID, String name, String title, String race, String dob, String address, String password, String username) {
 		if(haveUser(username))return false;
 		
 		userList.add(new User(userID, name, title, race, dob, address, password, username));

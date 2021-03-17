@@ -1,7 +1,7 @@
-import java.util.ArrayList;
+import java.util.UUID;
 public class User {
     
-    private String userID;
+    private UUID userID;
     private String name;
     private String title;
     private String race;
@@ -10,7 +10,7 @@ public class User {
     private String password;
     private String username;
 
-    public User(String userID, String name, String title, String race, String dob, String address, String password, String username) {
+    public User(UUID userID, String name, String title, String race, String dob, String address, String password, String username) {
         this.userID = userID;
         this.name = name;
         this.title = title;
@@ -20,7 +20,7 @@ public class User {
         this.password = password;
         this.username = username;
     }
-    public String getUserID() {
+    public UUID getUserID() {
         return userID;
     }
     public String getUsername() {
@@ -28,5 +28,20 @@ public class User {
     }
     public String getPassword() {
         return password;
+    }
+    public String getTitle() {
+        return title;
+    }
+    public String getRace() {
+        return race;
+    }
+    public String getDOB() {
+        return dob;
+    }
+    public String getAddress() {
+        return address;
+    }
+    public String toString() {
+        return name;
     }
 }
