@@ -11,7 +11,7 @@ public class Account {
 		this.pass=pass;
 	}
 	//verify pass word
-	public boolean verifyPass() {
+	public static boolean verifyPass(String user, String pass) {
 		if(user.equals(acct[0][0]) &&pass.equals(acct[0][1])){
 			return true;
 		}
