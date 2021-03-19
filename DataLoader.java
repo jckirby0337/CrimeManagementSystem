@@ -17,10 +17,9 @@ public class DataLoader extends DataConstants{
 			
 			for(int i=0; i < crimesJSON.size(); i++) {
 				JSONObject crimeJSON = (JSONObject)crimesJSON.get(i);
-				int caseNum = ((Long)crimeJSON.get(CASE_NUMBER)).intValue();
-				UUID crimeID = (UUID)crimeJSON.get(CRIME_ID);
-				UUID suspectID = (UUID)crimeJSON.get(CRIME_SUSPECT_ID);
-				UUID victimID = (UUID)crimeJSON.get(VICTIM_ID);
+				int crimeID = ((Long)crimeJSON.get(CRIME_ID)).intValue();
+                int offenderID = ((Long)crimeJSON.get(OFFENDER_ID)).intValue();
+
 				String crimeCommitted = (String)crimeJSON.get(CRIME_COMMITTED);
 				String crimeLocation = (String)crimeJSON.get(CRIME_LOCATION);
 				String crimeDate = (String)crimeJSON.get(CRIME_DATE);
@@ -29,7 +28,7 @@ public class DataLoader extends DataConstants{
                 String evidence = (String)crimeJSON.get(EVIDENCE);
                 boolean solved = (boolean)crimeJSON.get(SOLVED);
 				
-				crimes.add(new Crime(caseNum, crimeID, suspectID, victimID, crimeCommitted, crimeLocation, crimeDate, criminal, criminalCustody, evidence, solved));
+				crimes.add(new Crime(crimeID, offenderID, crimeCommitted, crimeLocation, crimeLocation, crimeDate, criminal, criminalCustody, evidence, solved));
 			}
 			
 			return crimes;
@@ -51,7 +50,9 @@ public class DataLoader extends DataConstants{
 			
 			for(int i=0; i < suspectsJSON.size(); i++) {
 				JSONObject suspectJSON = (JSONObject)suspectsJSON.get(i);
-                UUID suspectID = (UUID)suspectJSON.get(SUSPECT_ID);
+				int crimeID = ((Long)suspectJSON.get(SUSPECT_CRIME_ID)).intValue();
+                int suspectID = ((Long)suspectJSON.get(SUSPECT_ID)).intValue();
+				int victimID = ((Long)suspectJSON.get(SUSPECT_VICTIM_ID)).intValue();
 				String name = (String)suspectJSON.get(SUSPECT_NAME);
 				int age = ((Long)suspectJSON.get(SUSPECT_AGE)).intValue();
 				char sex = (char)suspectJSON.get(SUSPECT_SEX);
@@ -69,7 +70,7 @@ public class DataLoader extends DataConstants{
 				String housingLocation = (String)suspectJSON.get(SUSPECT_HOUSE_LOCATION);
 				String educationLevel = (String)suspectJSON.get(SUSPECT_EDUCATION_LEVEL);
 
-				suspects.add(new Suspect(suspectID, name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount,
+				suspects.add(new Suspect(crimeID, suspectID, victimID, name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount,
 			 	creditCard, armed, publicRisk, nicknames, mentalState, housingLocation, educationLevel));
 			}
 			
@@ -81,7 +82,34 @@ public class DataLoader extends DataConstants{
 		
 		return null;
 	}
-
+	public static ArrayList<Victim> getVictims() {
+		ArrayList<Victim> victims = new ArrayList<Victim>();
+		
+		try {
+			FileReader reader = new FileReader(VICTIM_FILE_NAME);
+			JSONParser parser = new JSONParser();	
+			JSONArray victimsJSON = (JSONArray)new JSONParser().parse(reader);
+			
+			for(int i=0; i < victimsJSON.size(); i++) {
+				JSONObject victimJSON = (JSONObject)victimJSON.get(i);
+				String name = (String)victimJSON.get(VICTIM_NAME);
+				int age = ((Long)victimJSON.get(VICTIM_AGE)).intValue();
+				char sex = (char)victimJSON.get(VICTIM_SEX);
+				String race = (String)victimJSON.get(VICTIM_RACE);
+				String details = (String)victimJSON.get(VICTIM_DETAILS);
+				UUID victimID = (UUID)victimJSON.get(VICTIM_ID);
+				
+				victims.add(new Victim(victimID, name, age, sex, race, details);
+			}
+			
+			return victims;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 	public static ArrayList<User> getUsers() {
 		ArrayList<User> users = new ArrayList<User>();
 		
