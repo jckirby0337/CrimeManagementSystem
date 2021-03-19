@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 public class Victims {
     private static Victims victims;
 	private ArrayList<Victim> victimList;
@@ -39,10 +40,10 @@ public class Victims {
 		return victimList;
 	}
 	
-	public boolean addVictim(String name, int age, char sex, String race, String details) {
+	public boolean addVictim(UUID victimID, String name, int age, char sex, String race, String details) {
 		if(haveVictim(name))return false;
 		
-		victimList.add(new Victim(name, age, sex, race, details));
+		victimList.add(new Victim(victimID, name, age, sex, race, details));
 		return true;
 	}
 	
