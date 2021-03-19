@@ -152,6 +152,7 @@ public class DataWriter extends DataConstants {
 		victimDetails.put(VICTIM_SEX, victim.getSex());
 		victimDetails.put(VICTIM_RACE, victim.getRace());
 		victimDetails.put(VICTIM_NAME, victim.getName());
+		return victimDetails;
 	}
 
 	public static void main(String[] args) {
