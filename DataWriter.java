@@ -53,28 +53,6 @@ public class DataWriter extends DataConstants {
         }
 	}
 
-    public static void saveOffenders() {
-		Offenders offenders = Offenders.getInstance(); 
-		ArrayList<Offender> offenderList = offenders.getOffenders();
-		JSONArray jsonOffenders = new JSONArray();
-		
-		//creating all the json objects
-		for(int i=0; i< offenderList.size(); i++) {
-			jsonOffenders.add(getOffenderJSON(offenderList.get(i))); 
-		}
-    
-		
-		//Write JSON file
-        try (FileWriter file = new FileWriter(OFFENDER_FILE_NAME)) {
- 
-            file.write(jsonOffenders.toJSONString());
-            file.flush();
- 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-	}
-
     public static void saveUsers() {
 		//Users users = Users.getInstance(); 
 		//ArrayList<User> userList = users.getUsers();
@@ -92,6 +70,27 @@ public class DataWriter extends DataConstants {
         try (FileWriter file = new FileWriter(USER_FILE_NAME)) {
  
             file.write(jsonUsers.toJSONString());
+            file.flush();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+	public static void saveVictims() {
+		Victims victims = Victims.getInstance();
+		ArrayList<Victim> victimList = victims.getVictims();
+		JSONArray jsonVictims = new JSONArray();
+		
+		//creating all the json objects
+		for(int i=0; i< victimList.size(); i++) {
+			jsonVictims.add(getVictimJSON(victimList.get(i)));
+		}
+    
+		
+		//Write JSON file
+        try (FileWriter file = new FileWriter(VICTIM_FILE_NAME)) {
+ 
+            file.write(jsonVictims.toJSONString());
             file.flush();
  
         } catch (IOException e) {
