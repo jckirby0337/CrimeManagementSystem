@@ -82,46 +82,6 @@ public class DataLoader extends DataConstants{
 		return null;
 	}
 
-	public static ArrayList<Offender> getOffenders() {
-		ArrayList<Offender> offenders = new ArrayList<Offender>();
-		
-		try {
-			FileReader reader = new FileReader(OFFENDER_FILE_NAME);
-			JSONParser parser = new JSONParser();	
-			JSONArray offendersJSON = (JSONArray)new JSONParser().parse(reader);
-			
-			for(int i=0; i < offendersJSON.size(); i++) {
-				JSONObject offenderJSON = (JSONObject)offendersJSON.get(i);
-				int offenderID = ((Long)offenderJSON.get(OFFENDER_OFFENDER_ID)).intValue();
-				int victimID = ((Long)offenderJSON.get(OFFENDER_VICTIM_ID)).intValue();
-				String name = (String)offenderJSON.get(SUSPECT_NAME);
-                boolean tattoos = (boolean)offenderJSON.get(OFFENDER_TATTOOS);
-				String vehicle = (String)offenderJSON.get(SUSPECT_VEHICLE);
-				String licensePlate = (String)offenderJSON.get(OFFENDER_LICENSE_PLATE);
-				int crimeLevel = ((Long)offenderJSON.get(OFFENDER_CRIME_LEVEL)).intValue();
-				String address = (String)offenderJSON.get(OFFENDER_ADDRESS);
-				boolean bankAccount = (boolean)offenderJSON.get(OFFENDER_BANK_ACCOUNT);
-                boolean creditCard = (boolean)offenderJSON.get(OFFENDER_CREDIT_CARD);
-				boolean armed = (boolean)offenderJSON.get(OFFENDER_ARMED);
-				boolean publicRisk = (boolean)offenderJSON.get(OFFENDER_PUBLIC_RISK);
-				String nicknames = (String)offenderJSON.get(OFFENDER_NICKNAMES);
-				String mentalState = (String)offenderJSON.get(OFFENDER_MENTAL_STATE);
-				String housingLocation = (String)offenderJSON.get(OFFENDER_HOUSING_LOCATIONS);
-				String educationLevel = (String)offenderJSON.get(OFFENDER_EDUCATION_LEVEL);
-
-				offenders.add(new Offender(offenderID, victimID, name, tattoos, vehicle, licensePlate, crimeLevel, 
-				address, bankAccount, creditCard, armed, publicRisk, nicknames, mentalState, housingLocation, educationLevel));
-			}
-			
-			return offenders;
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return null;
-	}
-
 	public static ArrayList<User> getUsers() {
 		ArrayList<User> users = new ArrayList<User>();
 		
