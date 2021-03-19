@@ -17,9 +17,10 @@ public class DataLoader extends DataConstants{
 			
 			for(int i=0; i < crimesJSON.size(); i++) {
 				JSONObject crimeJSON = (JSONObject)crimesJSON.get(i);
-				int crimeID = ((Long)crimeJSON.get(CRIME_ID)).intValue();
-                int offenderID = ((Long)crimeJSON.get(OFFENDER_ID)).intValue();
-
+				int caseNum = ((Long)crimeJSON.get(CASE_NUMBER)).intValue();
+				UUID crimeID = (UUID)crimeJSON.get(CRIME_ID);
+				UUID suspectID = (UUID)crimeJSON.get(CRIME_SUSPECT_ID);
+				UUID victimID = (UUID)crimeJSON.get(CRIME_VICTIM_ID);
 				String crimeCommitted = (String)crimeJSON.get(CRIME_COMMITTED);
 				String crimeLocation = (String)crimeJSON.get(CRIME_LOCATION);
 				String crimeDate = (String)crimeJSON.get(CRIME_DATE);
@@ -28,7 +29,7 @@ public class DataLoader extends DataConstants{
                 String evidence = (String)crimeJSON.get(EVIDENCE);
                 boolean solved = (boolean)crimeJSON.get(SOLVED);
 				
-				crimes.add(new Crime(crimeID, offenderID, crimeCommitted, crimeLocation, crimeLocation, crimeDate, criminal, criminalCustody, evidence, solved));
+				crimes.add(new Crime(caseNum, crimeID, suspectID, victimID, crimeCommitted, crimeLocation, crimeDate, criminal, criminalCustody, evidence, solved));
 			}
 			
 			return crimes;
@@ -50,9 +51,7 @@ public class DataLoader extends DataConstants{
 			
 			for(int i=0; i < suspectsJSON.size(); i++) {
 				JSONObject suspectJSON = (JSONObject)suspectsJSON.get(i);
-				int crimeID = ((Long)suspectJSON.get(SUSPECT_CRIME_ID)).intValue();
-                int suspectID = ((Long)suspectJSON.get(SUSPECT_ID)).intValue();
-				int victimID = ((Long)suspectJSON.get(SUSPECT_VICTIM_ID)).intValue();
+                UUID suspectID = (UUID)suspectJSON.get(SUSPECT_ID);
 				String name = (String)suspectJSON.get(SUSPECT_NAME);
 				int age = ((Long)suspectJSON.get(SUSPECT_AGE)).intValue();
 				char sex = (char)suspectJSON.get(SUSPECT_SEX);
@@ -70,7 +69,7 @@ public class DataLoader extends DataConstants{
 				String housingLocation = (String)suspectJSON.get(SUSPECT_HOUSE_LOCATION);
 				String educationLevel = (String)suspectJSON.get(SUSPECT_EDUCATION_LEVEL);
 
-				suspects.add(new Suspect(crimeID, suspectID, victimID, name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount,
+				suspects.add(new Suspect(suspectID, name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount,
 			 	creditCard, armed, publicRisk, nicknames, mentalState, housingLocation, educationLevel));
 			}
 			
