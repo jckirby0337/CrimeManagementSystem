@@ -54,10 +54,8 @@ public class DataWriter extends DataConstants {
 	}
 
     public static void saveUsers() {
-		//Users users = Users.getInstance(); 
-		//ArrayList<User> userList = users.getUsers();
-		ArrayList<User> userList = new ArrayList();
-		userList.add(new User(UUID.randomUUID(), "Bob", "Official", "White", "9/21/71", "205", "123", "billybob"));
+		Users users = Users.getInstance(); 
+		ArrayList<User> userList = users.getUsers();
 		JSONArray jsonUsers = new JSONArray();
 		
 		//creating all the json objects
@@ -97,10 +95,12 @@ public class DataWriter extends DataConstants {
             e.printStackTrace();
         }
 	}
-	/*public static JSONObject getCrimeJSON(Crime crime) {
+	public static JSONObject getCrimeJSON(Crime crime) {
 		JSONObject crimeDetails = new JSONObject();
-		crimeDetails.put(CRIME_ID, crime.getId().toString());
-        crimeDetails.put(OFFENDER_ID, offender.getId().toString());
+		crimeDetails.put(CASE_NUMBER, crime.getCaseNum());
+		crimeDetails.put(CRIME_ID, crime.getCrimeID().toString());
+		crimeDetails.put(CRIME_SUSPECT_ID, crime.getSuspectID().toString());
+		crimeDetails.put(CRIME_VICTIM_ID, crime.getVictimID().toString());
         crimeDetails.put(CRIME_COMMITTED, crime.getCrimeCommited());
         crimeDetails.put(CRIME_LOCATION, crime.getCrimeLocation());
         crimeDetails.put(CRIME_DATE, crime.getCrimeDate());
@@ -113,9 +113,7 @@ public class DataWriter extends DataConstants {
 
 	public static JSONObject getSuspectJSON(Suspect suspect) {
 		JSONObject suspectDetails = new JSONObject();
-		suspectDetails.put(SUSPECT_CRIME_ID, crime.getId().toString());
-        suspectDetails.put(SUSPECT_ID, offender.getId().toString());
-        suspectDetails.put(SUSPECT_VICTIM_ID, crime.getCrimeCommited());
+        suspectDetails.put(SUSPECT_ID, suspect.getSuspectID().toString());
         suspectDetails.put(SUSPECT_NAME, suspect.getName());
         suspectDetails.put(SUSPECT_AGE, suspect.getAge());
         suspectDetails.put(SUSPECT_SEX, suspect.getSex());
@@ -134,7 +132,7 @@ public class DataWriter extends DataConstants {
 		suspectDetails.put(SUSPECT_EDUCATION_LEVEL, suspect.getEducationLevel());
         return suspectDetails;
 	}
-*/
+
     public static JSONObject getUserJSON(User user) {
 		JSONObject userDetails = new JSONObject();
 		userDetails.put(USER_USER_ID, user.getUserID().toString());
@@ -144,12 +142,16 @@ public class DataWriter extends DataConstants {
 		userDetails.put(USER_RACE, user.getRace());
 		userDetails.put(USER_DATE_OF_BIRTH, user.getDOB());
 		userDetails.put(USER_ADDRESS, user.getAddress());
-		/*userDetails.put(USER_FIRST_NAME, user.getFirstName());
-		userDetails.put(USER_LAST_NAME, user.getLastName());
-		userDetails.put(USER_AGE, user.getAge());
-		userDetails.put(USER_PHONE_NUMBER, user.getPhoneNumber());
-        */
         return userDetails;
+	}
+
+	public static JSONObject getVictimJSON(Victim victim) {
+		JSONObject victimDetails = new JSONObject();
+		victimDetails.put(VICTIM_ID, victim.getVictimID().toString());
+		victimDetails.put(VICTIM_AGE, victim.getAge());
+		victimDetails.put(VICTIM_SEX, victim.getSex());
+		victimDetails.put(VICTIM_RACE, victim.getRace());
+		victimDetails.put(VICTIM_NAME, victim.getName());
 	}
 
 	public static void main(String[] args) {
