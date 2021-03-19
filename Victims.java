@@ -15,7 +15,7 @@ public class Victims {
 		return victims;
 	}
 
-	public boolean havevictim(String name) {
+	public boolean haveVictim(String name) {
 		for(Victim victim : victimList) {
 			if(victim.getName().equals(name)) {
 				return true;
@@ -39,15 +39,10 @@ public class Victims {
 		return victimList;
 	}
 	
-	public boolean addVictim(String name, int age, char sex, String race, Boolean tattoos,
-    String vehicle, String licensePlate, String address, Boolean bankAccount,
-    Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
-    String mentalState, String housingLocation, String educationLevel) {
+	public boolean addVictim(String name, int age, char sex, String race, String details) {
 		if(haveVictim(name))return false;
 		
-		victimList.add(new Victim(name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount, 
-                                    creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
-                                    educationLevel));
+		victimList.add(new Victim(name, age, sex, race, details));
 		return true;
 	}
 	
