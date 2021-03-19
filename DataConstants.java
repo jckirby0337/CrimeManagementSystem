@@ -2,7 +2,7 @@ public abstract class DataConstants {
 
 // Crime Fields    
     protected static final String CRIME_FILE_NAME = "CrimeManagementSystem/Crime.json";
-    protected static final String CASE_ID = "case id";
+    protected static final String CASE_NUMBER = "case num";
     protected static final String CRIME_ID = "Crime id";
     protected static final String CRIME_SUSPECT_ID = "suspect id";
     protected static final String VICTIM_ID = "victim id";
