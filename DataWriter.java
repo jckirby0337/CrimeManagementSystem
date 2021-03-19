@@ -135,29 +135,6 @@ public class DataWriter extends DataConstants {
 		suspectDetails.put(SUSPECT_EDUCATION_LEVEL, suspect.getEducationLevel());
         return suspectDetails;
 	}
-
-    public static JSONObject getOffenderJSON(Offender offender) {
-		JSONObject offenderDetails = new JSONObject();
-		offenderDetails.put(OFFENDER_CRIME_ID, offender.getCrimeID().toString()); // ????
-        offenderDetails.put(OFFENDER_OFFENDER_ID, offender.getOffenderID().toString()); // ????
-        offenderDetails.put(OFFENDER_VICTIM_ID, crime.getVictimID()); // ????
-		offenderDetails.put(OFFENDER_TATTOOS, offender.hasTattoos());
-		offenderDetails.put(OFFENDER_VEHICLE, offender.getVehicle());
-		offenderDetails.put(OFFENDER_LICENSE_PLATE, offender.getLicensePlate());
-		offenderDetails.put(OFFENDER_CRIME_LEVEL, offender.getCrimeLevels());
-		offenderDetails.put(OFFENDER_ADDRESS, offender.getAddress());
-		offenderDetails.put(OFFENDER_BANK_ACCOUNT, offender.hasBankAccount());
-		offenderDetails.put(OFFENDER_CREDIT_CARD, offender.hasCreditCard());
-		offenderDetails.put(OFFENDER_ARMED, offender.hasArmed()); 
-		offenderDetails.put(OFFENDER_PUBLIC_RISK, offender.hasPublicRisk());
-		offenderDetails.put(OFFENDER_NICKNAMES, offender.getNicknames());
-		offenderDetails.put(OFFENDER_MENTAL_STATE, offender.getMentalState());
-		offenderDetails.put(OFFENDER_HOUSING_LOCATIONS, offender.getHousingLocations());
-		offenderDetails.put(OFFENDER_EDUCATION_LEVEL, offender.getEducationLevel());
-
-
-        return offenderDetails;
-	}
 */
     public static JSONObject getUserJSON(User user) {
 		JSONObject userDetails = new JSONObject();
