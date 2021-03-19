@@ -32,6 +32,25 @@ public class Suspect extends Details{
         this.housingLocation = housingLocation;
         this.educationLevel = educationLevel;
     }
+    public Suspect(UUID suspectID, String name, int age, char sex, String race, Boolean tattoos,
+                   String vehicle, String licensePlate, String address, Boolean bankAccount,
+                   Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
+                   String mentalState, String housingLocation, String educationLevel) {
+        super(name, age, sex, race);
+        this.suspectID = suspectID;
+        this.tattoos = tattoos;
+        this.vehicle = vehicle;
+        this.licensePlate = licensePlate;
+        this.address = address;
+        this.bankAccount = bankAccount;
+        this.creditCard = creditCard;
+        this.armed = armed;
+        this.publicRisk = publicRisk;
+        this.nickNames = nickNames;
+        this.mentalState = mentalState;
+        this.housingLocation = housingLocation;
+        this.educationLevel = educationLevel;
+    }
     public void setSuspectID(UUID suspectID) {
         this.suspectID = suspectID;
     }
