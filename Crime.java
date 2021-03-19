@@ -13,6 +13,7 @@ public class Crime {
 	private boolean isSolved;
 	
 	public Crime(String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+		this.crimeID = UUID.randomUUID();
 		this.crimeCommited = crimeCommited;
 		this.crimeLocation = crimeLocation;
 		this.crimeDate = crimeDate;
@@ -23,6 +24,7 @@ public class Crime {
 	}
 	public Crime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
 		this.caseNum = caseNum;
+		this.crimeID = UUID.randomUUID();
 		this.crimeCommited = crimeCommited;
 		this.crimeLocation = crimeLocation;
 		this.crimeDate = crimeDate;
