@@ -34,24 +34,6 @@ public abstract class DataConstants {
     protected static final String SUSPECT_HOUSE_LOCATION = "House-Location";
     protected static final String SUSPECT_EDUCATION_LEVEL = "Education-Level";
 
-// Offender Fields
-    protected static final String OFFENDER_FILE_NAME = "CrimeManagementSystem/Offender.json";
-    protected static final String OFFENDER_OFFENDER_ID = "id";
-    protected static final String OFFENDER_VICTIM_ID = "victimID";
-    protected static final String OFFENDER_TATTOOS = "Tattoos";
-    protected static final String OFFENDER_VEHICLE = "Vehicle";
-    protected static final String OFFENDER_LICENSE_PLATE = "licensePlate";
-    protected static final String OFFENDER_CRIME_LEVEL = "crimeLevels";
-    protected static final String OFFENDER_ADDRESS = "Address";
-    protected static final String OFFENDER_BANK_ACCOUNT = "bankAccount";
-    protected static final String OFFENDER_CREDIT_CARD = "creditCard";
-    protected static final String OFFENDER_ARMED = "armed";
-    protected static final String OFFENDER_PUBLIC_RISK = "publicRisk";
-    protected static final String OFFENDER_NICKNAMES = "nicknames";
-    protected static final String OFFENDER_MENTAL_STATE = "mentalState";
-    protected static final String OFFENDER_HOUSING_LOCATIONS = "housingLocations";
-    protected static final String OFFENDER_EDUCATION_LEVEL = "educationLevel";
-    
 // User Fields 
     protected static final String USER_FILE_NAME = "CrimeManagementSystem/User.json";
     protected static final String USER_USER_ID = "UserID";
