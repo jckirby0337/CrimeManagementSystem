@@ -1,5 +1,9 @@
+import java.util.UUID;
 public class Crime {
-
+	private int caseNum;
+	private UUID crimeID;
+	private UUID suspectID;
+	private UUID victimID;
 	private String crimeCommited;
 	private String crimeLocation;
 	private int crimeDate;
@@ -17,8 +21,62 @@ public class Crime {
 		this.evidence = evidence;
 		this.isSolved = isSolved;
 	}
+	public Crime(int caseNum, String crimeCommited, String crimeLocation, int crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+		this.caseNum = caseNum;
+		this.crimeCommited = crimeCommited;
+		this.crimeLocation = crimeLocation;
+		this.crimeDate = crimeDate;
+		this.criminal = criminal;
+		this.criminalInCustody = criminalInCustody;
+		this.evidence = evidence;
+		this.isSolved = isSolved;
+	}
+	public Crime(int caseNum, UUID crimeID, UUID suspectID, UUID victimID, String crimeCommited, String crimeLocation, int crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+		this.caseNum = caseNum;
+		this.crimeID = crimeID;
+		this.suspectID = suspectID;
+		this.victimID = victimID;
+		this.crimeCommited = crimeCommited;
+		this.crimeLocation = crimeLocation;
+		this.crimeDate = crimeDate;
+		this.criminal = criminal;
+		this.criminalInCustody = criminalInCustody;
+		this.evidence = evidence;
+		this.isSolved = isSolved;
+	}
 
 	//Setters and getters
+	public int getCaseNum() {
+		return this.caseNum;
+	}
+
+	public void setCaseNum(int caseNum) {
+		this.caseNum = caseNum;
+	}
+
+	public UUID getCrimeID() {
+		return this.crimeID;
+	}
+
+	public void setCrimeID(UUID crimeID) {
+		this.crimeID = crimeID;
+	}
+
+	public UUID getSuspectID() {
+		return this.suspectID;
+	}
+
+	public void setSuspectID(UUID suspectID) {
+		this.suspectID = suspectID;
+	}
+
+	public UUID getVictimID() {
+		return this.victimID;
+	}
+
+	public void setVictimID(UUID victimID) {
+		this.victimID = victimID;
+	}
 	public String getCrimeCommited() {
 		return crimeCommited;
 	}
