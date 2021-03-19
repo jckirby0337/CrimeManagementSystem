@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Crimes {
     private static Crimes crimes;
@@ -39,10 +40,10 @@ public class Crimes {
         return crimeList;
     }
 
-    public boolean addCrime(String crimeCommited, String crimeLocation, int crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+    public boolean addCrime(int caseNum, UUID crimeID, UUID suspectID, UUID victimID, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
         if(haveCrime(criminal)) return false;
 
-        crimeList.add(new Crime(crimeCommited, crimeLocation, crimeDate, criminal, criminalInCustody, evidence, isSolved));
+        crimeList.add(new Crime(caseNum, crimeID, suspectID, victimID, crimeCommited, crimeLocation, crimeDate, criminal, criminalInCustody, evidence, isSolved));
         return true;
     }
 
