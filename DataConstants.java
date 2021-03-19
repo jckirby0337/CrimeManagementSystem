@@ -5,7 +5,7 @@ public abstract class DataConstants {
     protected static final String CASE_NUMBER = "case num";
     protected static final String CRIME_ID = "Crime id";
     protected static final String CRIME_SUSPECT_ID = "suspect id";
-    protected static final String VICTIM_ID = "victim id";
+    protected static final String CRIME_VICTIM_ID = "victim id";
     protected static final String CRIME_COMMITTED = "crime committed";
     protected static final String CRIME_LOCATION = "crime location";
     protected static final String CRIME_DATE = "crime date";
@@ -33,6 +33,14 @@ public abstract class DataConstants {
     protected static final String SUSPECT_MENTAL_STATE = "Mental-State";
     protected static final String SUSPECT_HOUSE_LOCATION = "House-Location";
     protected static final String SUSPECT_EDUCATION_LEVEL = "Education-Level";
+
+//  Victim Fields
+    protected static final String VICTIM_FILE_NAME = "CrimeManagementSystem/Victim.json";
+    protected static final String VICTIM_ID = "VictimID";
+    protected static final String VICTIM_AGE = "Age";
+    protected static final String VICTIM_SEX = "Sex";
+    protected static final String VICTIM_RACE = "Race";
+    protected static final String VICTIM_NAME = "Name";
 
 // User Fields 
     protected static final String USER_FILE_NAME = "CrimeManagementSystem/User.json";
