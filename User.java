@@ -20,6 +20,17 @@ public class User {
         this.password = password;
         this.username = username;
     }
+    public User(UUID userID, String name, String title, String race, String dob, String address, String password, String username) {
+        this.userID = userID;
+        this.name = name;
+        this.title = title;
+        this.race = race;
+        this.dob = dob;
+        this.address = address;
+        this.password = password;
+        this.username = username;
+    }
+
     public UUID getUserID() {
         return userID;
     }
