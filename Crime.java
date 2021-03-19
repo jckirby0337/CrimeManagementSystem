@@ -6,13 +6,13 @@ public class Crime {
 	private UUID victimID;
 	private String crimeCommited;
 	private String crimeLocation;
-	private int crimeDate;
+	private String crimeDate;
 	private String criminal;
 	private boolean criminalInCustody;
 	private String evidence;
 	private boolean isSolved;
 	
-	public Crime(String crimeCommited, String crimeLocation, int crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+	public Crime(String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
 		this.crimeCommited = crimeCommited;
 		this.crimeLocation = crimeLocation;
 		this.crimeDate = crimeDate;
@@ -21,7 +21,7 @@ public class Crime {
 		this.evidence = evidence;
 		this.isSolved = isSolved;
 	}
-	public Crime(int caseNum, String crimeCommited, String crimeLocation, int crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+	public Crime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
 		this.caseNum = caseNum;
 		this.crimeCommited = crimeCommited;
 		this.crimeLocation = crimeLocation;
@@ -31,7 +31,7 @@ public class Crime {
 		this.evidence = evidence;
 		this.isSolved = isSolved;
 	}
-	public Crime(int caseNum, UUID crimeID, UUID suspectID, UUID victimID, String crimeCommited, String crimeLocation, int crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+	public Crime(int caseNum, UUID crimeID, UUID suspectID, UUID victimID, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
 		this.caseNum = caseNum;
 		this.crimeID = crimeID;
 		this.suspectID = suspectID;
@@ -89,10 +89,10 @@ public class Crime {
 	public void setCrimeLocation(String crimeLocation) {
 		this.crimeLocation = crimeLocation;
 	}
-	public int getCrimeDate() {
+	public String getCrimeDate() {
 		return crimeDate;
 	}
-	public void setCrimeDate(int crimeDate) {
+	public void setCrimeDate(String crimeDate) {
 		this.crimeDate = crimeDate;
 	}
     public String getCriminal() {
