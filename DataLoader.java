@@ -51,9 +51,7 @@ public class DataLoader extends DataConstants{
 			
 			for(int i=0; i < suspectsJSON.size(); i++) {
 				JSONObject suspectJSON = (JSONObject)suspectsJSON.get(i);
-				int crimeID = ((Long)suspectJSON.get(SUSPECT_CRIME_ID)).intValue();
-                int suspectID = ((Long)suspectJSON.get(SUSPECT_ID)).intValue();
-				int victimID = ((Long)suspectJSON.get(SUSPECT_VICTIM_ID)).intValue();
+                UUID suspectID = (UUID)suspectJSON.get(SUSPECT_ID);
 				String name = (String)suspectJSON.get(SUSPECT_NAME);
 				int age = ((Long)suspectJSON.get(SUSPECT_AGE)).intValue();
 				char sex = (char)suspectJSON.get(SUSPECT_SEX);
@@ -71,7 +69,7 @@ public class DataLoader extends DataConstants{
 				String housingLocation = (String)suspectJSON.get(SUSPECT_HOUSE_LOCATION);
 				String educationLevel = (String)suspectJSON.get(SUSPECT_EDUCATION_LEVEL);
 
-				suspects.add(new Suspect(crimeID, suspectID, victimID, name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount,
+				suspects.add(new Suspect(suspectID, name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount,
 			 	creditCard, armed, publicRisk, nicknames, mentalState, housingLocation, educationLevel));
 			}
 			
