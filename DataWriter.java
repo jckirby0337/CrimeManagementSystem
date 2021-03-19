@@ -2,7 +2,6 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.UUID;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -153,10 +152,5 @@ public class DataWriter extends DataConstants {
 		victimDetails.put(VICTIM_RACE, victim.getRace());
 		victimDetails.put(VICTIM_NAME, victim.getName());
 		return victimDetails;
-	}
-
-	public static void main(String[] args) {
-		DataWriter.saveUsers();
-
 	}
 }

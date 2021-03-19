@@ -90,7 +90,7 @@ public class DataLoader extends DataConstants{
 			JSONArray victimsJSON = (JSONArray)new JSONParser().parse(reader);
 			
 			for(int i=0; i < victimsJSON.size(); i++) {
-				JSONObject victimJSON = (JSONObject)victimJSON.get(i);
+				JSONObject victimJSON = (JSONObject)victimsJSON.get(i);
 				String name = (String)victimJSON.get(VICTIM_NAME);
 				int age = ((Long)victimJSON.get(VICTIM_AGE)).intValue();
 				char sex = (char)victimJSON.get(VICTIM_SEX);
@@ -98,7 +98,7 @@ public class DataLoader extends DataConstants{
 				String details = (String)victimJSON.get(VICTIM_DETAILS);
 				UUID victimID = (UUID)victimJSON.get(VICTIM_ID);
 				
-				victims.add(new Victim(victimID, name, age, sex, race, details);
+				victims.add(new Victim(victimID, name, age, sex, race, details));
 			}
 			
 			return victims;
