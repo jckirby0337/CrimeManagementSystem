@@ -36,6 +36,7 @@ public abstract class DataConstants {
 
 //  Victim Fields
     protected static final String VICTIM_FILE_NAME = "CrimeManagementSystem/Victim.json";
+    protected static final String VICTIM_DETAILS = "details";
     protected static final String VICTIM_ID = "VictimID";
     protected static final String VICTIM_AGE = "Age";
     protected static final String VICTIM_SEX = "Sex";
