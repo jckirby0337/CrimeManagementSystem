@@ -18,9 +18,9 @@ public class DataLoader extends DataConstants{
 			for(int i=0; i < crimesJSON.size(); i++) {
 				JSONObject crimeJSON = (JSONObject)crimesJSON.get(i);
 				int caseNum = ((Long)crimeJSON.get(CASE_NUMBER)).intValue();
-				UUID crimeID = (UUID)crimeJSON.get(CRIME_ID);
-				UUID suspectID = (UUID)crimeJSON.get(CRIME_SUSPECT_ID);
-				UUID victimID = (UUID)crimeJSON.get(CRIME_VICTIM_ID);
+				UUID crimeID = UUID.fromString((String)crimeJSON.get(CRIME_ID));
+				UUID suspectID = UUID.fromString((String)crimeJSON.get(CRIME_SUSPECT_ID));
+				UUID victimID = UUID.fromString((String)crimeJSON.get(CRIME_VICTIM_ID));
 				String crimeCommitted = (String)crimeJSON.get(CRIME_COMMITTED);
 				String crimeLocation = (String)crimeJSON.get(CRIME_LOCATION);
 				String crimeDate = (String)crimeJSON.get(CRIME_DATE);
@@ -51,7 +51,7 @@ public class DataLoader extends DataConstants{
 			
 			for(int i=0; i < suspectsJSON.size(); i++) {
 				JSONObject suspectJSON = (JSONObject)suspectsJSON.get(i);
-                UUID suspectID = (UUID)suspectJSON.get(SUSPECT_ID);
+                UUID suspectID = UUID.fromString((String)suspectJSON.get(SUSPECT_ID));
 				String name = (String)suspectJSON.get(SUSPECT_NAME);
 				int age = ((Long)suspectJSON.get(SUSPECT_AGE)).intValue();
 				char sex = (char)suspectJSON.get(SUSPECT_SEX);
@@ -96,7 +96,7 @@ public class DataLoader extends DataConstants{
 				char sex = (char)victimJSON.get(VICTIM_SEX);
 				String race = (String)victimJSON.get(VICTIM_RACE);
 				String details = (String)victimJSON.get(VICTIM_DETAILS);
-				UUID victimID = (UUID)victimJSON.get(VICTIM_ID);
+				UUID victimID = UUID.fromString((String)victimJSON.get(VICTIM_ID));
 				
 				victims.add(new Victim(victimID, name, age, sex, race, details));
 			}
@@ -119,7 +119,7 @@ public class DataLoader extends DataConstants{
 			
 			for(int i=0; i < usersJSON.size(); i++) {
 				JSONObject userJSON = (JSONObject)usersJSON.get(i);
-				UUID userID = (UUID)userJSON.get(USER_USER_ID);
+				UUID userID = UUID.fromString((String)userJSON.get(USER_USER_ID));
 				String name = (String)userJSON.get(USER_NAME);
 				String title = (String)userJSON.get(USER_TITLE);
 				String race = (String)userJSON.get(USER_RACE);

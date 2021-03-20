@@ -16,9 +16,9 @@ public class Users {
 		return users;
 	}
 
-	public boolean haveUser(String userName) {
+	public boolean haveUser(String userName, String password) {
 		for(User user : userList) {
-			if(user.getUsername().equals(userName)) {
+			if(user.getUsername().equals(userName) && user.getPassword().equals(password)) {
 				return true;
 			}
 		}
@@ -40,10 +40,10 @@ public class Users {
 		return userList;
 	}
 	
-	public boolean addUser(UUID userID, String name, String title, String race, String dob, String address, String password, String username) {
-		if(haveUser(username))return false;
+	public boolean addUser(String name, String title, String race, String dob, String address, String password, String username) {
+		if(haveUser(username, password))return false;
 		
-		userList.add(new User(userID, name, title, race, dob, address, password, username));
+		userList.add(new User(name, title, race, dob, address, password, username));
 		return true;
 	}
 	

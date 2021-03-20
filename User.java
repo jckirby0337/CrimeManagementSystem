@@ -34,6 +34,9 @@ public class User {
     public UUID getUserID() {
         return userID;
     }
+    public String getName() {
+        return name;
+    }
     public String getUsername() {
         return username;
     }
