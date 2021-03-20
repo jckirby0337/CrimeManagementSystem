@@ -33,6 +33,9 @@ public class CrimeManagementSystemUI {
                 case(0):
                     createAccount();
                     break;
+                case(1):
+                    login();
+                    break;
             }
         }
     }
@@ -67,8 +70,9 @@ public class CrimeManagementSystemUI {
                 String dob = getField("dob (mm/dd/yyyy)");
                 String address = getField("Address");
                 if(system.createAccount(name, title, race, dob, address, password, username)) {
-                    System.out.println("You have successfully created an account already exists");
+                    System.out.println("You have successfully created an account");
                 } 
+                break;
             }
             else {
                 System.out.println("Sorry an account with that username and password");
@@ -92,4 +96,9 @@ public class CrimeManagementSystemUI {
         System.out.print(prompt + ": ");
         return scanner.nextLine();
     }
+
+    public static void main(String[] args) {
+		CrimeManagementSystemUI systemInterface = new CrimeManagementSystemUI();
+		systemInterface.run();
+	}
 }
