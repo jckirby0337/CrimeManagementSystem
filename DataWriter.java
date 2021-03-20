@@ -2,7 +2,6 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.UUID;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -53,33 +52,9 @@ public class DataWriter extends DataConstants {
         }
 	}
 
-    public static void saveOffenders() {
-		Offenders offenders = Offenders.getInstance(); 
-		ArrayList<Offender> offenderList = offenders.getOffenders();
-		JSONArray jsonOffenders = new JSONArray();
-		
-		//creating all the json objects
-		for(int i=0; i< offenderList.size(); i++) {
-			jsonOffenders.add(getOffenderJSON(offenderList.get(i))); 
-		}
-    
-		
-		//Write JSON file
-        try (FileWriter file = new FileWriter(OFFENDER_FILE_NAME)) {
- 
-            file.write(jsonOffenders.toJSONString());
-            file.flush();
- 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-	}
-
     public static void saveUsers() {
-		//Users users = Users.getInstance(); 
-		//ArrayList<User> userList = users.getUsers();
-		ArrayList<User> userList = new ArrayList();
-		userList.add(new User(UUID.randomUUID(), "Bob", "Official", "White", "9/21/71", "205", "123", "billybob"));
+		Users users = Users.getInstance(); 
+		ArrayList<User> userList = users.getUsers();
 		JSONArray jsonUsers = new JSONArray();
 		
 		//creating all the json objects
@@ -98,10 +73,33 @@ public class DataWriter extends DataConstants {
             e.printStackTrace();
         }
 	}
-	/*public static JSONObject getCrimeJSON(Crime crime) {
+	public static void saveVictims() {
+		Victims victims = Victims.getInstance();
+		ArrayList<Victim> victimList = victims.getVictims();
+		JSONArray jsonVictims = new JSONArray();
+		
+		//creating all the json objects
+		for(int i=0; i< victimList.size(); i++) {
+			jsonVictims.add(getVictimJSON(victimList.get(i)));
+		}
+    
+		
+		//Write JSON file
+        try (FileWriter file = new FileWriter(VICTIM_FILE_NAME)) {
+ 
+            file.write(jsonVictims.toJSONString());
+            file.flush();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+	public static JSONObject getCrimeJSON(Crime crime) {
 		JSONObject crimeDetails = new JSONObject();
-		crimeDetails.put(CRIME_ID, crime.getId().toString());
-        crimeDetails.put(OFFENDER_ID, offender.getId().toString());
+		crimeDetails.put(CASE_NUMBER, crime.getCaseNum());
+		crimeDetails.put(CRIME_ID, crime.getCrimeID().toString());
+		crimeDetails.put(CRIME_SUSPECT_ID, crime.getSuspectID().toString());
+		crimeDetails.put(CRIME_VICTIM_ID, crime.getVictimID().toString());
         crimeDetails.put(CRIME_COMMITTED, crime.getCrimeCommited());
         crimeDetails.put(CRIME_LOCATION, crime.getCrimeLocation());
         crimeDetails.put(CRIME_DATE, crime.getCrimeDate());
@@ -114,9 +112,7 @@ public class DataWriter extends DataConstants {
 
 	public static JSONObject getSuspectJSON(Suspect suspect) {
 		JSONObject suspectDetails = new JSONObject();
-		suspectDetails.put(SUSPECT_CRIME_ID, crime.getId().toString());
-        suspectDetails.put(SUSPECT_ID, offender.getId().toString());
-        suspectDetails.put(SUSPECT_VICTIM_ID, crime.getCrimeCommited());
+        suspectDetails.put(SUSPECT_ID, suspect.getSuspectID().toString());
         suspectDetails.put(SUSPECT_NAME, suspect.getName());
         suspectDetails.put(SUSPECT_AGE, suspect.getAge());
         suspectDetails.put(SUSPECT_SEX, suspect.getSex());
@@ -136,29 +132,6 @@ public class DataWriter extends DataConstants {
         return suspectDetails;
 	}
 
-    public static JSONObject getOffenderJSON(Offender offender) {
-		JSONObject offenderDetails = new JSONObject();
-		offenderDetails.put(OFFENDER_CRIME_ID, offender.getCrimeID().toString()); // ????
-        offenderDetails.put(OFFENDER_OFFENDER_ID, offender.getOffenderID().toString()); // ????
-        offenderDetails.put(OFFENDER_VICTIM_ID, crime.getVictimID()); // ????
-		offenderDetails.put(OFFENDER_TATTOOS, offender.hasTattoos());
-		offenderDetails.put(OFFENDER_VEHICLE, offender.getVehicle());
-		offenderDetails.put(OFFENDER_LICENSE_PLATE, offender.getLicensePlate());
-		offenderDetails.put(OFFENDER_CRIME_LEVEL, offender.getCrimeLevels());
-		offenderDetails.put(OFFENDER_ADDRESS, offender.getAddress());
-		offenderDetails.put(OFFENDER_BANK_ACCOUNT, offender.hasBankAccount());
-		offenderDetails.put(OFFENDER_CREDIT_CARD, offender.hasCreditCard());
-		offenderDetails.put(OFFENDER_ARMED, offender.hasArmed()); 
-		offenderDetails.put(OFFENDER_PUBLIC_RISK, offender.hasPublicRisk());
-		offenderDetails.put(OFFENDER_NICKNAMES, offender.getNicknames());
-		offenderDetails.put(OFFENDER_MENTAL_STATE, offender.getMentalState());
-		offenderDetails.put(OFFENDER_HOUSING_LOCATIONS, offender.getHousingLocations());
-		offenderDetails.put(OFFENDER_EDUCATION_LEVEL, offender.getEducationLevel());
-
-
-        return offenderDetails;
-	}
-*/
     public static JSONObject getUserJSON(User user) {
 		JSONObject userDetails = new JSONObject();
 		userDetails.put(USER_USER_ID, user.getUserID().toString());
@@ -168,16 +141,16 @@ public class DataWriter extends DataConstants {
 		userDetails.put(USER_RACE, user.getRace());
 		userDetails.put(USER_DATE_OF_BIRTH, user.getDOB());
 		userDetails.put(USER_ADDRESS, user.getAddress());
-		/*userDetails.put(USER_FIRST_NAME, user.getFirstName());
-		userDetails.put(USER_LAST_NAME, user.getLastName());
-		userDetails.put(USER_AGE, user.getAge());
-		userDetails.put(USER_PHONE_NUMBER, user.getPhoneNumber());
-        */
         return userDetails;
 	}
 
-	public static void main(String[] args) {
-		DataWriter.saveUsers();
-
+	public static JSONObject getVictimJSON(Victim victim) {
+		JSONObject victimDetails = new JSONObject();
+		victimDetails.put(VICTIM_ID, victim.getVictimID().toString());
+		victimDetails.put(VICTIM_AGE, victim.getAge());
+		victimDetails.put(VICTIM_SEX, victim.getSex());
+		victimDetails.put(VICTIM_RACE, victim.getRace());
+		victimDetails.put(VICTIM_NAME, victim.getName());
+		return victimDetails;
 	}
 }

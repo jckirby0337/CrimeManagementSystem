@@ -1,48 +1,22 @@
-public class Victim {
-    private String name;
-    private int age;
-    private String sex;
-    private String race;
+import java.util.UUID;
+public class Victim extends Details{
+    private UUID victimID;
     private String details;
 
-    public Victim(String name, int age, String sex, String race, String details) {
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
-        this.race = race;
+    public Victim(String name, int age, char sex, String race, String details) {
+        super(name, age, sex, race);
+        this.victimID = UUID.randomUUID();
         this.details = details;
     }
 
-    public String getName() {
-        return this.name;
+    public Victim(UUID victimID, String name, int age, char sex, String race, String details) {
+        super(name, age, sex, race);
+        this.victimID = victimID;
+        this.details = details;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return this.age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getSex() {
-        return this.sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getRace() {
-        return this.race;
-    }
-
-    public void setRace(String race) {
-        this.race = race;
+    public UUID getVictimID() {
+        return victimID;
     }
 
     public String getDetails() {
@@ -52,6 +26,4 @@ public class Victim {
     public void setDetails(String details) {
         this.details = details;
     }
-
-
 }
