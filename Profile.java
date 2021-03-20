@@ -48,10 +48,38 @@ public class Profile {
 		}
 		// Account verify = new Account(user,pass);
 		// return verify;
+		displayMenu();
 	}
 	
 	public void displayMenu(){
-		Sys
+		System.out.println("Welcome "+user);
+		if(user=="trock")
+		{
+			System.out.println("These are your menu options:\n");
+			System.out.println("1. Add User\n"+"2. Remove User"+"3. Get Password of User");
+			Scanner admin = new Scanner(System.in);
+			Users acc = new Users();
+			if(admin.equals("1")){
+				\
+				String[] inputDet = new String[8];
+				String[] info = {"User ID: ","Name: ","Title: ","Race: ","DOB: ", "Address: ","Password: ","Username: " };
+				System.out.println("Please fill out information of the new user.");
+				for(int i = 0;i<8;i++){
+					Scanner newUser = new Scanner(System.in);
+					System.out.print(info[i]);
+					inputDet[i] = newUser.nextLine;
+				}
+				acc.addUser(inputDet[0],inputDet[1],inputDet[2],inputDet[3],inputDet[4],inputDet[5],inputDet[6],inputDet[7]);
+			}
+			else if(admin.equals("2"))
+			{
+
+			}
+			else if(admin.equals("3"))
+			{
+				
+			}
+		}
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
