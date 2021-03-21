@@ -36,6 +36,21 @@ public class CrimeManagementSystemUI {
                 case(1):
                     login();
                     break;
+                case(2):
+                    findCase();
+                    break;
+                case(3):
+                    addCrime();
+                    break;
+                case(4):
+                    addSuspect();
+                    break;
+                case(5):
+                    editCrime();
+                    break;
+                case(6):
+                    editSuspect();
+                    break;
             }
         }
     }
@@ -90,6 +105,10 @@ public class CrimeManagementSystemUI {
         } else {
             System.out.println("Sorry, invalid username or password");
         }
+    }
+    
+    private void getCase() {
+        
     }
 
     private String getField(String prompt) {
