@@ -4,6 +4,7 @@ public class Crime {
 	private UUID crimeID;
 	private UUID suspectID;
 	private UUID victimID;
+	private UUID witnessID;
 	private String crimeCommited;
 	private String crimeLocation;
 	private String crimeDate;
@@ -33,11 +34,12 @@ public class Crime {
 		this.evidence = evidence;
 		this.isSolved = isSolved;
 	}
-	public Crime(int caseNum, UUID crimeID, UUID suspectID, UUID victimID, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+	public Crime(int caseNum, UUID crimeID, UUID suspectID, UUID victimID, UUID witnessID, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
 		this.caseNum = caseNum;
 		this.crimeID = crimeID;
 		this.suspectID = suspectID;
 		this.victimID = victimID;
+		this.witnessID = witnessID;
 		this.crimeCommited = crimeCommited;
 		this.crimeLocation = crimeLocation;
 		this.crimeDate = crimeDate;
@@ -79,45 +81,66 @@ public class Crime {
 	public void setVictimID(UUID victimID) {
 		this.victimID = victimID;
 	}
+	public UUID setWitnessID() {
+		return witnessID;
+	}
+
+	public void getWitnessID(UUID witnessID) {
+		this.witnessID = witnessID;
+	}
+
 	public String getCrimeCommited() {
 		return crimeCommited;
 	}
+
 	public void setCrimeCommited(String crimeCommited) {
 		this.crimeCommited = crimeCommited;
 	}
+
 	public String getCrimeLocation() {
 		return crimeLocation;
 	}
+
 	public void setCrimeLocation(String crimeLocation) {
 		this.crimeLocation = crimeLocation;
 	}
+
 	public String getCrimeDate() {
 		return crimeDate;
 	}
+
 	public void setCrimeDate(String crimeDate) {
 		this.crimeDate = crimeDate;
 	}
+
     public String getCriminal() {
         return criminal;
     }
+
 	public void setCriminal(String criminal) {
 		this.criminal = criminal;
 	}
+
 	public boolean isCriminalInCustody() {
 		return criminalInCustody;
 	}
+
 	public void setCriminalInCustody(boolean criminalInCustody) {
 		this.criminalInCustody = criminalInCustody;
 	}
+
 	public String getEvidence() {
 		return evidence;
 	}
+
 	public void setEvidence(String evidence) {
 		this.evidence = evidence;
 	}
+
 	public boolean isSolved() {
 		return isSolved;
 	}
+	
 	public void setSolved(boolean isSolved) {
 		this.isSolved = isSolved;
 	}
