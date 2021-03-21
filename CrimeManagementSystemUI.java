@@ -90,7 +90,7 @@ public class CrimeManagementSystemUI {
                 break;
             }
             else {
-                System.out.println("Sorry an account with that username and password");
+                System.out.println("Sorry an account with that username and password already exists");
             }
         }
     }
@@ -108,7 +108,23 @@ public class CrimeManagementSystemUI {
     }
     
     private void getCase() {
+        String caseNumber = getField("Case Number");
+    }
+
+    private void addCrime() {
         
+    }
+    
+    private void addSuspect() {
+
+    }
+
+    private void editCrime() {
+
+    }
+
+   private void editSuspect() {
+
     }
 
     private String getField(String prompt) {
