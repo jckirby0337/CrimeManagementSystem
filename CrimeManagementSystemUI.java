@@ -107,8 +107,10 @@ public class CrimeManagementSystemUI {
         }
     }
     
-    private void getCase() {
+    private void findCase() {
         String caseNumber = getField("Case Number");
+
+        if()
     }
 
     private void addCrime() {
@@ -123,7 +125,7 @@ public class CrimeManagementSystemUI {
 
     }
 
-   private void editSuspect() {
+    private void editSuspect() {
 
     }
 
