@@ -32,6 +32,8 @@ public class CrimeManagementSystem {
         return currentUser;
     }
 
+    public boolean createCrime()
+
     public void logout() {
         users.saveUsers();
     }

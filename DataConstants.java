@@ -6,6 +6,7 @@ public abstract class DataConstants {
     protected static final String CRIME_ID = "Crime id";
     protected static final String CRIME_SUSPECT_ID = "suspect id";
     protected static final String CRIME_VICTIM_ID = "victim id";
+    protected static final String CRIME_WITNESS_ID = "witness id";
     protected static final String CRIME_COMMITTED = "crime committed";
     protected static final String CRIME_LOCATION = "crime location";
     protected static final String CRIME_DATE = "crime date";

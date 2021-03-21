@@ -46,7 +46,7 @@ public class Users {
 		userList.add(new User(name, title, race, dob, address, password, username));
 		return true;
 	}
-	
+
 	public void saveUsers() {
 		DataWriter.saveUsers();
 	}

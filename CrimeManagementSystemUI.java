@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class CrimeManagementSystemUI {
     private static final String WELCOME_MESSAGE = "Welcome to the Crime Management System";
     private String[] mainMenuOptions = {"Create Account", "Login", "Find Case", "Add Crime", "Add Offender", "Edit Crime", "Edit Offender"};
+    private String[] crimeMenuOptions = {"Add Suspect", "Add Victim", "Add Witness"};
     private Scanner scanner;
     private CrimeManagementSystem system;
     
