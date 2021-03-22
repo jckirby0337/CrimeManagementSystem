@@ -82,7 +82,7 @@ public class Crimes {
     public boolean addSuspectID(UUID crimeID, UUID suspectID) {
         for(Crime crime : crimeList) {
             if(crime.getCrimeID() == crimeID) {
-                crime.setSuspectID(suspectID);
+                crimeList.get(crimeList.indexOf(crime)).setSuspectID(suspectID);
                 return true;
             }
         }
@@ -93,7 +93,7 @@ public class Crimes {
     public boolean addVictimID(UUID crimeID, UUID victimID) {
         for(Crime crime : crimeList) {
             if(crime.getCrimeID() == crimeID) {
-                crime.setVictimID(victimID);
+                crimeList.get(crimeList.indexOf(crime)).setVictimID(victimID);
                 return true;
             }
         }
@@ -104,7 +104,7 @@ public class Crimes {
     public boolean addWitnessID(UUID crimeID, UUID witnessID) {
         for(Crime crime : crimeList) {
             if(crime.getCrimeID() == crimeID) {
-                crime.setWitnessID(witnessID);
+                crimeList.get(crimeList.indexOf(crime)).setWitnessID(witnessID);
                 return true;
             }
         }
