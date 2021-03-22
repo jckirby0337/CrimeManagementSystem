@@ -40,7 +40,7 @@ public class Suspects {
 		return suspectList;
 	}
 	
-	public boolean addSuspect(String name, int age, char sex, String race, Boolean tattoos,
+	public boolean addSuspect(String name, int age, String sex, String race, Boolean tattoos,
     String vehicle, String licensePlate, String address, Boolean bankAccount,
     Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
     String mentalState, String housingLocation, String educationLevel) {

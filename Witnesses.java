@@ -40,7 +40,7 @@ public class Witnesses {
 		return witnessList;
 	}
 	
-	public boolean addWitness(String name, int age, char sex, String race, String details, String story, boolean isDefending) {
+	public boolean addWitness(String name, int age, String sex, String race, String details, String story, boolean isDefending) {
 		if(haveWitness(name))return false;
 		
 		witnessList.add(new Witness(name, age, sex, race, details, story, isDefending));

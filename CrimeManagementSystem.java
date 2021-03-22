@@ -57,7 +57,7 @@ public class CrimeManagementSystem {
         return false;
     }
 
-    public boolean createSuspect(boolean isConnectedToCrime, String name, int age, char sex, String race, Boolean tattoos,
+    public boolean createSuspect(boolean isConnectedToCrime, String name, int age, String sex, String race, Boolean tattoos,
     String vehicle, String licensePlate, String address, Boolean bankAccount,
     Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
     String mentalState, String housingLocation, String educationLevel) {
@@ -74,7 +74,7 @@ public class CrimeManagementSystem {
         return false;
     }
 
-    public boolean createVictim(String name, int age, char sex, String race, String details) {
+    public boolean createVictim(String name, int age, String sex, String race, String details) {
         if(victims.addVictim(name, age, sex, race, details)) {
             currentVictimID = victims.getVictim(name).getVictimID();
             return crimes.addVictimID(currentCrimeID, currentVictimID);
@@ -82,7 +82,7 @@ public class CrimeManagementSystem {
         return false;
     }
 
-    public boolean createWitness(String name, int age, char sex, String race, String details, String story, boolean isDefending) {
+    public boolean createWitness(String name, int age, String sex, String race, String details, String story, boolean isDefending) {
         if(witnesses.addWitness(name, age, sex, race, details, story, isDefending)) {
             currentWitnessID = witnesses.getWitness(name).getWitnessID();
             return crimes.addWitnessID(currentCrimeID, currentWitnessID);
@@ -93,6 +93,7 @@ public class CrimeManagementSystem {
     public void logout() {
         users.saveUsers();
         crimes.saveCrime();
+        suspects.saveSuspects();
         victims.saveVictims();
         witnesses.saveWitnesses();
     }

@@ -1,10 +1,10 @@
 public class Details {
     private String name;
     private int age;
-    private char sex;
+    private String sex;
     private String race;
 
-    public Details(String name, int age, char sex, String race) {
+    public Details(String name, int age, String sex, String race) {
         this.name = name;
         this.age = age;
         this.sex = sex;
@@ -27,11 +27,11 @@ public class Details {
         this.age = age;
     }
 
-    public char getSex() {
+    public String getSex() {
         return this.sex;
     }
 
-    public void setSex(char sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 

@@ -3,13 +3,13 @@ public class Victim extends Details{
     private UUID victimID;
     private String details;
 
-    public Victim(String name, int age, char sex, String race, String details) {
+    public Victim(String name, int age, String sex, String race, String details) {
         super(name, age, sex, race);
         this.victimID = UUID.randomUUID();
         this.details = details;
     }
 
-    public Victim(UUID victimID, String name, int age, char sex, String race, String details) {
+    public Victim(UUID victimID, String name, int age, String sex, String race, String details) {
         super(name, age, sex, race);
         this.victimID = victimID;
         this.details = details;

@@ -173,16 +173,16 @@ public class CrimeManagementSystemUI {
         System.out.println("Creating suspect...");
         String name = getField("Name");
         int age =  getFieldInt("Age (only numbers)");
-        char sex = getFieldChar("Sex (M / F)");
+        String sex = getFieldChar("Sex (M / F)");
         String race = getField("Race");
-        boolean tattoos = getFieldTF("Tattos (yes or no)");
+        boolean tattoos = getFieldTF("Tattoos");
         String vehicle = getField("Vehicle");
         String licensePlate = getField("License plate (ALH 833)");
         String address = getField("Address");
-        boolean bankAccount = getFieldTF("Bank Account (yes or no)");
-        boolean creditCard = getFieldTF("Credit card (yes or no");
-        boolean armed = getFieldTF("Armed (yes or no)");
-        boolean publicRisk = getFieldTF("Public risk (yes or no)");
+        boolean bankAccount = getFieldTF("Bank Account");
+        boolean creditCard = getFieldTF("Credit card ");
+        boolean armed = getFieldTF("Armed");
+        boolean publicRisk = getFieldTF("Public risk");
         String nickNames = getField("Nicknames");
         String mentalState = getField("Mental state");
         String housingLocation = getField("Housing location");
@@ -196,7 +196,7 @@ public class CrimeManagementSystemUI {
         System.out.println("Creating victim...");
         String name = getField("Name");
         int age = getFieldInt("Age (only numbers)");
-        char sex = getFieldChar("Sex (M / F)");
+        String sex = getFieldChar("Sex (M / F)");
         String race = getField("Race");
         String details = getField("Details");
         if(system.createVictim(name, age, sex, race, details)) {
@@ -208,7 +208,7 @@ public class CrimeManagementSystemUI {
         System.out.println("Creting witness...");
         String name = getField("Name");
         int age = getFieldInt("Age (only numbers)");
-        char sex = getFieldChar("Sex (M / F)");
+        String sex = getFieldChar("Sex (M / F)");
         String race = getField("Race");
         String details = getField("Details");
         String story = getField("Story");
@@ -253,9 +253,11 @@ public class CrimeManagementSystemUI {
         scanner.nextLine();
         return temp;
     }
-    private char getFieldChar(String prompt) {
+    private String getFieldChar(String prompt) {
         System.out.print(prompt + ": ");
-        return scanner.next().charAt(0);
+        String temp = "" + scanner.next().charAt(0);
+        scanner.nextLine();
+        return temp;
     }
 
     public static void main(String[] args) {

@@ -122,6 +122,7 @@ public class DataWriter extends DataConstants {
 		crimeDetails.put(CRIME_ID, crime.getCrimeID().toString());
 		crimeDetails.put(CRIME_SUSPECT_ID, crime.getSuspectID().toString());
 		crimeDetails.put(CRIME_VICTIM_ID, crime.getVictimID().toString());
+		crimeDetails.put(CRIME_WITNESS_ID, crime.getWitnessID().toString());
         crimeDetails.put(CRIME_COMMITTED, crime.getCrimeCommited());
         crimeDetails.put(CRIME_LOCATION, crime.getCrimeLocation());
         crimeDetails.put(CRIME_DATE, crime.getCrimeDate());

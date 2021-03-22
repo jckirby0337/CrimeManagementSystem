@@ -13,7 +13,7 @@ public class Suspect extends Details{
     private String mentalState;
     private String housingLocation;
     private String educationLevel;
-    public Suspect(String name, int age, char sex, String race, Boolean tattoos,
+    public Suspect(String name, int age, String sex, String race, Boolean tattoos,
                    String vehicle, String licensePlate, String address, Boolean bankAccount,
                    Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
                    String mentalState, String housingLocation, String educationLevel) {
@@ -32,7 +32,7 @@ public class Suspect extends Details{
         this.housingLocation = housingLocation;
         this.educationLevel = educationLevel;
     }
-    public Suspect(UUID suspectID, String name, int age, char sex, String race, Boolean tattoos,
+    public Suspect(UUID suspectID, String name, int age, String sex, String race, Boolean tattoos,
                    String vehicle, String licensePlate, String address, Boolean bankAccount,
                    Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
                    String mentalState, String housingLocation, String educationLevel) {

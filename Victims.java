@@ -40,7 +40,7 @@ public class Victims {
 		return victimList;
 	}
 	
-	public boolean addVictim(String name, int age, char sex, String race, String details) {
+	public boolean addVictim(String name, int age, String sex, String race, String details) {
 		if(haveVictim(name))return false;
 		
 		victimList.add(new Victim(name, age, sex, race, details));

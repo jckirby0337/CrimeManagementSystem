@@ -55,7 +55,7 @@ public class DataLoader extends DataConstants{
                 UUID suspectID = UUID.fromString((String)suspectJSON.get(SUSPECT_ID));
 				String name = (String)suspectJSON.get(SUSPECT_NAME);
 				int age = ((Long)suspectJSON.get(SUSPECT_AGE)).intValue();
-				char sex = (char)suspectJSON.get(SUSPECT_SEX);
+				String sex = (String)suspectJSON.get(SUSPECT_SEX);
 				String race = (String)suspectJSON.get(SUSPECT_RACE);
                 boolean tattoos = (boolean)suspectJSON.get(SUSPECT_TATTOOS);
 				String vehicle = (String)suspectJSON.get(SUSPECT_VEHICLE);
@@ -94,7 +94,7 @@ public class DataLoader extends DataConstants{
 				JSONObject victimJSON = (JSONObject)victimsJSON.get(i);
 				String name = (String)victimJSON.get(VICTIM_NAME);
 				int age = ((Long)victimJSON.get(VICTIM_AGE)).intValue();
-				char sex = (char)victimJSON.get(VICTIM_SEX);
+				String sex = (String)victimJSON.get(VICTIM_SEX);
 				String race = (String)victimJSON.get(VICTIM_RACE);
 				String details = (String)victimJSON.get(VICTIM_DETAILS);
 				UUID victimID = UUID.fromString((String)victimJSON.get(VICTIM_ID));
@@ -154,7 +154,7 @@ public class DataLoader extends DataConstants{
 				JSONObject witnessJSON = (JSONObject)witnessesJSON.get(i);
 				String name = (String)witnessJSON.get(WITNESS_NAME);
 				int age = ((Long)witnessJSON.get(WITNESS_AGE)).intValue();
-				char sex = (char)witnessJSON.get(WITNESS_SEX);
+				String sex = (String)witnessJSON.get(WITNESS_SEX);
 				String race = (String)witnessJSON.get(WITNESS_RACE);
 				String details = (String)witnessJSON.get(WITNESS_DETAILS);
 				String story = (String)witnessJSON.get(WITNESS_STORY);
