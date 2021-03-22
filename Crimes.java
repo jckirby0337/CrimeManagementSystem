@@ -78,6 +78,17 @@ public class Crimes {
         return false;
     }
 
+    public boolean addVictimID(UUID crimeID, UUID victimID) {
+        for(Crime crime : crimeList) {
+            if(crime.getCrimeID() == crimeID) {
+                crime.setVictimID(victimID);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void saveCrime() {
         DataWriter.saveCrimes();
     }

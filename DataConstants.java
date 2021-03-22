@@ -58,7 +58,11 @@ public abstract class DataConstants {
 // Witness Fields
     protected static final String WITNESS_FILE_NAME = "CrimeManagementSystem/Witness.json";
     protected static final String WITNESS_ID = "WitnessID";
+    protected static final String WITNESS_NAME = "Name";
+    protected static final String WITNESS_AGE = "Age";
+    protected static final String WITNESS_SEX = "Sex";
+    protected static final String WITNESS_RACE = "Race";
     protected static final String WITNESS_DETAILS = "details";
-    // please help
-
+    protected static final String WITNESS_STORY = "story";
+    protected static final String WITNESS_isDefending = "isDefending";
 }

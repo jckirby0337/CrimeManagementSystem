@@ -26,7 +26,7 @@ public class Victims {
 		return false;
 	}
 	
-	public Victim getUser(String name) {
+	public Victim getVictim(String name) {
 		for(Victim victim : victimList) {
 			if(victim.getName().equals(name)) {
 				return victim;
@@ -40,12 +40,14 @@ public class Victims {
 		return victimList;
 	}
 	
-	public boolean addVictim(UUID victimID, String name, int age, char sex, String race, String details) {
+	public boolean addVictim(String name, int age, char sex, String race, String details) {
 		if(haveVictim(name))return false;
 		
-		victimList.add(new Victim(victimID, name, age, sex, race, details));
+		victimList.add(new Victim(name, age, sex, race, details));
 		return true;
 	}
+
+	public boolean addWitness()
 	
 	public void saveVictims() {
 		DataWriter.saveVictims();

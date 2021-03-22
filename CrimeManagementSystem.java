@@ -58,13 +58,20 @@ public class CrimeManagementSystem {
         creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
         educationLevel) && isConnectedToCrime) {
             currentSuspectID = suspects.getSuspect(name).getSuspectID();
-            crimes.addSuspectID(currentCrimeID, currentSuspectID);
-            return true;
+            return crimes.addSuspectID(currentCrimeID, currentSuspectID);
         }
         else if(suspects.addSuspect(name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount, 
         creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
         educationLevel)) return true;
 
+        return false;
+    }
+
+    public boolean createVictim(String name, int age, char sex, String race, String details) {
+        if(victims.addVictim(name, age, sex, race, details)) {
+            currentVictimID = victims.getVictim(name).getVictimID();
+            return crimes.addVictimID(currentCrimeID, currentVictimID);
+        }
         return false;
     }
 

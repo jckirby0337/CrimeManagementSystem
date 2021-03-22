@@ -193,6 +193,24 @@ public class CrimeManagementSystemUI {
         }
     }
 
+    private void addVictim() {
+        System.out.println("Creating victim...");
+        String name = getField("Name");
+        int age = getFieldInt("Age (only numbers)");
+        char sex = getFieldChar("Sex (M / F)");
+        String race = getField("Race");
+        String details = getField("Details");
+        if(system.createVictim(name, age, sex, race, details)) {
+            System.out.println("You have successfully created a victim");
+        }
+    }
+
+    public void addWitness() {
+        System.out.println("Creting witness...");
+
+        if(system.create)
+    }
+
     private void editCrime() {
 
     }
