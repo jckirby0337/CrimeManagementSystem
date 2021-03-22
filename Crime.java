@@ -26,6 +26,9 @@ public class Crime {
 	public Crime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
 		this.caseNum = caseNum;
 		this.crimeID = UUID.randomUUID();
+		this.suspectID = UUID.randomUUID();
+		this.victimID = UUID.randomUUID();
+		this.witnessID = UUID.randomUUID();
 		this.crimeCommited = crimeCommited;
 		this.crimeLocation = crimeLocation;
 		this.crimeDate = crimeDate;
