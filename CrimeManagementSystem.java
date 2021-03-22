@@ -22,7 +22,7 @@ public class CrimeManagementSystem {
     }
 
     public boolean createAccount(String name, String title, String race, String dob, String address, String password, String username) {
-        return users.addUser(username, title, race, dob, address, password, username);
+        return users.addUser(name, title, race, dob, address, password, username);
     }
 
     public boolean login(String username, String password) {

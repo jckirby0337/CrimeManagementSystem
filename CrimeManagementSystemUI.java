@@ -249,7 +249,9 @@ public class CrimeManagementSystemUI {
 
     private int getFieldInt(String prompt) {
         System.out.print(prompt + ": ");
-        return scanner.nextInt();
+        int temp = scanner.nextInt();
+        scanner.nextLine();
+        return temp;
     }
     private char getFieldChar(String prompt) {
         System.out.print(prompt + ": ");

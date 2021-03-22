@@ -52,19 +52,31 @@ public class Crimes {
     }
 
     public boolean addCrime(int caseNum, UUID crimeID, UUID suspectID, UUID victimID, UUID witnessID, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
-        if(haveCrime(criminal)) { System.out.println("Crime already exist"); return false;}
-        else if(haveCaseNum(caseNum)) { System.out.println("Case Number already exist"); return false;}
+        if(crimeList != null) {
+            if(haveCrime(criminal)) { System.out.println("Crime already exist"); return false;}
+            else if(haveCaseNum(caseNum)) { System.out.println("Case Number already exist"); return false;}
 
-        crimeList.add(new Crime(caseNum, crimeID, suspectID, victimID, witnessID, crimeCommited, crimeLocation, crimeDate, criminal, criminalInCustody, evidence, isSolved));
-        return true;
+            crimeList.add(new Crime(caseNum, crimeID, suspectID, victimID, witnessID, crimeCommited, crimeLocation, crimeDate, criminal, criminalInCustody, evidence, isSolved));
+            return true;
+        }
+        else {
+            crimeList.add(new Crime(caseNum, crimeID, suspectID, victimID, witnessID, crimeCommited, crimeLocation, crimeDate, criminal, criminalInCustody, evidence, isSolved));
+            return true;
+        }
     }
 
     public boolean addCrime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
-        if(haveCrime(criminal)) { System.out.println("Crime already exist"); return false;}
-        else if(haveCaseNum(caseNum)) { System.out.println("Case Number already exist"); return false;}
-        
-        crimeList.add(new Crime(caseNum, crimeCommited, crimeLocation, crimeDate, criminal, criminalInCustody, evidence, isSolved));
-        return true;
+        if(crimeList != null) {
+            if(haveCrime(criminal)) { System.out.println("Crime already exist"); return false;}
+            else if(haveCaseNum(caseNum)) { System.out.println("Case Number already exist"); return false;}
+            
+            crimeList.add(new Crime(caseNum, crimeCommited, crimeLocation, crimeDate, criminal, criminalInCustody, evidence, isSolved));
+            return true;
+        }
+        else {
+            crimeList.add(new Crime(caseNum, crimeCommited, crimeLocation, crimeDate, criminal, criminalInCustody, evidence, isSolved));
+            return true;
+        }
     }
 
     public boolean addSuspectID(UUID crimeID, UUID suspectID) {

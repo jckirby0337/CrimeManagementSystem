@@ -172,7 +172,7 @@ public class DataLoader extends DataConstants{
 		return null;
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		ArrayList<User> users = DataLoader.getUsers();
 		for(User user: users) {
 			System.out.println(user);
@@ -181,4 +181,5 @@ public class DataLoader extends DataConstants{
 
 		System.out.println(UUID.randomUUID());
 	}
+	*/
 }

@@ -157,12 +157,13 @@ public class DataWriter extends DataConstants {
     public static JSONObject getUserJSON(User user) {
 		JSONObject userDetails = new JSONObject();
 		userDetails.put(USER_USER_ID, user.getUserID().toString());
-		userDetails.put(USER_NAME, user.getUsername());
-		userDetails.put(USER_USER_PASSWORD, user.getPassword());
+		userDetails.put(USER_NAME, user.getName());
 		userDetails.put(USER_TITLE, user.getTitle());
 		userDetails.put(USER_RACE, user.getRace());
 		userDetails.put(USER_DATE_OF_BIRTH, user.getDOB());
 		userDetails.put(USER_ADDRESS, user.getAddress());
+		userDetails.put(USER_USER_PASSWORD, user.getPassword());
+		userDetails.put(USER_USERNAME, user.getUsername());
         return userDetails;
 	}
 
