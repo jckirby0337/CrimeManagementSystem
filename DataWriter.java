@@ -94,6 +94,28 @@ public class DataWriter extends DataConstants {
             e.printStackTrace();
         }
 	}
+
+	public static void saveWitnesses() {
+		Witnesses witnesses = Witnesses.getInstance();
+		ArrayList<Witness> witnessList = witnesses.getWitnesses();
+		JSONArray jsonWitnesses = new JSONArray();
+		
+		//creating all the json objects
+		for(int i=0; i< witnessList.size(); i++) {
+			jsonWitnesses.add(getWitnessJSON(witnessList.get(i)));
+		}
+    
+		
+		//Write JSON file
+        try (FileWriter file = new FileWriter(WITNESS_FILE_NAME)) {
+ 
+            file.write(jsonWitnesses.toJSONString());
+            file.flush();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
 	public static JSONObject getCrimeJSON(Crime crime) {
 		JSONObject crimeDetails = new JSONObject();
 		crimeDetails.put(CASE_NUMBER, crime.getCaseNum());
@@ -151,6 +173,21 @@ public class DataWriter extends DataConstants {
 		victimDetails.put(VICTIM_SEX, victim.getSex());
 		victimDetails.put(VICTIM_RACE, victim.getRace());
 		victimDetails.put(VICTIM_NAME, victim.getName());
+		victimDetails.put(VICTIM_DETAILS, victim.getDetails());
 		return victimDetails;
+	}
+
+	public static JSONObject getWitnessJSON(Witness witness) {
+		JSONObject witnessDetails = new JSONObject();
+		witnessDetails.put(WITNESS_ID, witness.getWitnessID().toString());
+		witnessDetails.put(WITNESS_AGE, witness.getAge());
+		witnessDetails.put(WITNESS_SEX, witness.getSex());
+		witnessDetails.put(WITNESS_RACE, witness.getRace());
+		witnessDetails.put(WITNESS_NAME, witness.getName());
+		witnessDetails.put(WITNESS_DETAILS, witness.getDetails());
+		witnessDetails.put(WITNESS_STORY, witness.getStory());
+		witnessDetails.put(WITNESS_ISDEFENDING, witness.getIsDefening());
+
+		return witnessDetails;
 	}
 }

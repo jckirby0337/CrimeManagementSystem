@@ -27,10 +27,6 @@ public class Witness extends Details {
     public void setWitnessID(UUID witnessID) {
         this.witnessID = witnessID;
     }
-    
-    public boolean isDefening() {
-        return isDefending;
-    }
 
     public String getDetails() {
         return this.details;
@@ -44,5 +40,11 @@ public class Witness extends Details {
     }
     public void setStory(String story) {
         this.story = story;
+    }
+    public boolean getIsDefening() {
+        return isDefending;
+    }
+    public void setIsDefending(boolean isDefending) {
+        this.isDefending = isDefending;
     }
 }
