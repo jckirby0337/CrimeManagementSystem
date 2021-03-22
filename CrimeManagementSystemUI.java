@@ -118,6 +118,7 @@ public class CrimeManagementSystemUI {
     
     private void findCase() {
         int caseNumber = getFieldInt("Case Number (012)");
+        system.getCrime(caseNumber).print();
     }
 
     private void addCrime() {

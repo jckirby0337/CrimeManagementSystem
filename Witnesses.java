@@ -47,8 +47,8 @@ public class Witnesses {
 		return true;
 	}
 	
-	public void saveVictims() {
-		DataWriter.saveVictims();
+	public void saveWitnesses() {
+		DataWriter.saveWitnesses();
 	}
 
 }

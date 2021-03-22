@@ -145,5 +145,14 @@ public class Crime {
 		this.isSolved = isSolved;
 	}
 	
-	
+	public void print() {
+		System.out.println("Case Number: " + caseNum);
+		System.out.println("Crime Commited: " + crimeCommited);
+		System.out.println("Location of Crime: " + crimeLocation);
+		System.out.println("Date Crime Occured: " + crimeDate);
+		System.out.println("Criminal Name: " + criminal);
+		System.out.println("Criminal is in Custody: " + criminalInCustody);
+		System.out.println("Evidence: " + evidence);
+		System.out.println("Is the Crime Solved: " + isSolved);
+	}
 }

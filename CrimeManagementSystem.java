@@ -45,6 +45,10 @@ public class CrimeManagementSystem {
         return currentCrimeID;
     }
 
+    public Crime getCrime(int caseNum) {
+        return crimes.getCrime(caseNum);
+    }
+
     public boolean createCrime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
         if(crimes.addCrime(caseNum, crimeCommited, crimeLocation, crimeDate, criminal, criminalInCustody, evidence, isSolved)) {
             currentCrimeID = crimes.getCrime(caseNum).getCrimeID();
@@ -89,5 +93,7 @@ public class CrimeManagementSystem {
     public void logout() {
         users.saveUsers();
         crimes.saveCrime();
+        victims.saveVictims();
+        witnesses.saveWitnesses();
     }
 }
