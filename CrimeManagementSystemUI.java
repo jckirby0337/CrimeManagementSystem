@@ -1,9 +1,10 @@
 import java.util.Scanner;
+import java.util.UUID;
 
 public class CrimeManagementSystemUI {
     private static final String WELCOME_MESSAGE = "Welcome to the Crime Management System";
-    private String[] mainMenuOptions = {"Create Account", "Login", "Find Case", "Add Crime", "Add Offender", "Edit Crime", "Edit Offender"};
-    private String[] crimeMenuOptions = {"Add Suspect", "Add Victim", "Add Witness"};
+    private String[] mainMenuOptions = {"Create Account", "Login", "Find Case", "Add Crime", "Add Suspect not connected to a crime", "Edit Crime", "Edit suspect", "Logout"};
+    private String[] crimeMenuOptions = {"Add Suspect", "Add Victim", "Add Witness", "Go back to the Main Menu"};
     private Scanner scanner;
     private CrimeManagementSystem system;
     
@@ -44,7 +45,7 @@ public class CrimeManagementSystemUI {
                     addCrime();
                     break;
                 case(4):
-                    addSuspect();
+                    addSuspect(false);
                     break;
                 case(5):
                     editCrime();
@@ -63,6 +64,13 @@ public class CrimeManagementSystemUI {
 		}
 		System.out.println("\n");
 	}
+    private void displayCrimeMenu() {
+        System.out.println("\n************ Crime Menu *************");
+        for(int i=0; i< crimeMenuOptions.length; i++) {
+			System.out.println((i+1) + ". " + crimeMenuOptions[i]);
+		}
+		System.out.println("\n");
+    }
 
     private int getUserCommand(int numCommands) {
         System.out.print("What would you like to do?: ");
@@ -109,17 +117,80 @@ public class CrimeManagementSystemUI {
     }
     
     private void findCase() {
-        String caseNumber = getField("Case Number");
+        int caseNumber = getFieldInt("Case Number (012)");
 
         if()
     }
 
     private void addCrime() {
+        System.out.println("Creating crime...");
+        int caseNum = getFieldInt("Case Number (like 012, no spaces)");
+        String crimeCommited = getField("Crime commited");
+        String crimeLocation = getField("Crime location");
+        String crimeDate = getField("Date crime occured");
+        String criminal = getField("Suspect Name");
+        boolean criminalInCustody = getFieldTF("Suspect in custody");
+        String evidence = getField("Evidence");
+        boolean isSolved = getFieldTF("Is the crime solved");
         
-    }
-    
-    private void addSuspect() {
+        if(system.createCrime(caseNum, crimeCommited, crimeLocation, crimeDate, criminal, criminalInCustody, evidence, isSolved)) {
+            System.out.println("You have successfully created a crime");
+        }
+        boolean addMore = getFieldTF("Would you like to add a suspect, victim or witness");
+        if(addMore){
+            while(addMore) {
+                displayCrimeMenu();
 
+                int userCommand = getUserCommand(crimeMenuOptions.length);
+
+                if(userCommand == -1) {
+                    System.out.println("Not a valid command");
+                    continue;
+                }
+
+                if(userCommand == crimeMenuOptions.length -1) {
+                    break;
+                }
+
+                switch(userCommand) {
+                    case(0):
+                        addSuspect(true);
+                        break;
+                    case(1):
+                        addVictim();
+                        break;
+                    case(2):
+                        addWitness();
+                        break;
+                    case(3):
+                        addMore = false;
+                        break;
+                }
+            }
+        }
+    }
+
+    private void addSuspect(boolean isConnectedToCrime) {
+        System.out.println("Creating suspect...");
+        String name = getField("Name");
+        int age =  getFieldInt("Age (only numbers)");
+        char sex = getFieldChar("Sex (M / F)");
+        String race = getField("Race");
+        boolean tattoos = getFieldTF("Tattos (yes or no)");
+        String vehicle = getField("Vehicle");
+        String licensePlate = getField("License plate (ALH 833)");
+        String address = getField("Address");
+        boolean bankAccount = getFieldTF("Bank Account (yes or no)");
+        boolean creditCard = getFieldTF("Credit card (yes or no");
+        boolean armed = getFieldTF("Armed (yes or no)");
+        boolean publicRisk = getFieldTF("Public risk (yes or no)");
+        String nickNames = getField("Nicknames");
+        String mentalState = getField("Mental state");
+        String housingLocation = getField("Housing location");
+        String educationLevel = getField("Education level");
+        if(system.createSuspect(isConnectedToCrime, name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount, creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, educationLevel)) {
+            System.out.println("You have successfully created a suspect");
+        }
     }
 
     private void editCrime() {
@@ -133,6 +204,31 @@ public class CrimeManagementSystemUI {
     private String getField(String prompt) {
         System.out.print(prompt + ": ");
         return scanner.nextLine();
+    }
+
+    private boolean getFieldTF(String prompt) {
+        System.out.print(prompt + " (yes or no): ");
+        String userInput = scanner.nextLine();
+        if(userInput.equalsIgnoreCase("yes")) {
+            return true;
+        }
+        else if(userInput.equalsIgnoreCase("no")) {
+            return false;
+        }
+        else {
+            System.out.println("Answer did not match yes or no, please enter yes or no.");
+            getFieldTF(prompt);
+            return false;
+        }
+    }
+
+    private int getFieldInt(String prompt) {
+        System.out.print(prompt + ": ");
+        return scanner.nextInt();
+    }
+    private char getFieldChar(String prompt) {
+        System.out.print(prompt + ": ");
+        return scanner.next().charAt(0);
     }
 
     public static void main(String[] args) {

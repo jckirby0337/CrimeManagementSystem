@@ -1,9 +1,15 @@
+import java.util.UUID;
 public class CrimeManagementSystem {
     private Crimes crimes;
     private Suspects suspects;
     private Users users;
     private Victims victims;
     private User currentUser;
+    private UUID currentCrimeID;
+    private UUID currentSuspectID;
+    private UUID currentVictimID;
+
+
 
     public CrimeManagementSystem() {
         crimes = Crimes.getInstance();
@@ -32,9 +38,38 @@ public class CrimeManagementSystem {
         return currentUser;
     }
 
-    public boolean createCrime()
+    public UUID getCurrentCrime() {
+        return currentCrimeID;
+    }
+
+    public boolean createCrime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+        if(crimes.addCrime(caseNum, crimeCommited, crimeLocation, crimeDate, criminal, criminalInCustody, evidence, isSolved)) {
+            currentCrimeID = crimes.getCrime(caseNum).getCrimeID();
+            return true;
+        }
+        return false;
+    }
+
+    public boolean createSuspect(boolean isConnectedToCrime, String name, int age, char sex, String race, Boolean tattoos,
+    String vehicle, String licensePlate, String address, Boolean bankAccount,
+    Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
+    String mentalState, String housingLocation, String educationLevel) {
+        if(suspects.addSuspect(name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount, 
+        creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
+        educationLevel) && isConnectedToCrime) {
+            currentSuspectID = suspects.getSuspect(name).getSuspectID();
+            crimes.addSuspectID(currentCrimeID, currentSuspectID);
+            return true;
+        }
+        else if(suspects.addSuspect(name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount, 
+        creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
+        educationLevel)) return true;
+
+        return false;
+    }
 
     public void logout() {
         users.saveUsers();
+        crimes.saveCrime();
     }
 }

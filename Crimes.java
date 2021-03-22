@@ -36,15 +36,16 @@ public class Crimes {
     }
 
 
-    public Crime getCrime(String CriminalName) {
+    public Crime getCrime(int caseNum) {
         for(Crime crime : crimeList) {
-            if(crime.getCriminal().equals(CriminalName)) {
+            if(crime.getCaseNum() == caseNum) {
                 return crime;
             }
         }
 
         return null;
     }
+
 
     public ArrayList<Crime> getCrimes() {
         return crimeList;
@@ -66,6 +67,16 @@ public class Crimes {
         return true;
     }
 
+    public boolean addSuspectID(UUID crimeID, UUID suspectID) {
+        for(Crime crime : crimeList) {
+            if(crime.getCrimeID() == crimeID) {
+                crime.setSuspectID(suspectID);
+                return true;
+            }
+        }
+
+        return false;
+    }
 
     public void saveCrime() {
         DataWriter.saveCrimes();

@@ -26,7 +26,7 @@ public class Suspects {
 		return false;
 	}
 	
-	public Suspect getUser(String name) {
+	public Suspect getSuspect(String name) {
 		for(Suspect suspect : suspectList) {
 			if(suspect.getName().equals(name)) {
 				return suspect;
@@ -40,13 +40,13 @@ public class Suspects {
 		return suspectList;
 	}
 	
-	public boolean addSuspect(UUID suspectID, String name, int age, char sex, String race, Boolean tattoos,
+	public boolean addSuspect(String name, int age, char sex, String race, Boolean tattoos,
     String vehicle, String licensePlate, String address, Boolean bankAccount,
     Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
     String mentalState, String housingLocation, String educationLevel) {
-		if(haveSuspect(name))return false;
+		if(haveSuspect(name)) { System.out.println("Suspect with that name already exist"); return false;}
 		
-		suspectList.add(new Suspect(suspectID, name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount, 
+		suspectList.add(new Suspect(name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount, 
                                     creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
                                     educationLevel));
 		return true;
