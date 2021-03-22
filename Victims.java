@@ -46,8 +46,6 @@ public class Victims {
 		victimList.add(new Victim(name, age, sex, race, details));
 		return true;
 	}
-
-	public boolean addWitness()
 	
 	public void saveVictims() {
 		DataWriter.saveVictims();

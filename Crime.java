@@ -81,12 +81,12 @@ public class Crime {
 	public void setVictimID(UUID victimID) {
 		this.victimID = victimID;
 	}
-	public UUID setWitnessID() {
-		return witnessID;
+	public void setWitnessID(UUID witnessID) {
+		this.witnessID = witnessID;
 	}
 
-	public void getWitnessID(UUID witnessID) {
-		this.witnessID = witnessID;
+	public UUID getWitnessID() {
+		return witnessID;
 	}
 
 	public String getCrimeCommited() {

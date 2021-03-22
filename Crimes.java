@@ -89,6 +89,17 @@ public class Crimes {
         return false;
     }
 
+    public boolean addWitnessID(UUID crimeID, UUID witnessID) {
+        for(Crime crime : crimeList) {
+            if(crime.getCrimeID() == crimeID) {
+                crime.setWitnessID(witnessID);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void saveCrime() {
         DataWriter.saveCrimes();
     }

@@ -4,10 +4,12 @@ public class CrimeManagementSystem {
     private Suspects suspects;
     private Users users;
     private Victims victims;
+    private Witnesses witnesses;
     private User currentUser;
     private UUID currentCrimeID;
     private UUID currentSuspectID;
     private UUID currentVictimID;
+    private UUID currentWitnessID;
 
 
 
@@ -16,6 +18,7 @@ public class CrimeManagementSystem {
         suspects = Suspects.getInstance();
         users = Users.getInstance();
         victims = Victims.getInstance();
+        witnesses = Witnesses.getInstance();
     }
 
     public boolean createAccount(String name, String title, String race, String dob, String address, String password, String username) {
@@ -71,6 +74,14 @@ public class CrimeManagementSystem {
         if(victims.addVictim(name, age, sex, race, details)) {
             currentVictimID = victims.getVictim(name).getVictimID();
             return crimes.addVictimID(currentCrimeID, currentVictimID);
+        }
+        return false;
+    }
+
+    public boolean createWitness(String name, int age, char sex, String race, String details, String story, boolean isDefending) {
+        if(witnesses.addWitness(name, age, sex, race, details, story, isDefending)) {
+            currentWitnessID = witnesses.getWitness(name).getWitnessID();
+            return crimes.addWitnessID(currentCrimeID, currentWitnessID);
         }
         return false;
     }

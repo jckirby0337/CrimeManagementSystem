@@ -207,8 +207,16 @@ public class CrimeManagementSystemUI {
 
     public void addWitness() {
         System.out.println("Creting witness...");
-
-        if(system.create)
+        String name = getField("Name");
+        int age = getFieldInt("Age (only numbers)");
+        char sex = getFieldChar("Sex (M / F)");
+        String race = getField("Race");
+        String details = getField("Details");
+        String story = getField("Story");
+        boolean isDefending = getFieldTF("Is the witness defending (yes or no)");
+        if(system.createWitness(name, age, sex, race, details, story, isDefending)) {
+            System.out.println("You have successfully created a witness");
+        }
     }
 
     private void editCrime() {
