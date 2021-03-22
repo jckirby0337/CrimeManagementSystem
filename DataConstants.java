@@ -64,5 +64,5 @@ public abstract class DataConstants {
     protected static final String WITNESS_RACE = "Race";
     protected static final String WITNESS_DETAILS = "details";
     protected static final String WITNESS_STORY = "story";
-    protected static final String WITNESS_isDefending = "isDefending";
+    protected static final String WITNESS_ISDEFENDING = "isDefending";
 }

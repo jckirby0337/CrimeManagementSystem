@@ -142,6 +142,36 @@ public class DataLoader extends DataConstants{
 
 	}
 
+	public static ArrayList<Witness> getWitnesses() {
+		ArrayList<Witness> witnesses = new ArrayList<Witness>();
+		
+		try {
+			FileReader reader = new FileReader(WITNESS_FILE_NAME);
+			JSONParser parser = new JSONParser();	
+			JSONArray witnessesJSON = (JSONArray)new JSONParser().parse(reader);
+			
+			for(int i=0; i < witnessesJSON.size(); i++) {
+				JSONObject witnessJSON = (JSONObject)witnessesJSON.get(i);
+				String name = (String)witnessJSON.get(WITNESS_NAME);
+				int age = ((Long)witnessJSON.get(WITNESS_AGE)).intValue();
+				char sex = (char)witnessJSON.get(WITNESS_SEX);
+				String race = (String)witnessJSON.get(WITNESS_RACE);
+				String details = (String)witnessJSON.get(WITNESS_DETAILS);
+				String story = (String)witnessJSON.get(WITNESS_STORY);
+				boolean isDefending = (boolean)witnessJSON.get(WITNESS_ISDEFENDING);
+				
+				witnesses.add(new Witness(name, age, sex, race, details, story, isDefending));
+			}
+			
+			return witnesses;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
 	public static void main(String[] args) {
 		ArrayList<User> users = DataLoader.getUsers();
 		for(User user: users) {

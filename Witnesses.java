@@ -5,7 +5,7 @@ public class Witnesses {
 	private ArrayList<Witness> witnessList;
 	
 	private Witnesses() {
-		witnessList = DataLoader.getWitness();
+		witnessList = DataLoader.getWitnesses();
 	}
 	
 	public static Witnesses getInstance() {
