@@ -22,6 +22,7 @@ public class DataLoader extends DataConstants{
 				UUID suspectID = UUID.fromString((String)crimeJSON.get(CRIME_SUSPECT_ID));
 				UUID victimID = UUID.fromString((String)crimeJSON.get(CRIME_VICTIM_ID));
 				UUID witnessID = UUID.fromString((String)crimeJSON.get(CRIME_WITNESS_ID));
+				//Witness witness = Witnesses.getInstance().getWitness()
 				String crimeCommitted = (String)crimeJSON.get(CRIME_COMMITTED);
 				String crimeLocation = (String)crimeJSON.get(CRIME_LOCATION);
 				String crimeDate = (String)crimeJSON.get(CRIME_DATE);
