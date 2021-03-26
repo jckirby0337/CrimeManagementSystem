@@ -99,7 +99,10 @@ public class DataLoader extends DataConstants{
 				int age = ((Long)suspectJSON.get(SUSPECT_AGE)).intValue();
 				String sex = (String)suspectJSON.get(SUSPECT_SEX);
 				String race = (String)suspectJSON.get(SUSPECT_RACE);
-                boolean tattoos = (boolean)suspectJSON.get(SUSPECT_TATTOOS);
+				String phoneNumber = (String)suspectJSON.get(SUSPECT_PHONE_NUMBER);
+				String height = (String)suspectJSON.get(SUSPECT_HEIGHT);
+				String email = (String)suspectJSON.get(SUSPECT_EMAIL);
+				String tattoos = (String)suspectJSON.get(SUSPECT_TATTOOS);
 				String vehicle = (String)suspectJSON.get(SUSPECT_VEHICLE);
 				String licensePlate = (String)suspectJSON.get(SUSPECT_LICENSE_PLATE);
 				String address = (String)suspectJSON.get(SUSPECT_ADDRESS);
@@ -111,9 +114,11 @@ public class DataLoader extends DataConstants{
 				String mentalState = (String)suspectJSON.get(SUSPECT_MENTAL_STATE);
 				String housingLocation = (String)suspectJSON.get(SUSPECT_HOUSE_LOCATION);
 				String educationLevel = (String)suspectJSON.get(SUSPECT_EDUCATION_LEVEL);
+				String hairColor = (String)suspectJSON.get(SUSPECT_HAIR_COLOR);
+				String clothing = (String)suspectJSON.get(SUSPECT_CLOTHING);
 
-				suspects.add(new Suspect(suspectID, name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount,
-			 	creditCard, armed, publicRisk, nicknames, mentalState, housingLocation, educationLevel));
+				suspects.add(new Suspect(suspectID, name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount,
+			 	creditCard, armed, publicRisk, nicknames, mentalState, housingLocation, educationLevel, hairColor, clothing));
 			}
 			
 			return suspects;
@@ -138,10 +143,13 @@ public class DataLoader extends DataConstants{
 				int age = ((Long)victimJSON.get(VICTIM_AGE)).intValue();
 				String sex = (String)victimJSON.get(VICTIM_SEX);
 				String race = (String)victimJSON.get(VICTIM_RACE);
+				String phoneNumber = (String)victimJSON.get(VICTIM_PHONE_NUMBER);
+				String height = (String)victimJSON.get(VICTIM_HEIGHT);
+				String email = (String)victimJSON.get(VICTIM_EMAIL);
 				String details = (String)victimJSON.get(VICTIM_DETAILS);
 				UUID victimID = UUID.fromString((String)victimJSON.get(VICTIM_ID));
 				
-				victims.add(new Victim(victimID, name, age, sex, race, details));
+				victims.add(new Victim(victimID, name, age, sex, phoneNumber, height, email, race, details));
 			}
 			
 			return victims;
@@ -199,11 +207,14 @@ public class DataLoader extends DataConstants{
 				int age = ((Long)witnessJSON.get(WITNESS_AGE)).intValue();
 				String sex = (String)witnessJSON.get(WITNESS_SEX);
 				String race = (String)witnessJSON.get(WITNESS_RACE);
+				String phoneNumber = (String)witnessJSON.get(WITNESS_PHONE_NUMBER);
+				String height = (String)witnessJSON.get(WITNESS_HEIGHT);
+				String email = (String)witnessJSON.get(WITNESS_EMAIL);
 				String details = (String)witnessJSON.get(WITNESS_DETAILS);
 				String story = (String)witnessJSON.get(WITNESS_STORY);
 				boolean isDefending = (boolean)witnessJSON.get(WITNESS_ISDEFENDING);
 				
-				witnesses.add(new Witness(witnessesID, name, age, sex, race, details, story, isDefending));
+				witnesses.add(new Witness(witnessesID, name, age, sex, race, phoneNumber, height, email, details, story, isDefending));
 			}
 			
 			return witnesses;
