@@ -51,7 +51,7 @@ public class Crimes {
         return crimeList;
     }
 
-    public boolean addCrime(int caseNum, UUID crimeID, UUID suspectID, UUID victimID, UUID witnessID, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+    public boolean addCrime(int caseNum, UUID crimeID, ArrayList<Suspect> suspectID, ArrayList<Victim> victimID, ArrayList<Witness> witnessID, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
         if(crimeList != null) {
             if(haveCrime(criminal)) { System.out.println("Crime already exist"); return false;}
             else if(haveCaseNum(caseNum)) { System.out.println("Case Number already exist"); return false;}
@@ -79,10 +79,10 @@ public class Crimes {
         }
     }
 
-    public boolean addSuspectID(UUID crimeID, UUID suspectID) {
+    public boolean addSuspectID(UUID crimeID, Suspect suspect) {
         for(Crime crime : crimeList) {
             if(crime.getCrimeID() == crimeID) {
-                crimeList.get(crimeList.indexOf(crime)).setSuspectID(suspectID);
+                crimeList.get(crimeList.indexOf(crime)).setSuspectID(suspect);
                 return true;
             }
         }
@@ -90,10 +90,10 @@ public class Crimes {
         return false;
     }
 
-    public boolean addVictimID(UUID crimeID, UUID victimID) {
+    public boolean addVictimID(UUID crimeID, Victim victim) {
         for(Crime crime : crimeList) {
             if(crime.getCrimeID() == crimeID) {
-                crimeList.get(crimeList.indexOf(crime)).setVictimID(victimID);
+                crimeList.get(crimeList.indexOf(crime)).setVictimID(victim);
                 return true;
             }
         }
@@ -101,10 +101,10 @@ public class Crimes {
         return false;
     }
 
-    public boolean addWitnessID(UUID crimeID, UUID witnessID) {
+    public boolean addWitnessID(UUID crimeID, Witness witness) {
         for(Crime crime : crimeList) {
             if(crime.getCrimeID() == crimeID) {
-                crimeList.get(crimeList.indexOf(crime)).setWitnessID(witnessID);
+                crimeList.get(crimeList.indexOf(crime)).setWitnessID(witness);
                 return true;
             }
         }

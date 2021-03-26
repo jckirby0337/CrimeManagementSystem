@@ -7,9 +7,9 @@ public class CrimeManagementSystem {
     private Witnesses witnesses;
     private User currentUser;
     private UUID currentCrimeID;
-    private UUID currentSuspectID;
-    private UUID currentVictimID;
-    private UUID currentWitnessID;
+    private Suspect currentSuspect;
+    private Victim currentVictim;
+    private Witness currentWitness;
 
 
 
@@ -64,8 +64,8 @@ public class CrimeManagementSystem {
         if(suspects.addSuspect(name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount, 
         creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
         educationLevel) && isConnectedToCrime) {
-            currentSuspectID = suspects.getSuspect(name).getSuspectID();
-            return crimes.addSuspectID(currentCrimeID, currentSuspectID);
+            currentSuspect = suspects.getLastSuspect();
+            return crimes.addSuspectID(currentCrimeID, currentSuspect);
         }
         else if(suspects.addSuspect(name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount, 
         creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
@@ -76,16 +76,16 @@ public class CrimeManagementSystem {
 
     public boolean createVictim(String name, int age, String sex, String race, String details) {
         if(victims.addVictim(name, age, sex, race, details)) {
-            currentVictimID = victims.getVictim(name).getVictimID();
-            return crimes.addVictimID(currentCrimeID, currentVictimID);
+            currentVictim = victims.getLastVictim();
+            return crimes.addVictimID(currentCrimeID, currentVictim);
         }
         return false;
     }
 
     public boolean createWitness(String name, int age, String sex, String race, String details, String story, boolean isDefending) {
         if(witnesses.addWitness(name, age, sex, race, details, story, isDefending)) {
-            currentWitnessID = witnesses.getWitness(name).getWitnessID();
-            return crimes.addWitnessID(currentCrimeID, currentWitnessID);
+            currentWitness = witnesses.getLastWitness();
+            return crimes.addWitnessID(currentCrimeID, currentWitness);
         }
         return false;
     }

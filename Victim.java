@@ -26,4 +26,9 @@ public class Victim extends Details{
     public void setDetails(String details) {
         this.details = details;
     }
+
+    public String print(){
+        String print = "\n************ Victim *************" + super.print() + "\nDetails: " + details;
+        return print;
+    }
 }

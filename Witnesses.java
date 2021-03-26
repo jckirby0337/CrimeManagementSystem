@@ -35,6 +35,20 @@ public class Witnesses {
 		
 		return null;
 	}
+
+	public Witness getWitness(UUID witnessID) {
+		for(Witness witness : witnessList) {
+			if(witness.getWitnessID().equals(witnessID)) {
+				return witness;
+			}
+		}
+		
+		return null;
+	}
+
+	public Witness getLastWitness() {
+		return witnessList.get(witnessList.size()-1);
+	}
 	
 	public ArrayList<Witness> getWitnesses() {
 		return witnessList;

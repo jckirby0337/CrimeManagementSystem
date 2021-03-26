@@ -120,9 +120,9 @@ public class DataWriter extends DataConstants {
 		JSONObject crimeDetails = new JSONObject();
 		crimeDetails.put(CASE_NUMBER, crime.getCaseNum());
 		crimeDetails.put(CRIME_ID, crime.getCrimeID().toString());
-		crimeDetails.put(CRIME_SUSPECT_ID, crime.getSuspectID().toString());
-		crimeDetails.put(CRIME_VICTIM_ID, crime.getVictimID().toString());
-		crimeDetails.put(CRIME_WITNESS_ID, crime.getWitnessID().toString());
+		crimeDetails.put(CRIME_SUSPECT_ID, getSuspectIDArray(crime.getSuspectID()));
+		crimeDetails.put(CRIME_VICTIM_ID, getVictimIDArray(crime.getVictimID()));
+		crimeDetails.put(CRIME_WITNESS_ID, getWitnessIDArray(crime.getWitnessID()));
         crimeDetails.put(CRIME_COMMITTED, crime.getCrimeCommited());
         crimeDetails.put(CRIME_LOCATION, crime.getCrimeLocation());
         crimeDetails.put(CRIME_DATE, crime.getCrimeDate());
@@ -131,6 +131,30 @@ public class DataWriter extends DataConstants {
 		crimeDetails.put(EVIDENCE, crime.getEvidence());
         crimeDetails.put(SOLVED, crime.isSolved());
         return crimeDetails;
+	}
+
+	public static JSONArray getSuspectIDArray(ArrayList<Suspect> suspects) {
+		JSONArray suspectIDs = new JSONArray();
+		for(Suspect suspect : suspects) {
+			suspectIDs.add(suspect.getSuspectID().toString());
+		}
+		return suspectIDs;
+	}
+
+	public static JSONArray getVictimIDArray(ArrayList<Victim> victims) {
+		JSONArray victimIDs = new JSONArray();
+		for(Victim victim : victims) {
+			victimIDs.add(victim.getVictimID().toString());
+		}
+		return victimIDs;
+	}
+
+	public static JSONArray getWitnessIDArray(ArrayList<Witness> witnesses) {
+		JSONArray witnessIDs = new JSONArray();
+		for(Witness witness : witnesses) {
+			witnessIDs.add(witness.getWitnessID().toString());
+		}
+		return witnessIDs;
 	}
 
 	public static JSONObject getSuspectJSON(Suspect suspect) {

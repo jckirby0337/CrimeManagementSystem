@@ -43,5 +43,8 @@ public class Details {
         this.race = race;
     }
 
-
+    public String print(){
+        String print = "\nName: " + name + "\nAge: " + age + "\nSex: " + sex + "\nRace: " + race;
+        return print;
+    }
 }

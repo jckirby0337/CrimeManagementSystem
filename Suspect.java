@@ -114,4 +114,11 @@ public class Suspect extends Details{
     public void setEducationLevel(String educationlevel) {
         this.educationLevel = educationlevel;
     }
+
+    public String print() {
+        String print = "\n************ Suspect *************" + "\nTattoos: " + tattoos + "\nVehicle: " + vehicle + "\nLicense Plate: " + licensePlate
+        + "\nAddress: " + address + "\nBank Account: " + bankAccount + "\nCredit Card: " + creditCard + "\nArmed: " + armed + "\nPublic Risk: " + publicRisk
+        + "\nNicknames: " + nickNames + "\nMental State: " + mentalState + "\nHouseing Location: " + housingLocation + "\nEducation Level: " + educationLevel;
+        return print;
+    }
 }

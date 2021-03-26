@@ -19,10 +19,13 @@ public class DataLoader extends DataConstants{
 				JSONObject crimeJSON = (JSONObject)crimesJSON.get(i);
 				int caseNum = ((Long)crimeJSON.get(CASE_NUMBER)).intValue();
 				UUID crimeID = UUID.fromString((String)crimeJSON.get(CRIME_ID));
-				UUID suspectID = UUID.fromString((String)crimeJSON.get(CRIME_SUSPECT_ID));
+				ArrayList<Suspect> suspectID = getSuspectsbyID((JSONArray)crimeJSON.get(CRIME_SUSPECT_ID));
+				ArrayList<Victim> victimID = getVictimsbyID((JSONArray)crimeJSON.get(CRIME_VICTIM_ID));
+				ArrayList<Witness> witnessID = getWitnessesbyID((JSONArray)crimeJSON.get(CRIME_WITNESS_ID));
+				/*UUID suspectID = UUID.fromString((String)crimeJSON.get(CRIME_SUSPECT_ID));
 				UUID victimID = UUID.fromString((String)crimeJSON.get(CRIME_VICTIM_ID));
 				UUID witnessID = UUID.fromString((String)crimeJSON.get(CRIME_WITNESS_ID));
-				//Witness witness = Witnesses.getInstance().getWitness()
+				Witness witness = Witnesses.getInstance().getWitness()*/
 				String crimeCommitted = (String)crimeJSON.get(CRIME_COMMITTED);
 				String crimeLocation = (String)crimeJSON.get(CRIME_LOCATION);
 				String crimeDate = (String)crimeJSON.get(CRIME_DATE);
@@ -41,6 +44,36 @@ public class DataLoader extends DataConstants{
 		}
 		
 		return null;
+	}
+
+	private static ArrayList<Suspect> getSuspectsbyID(JSONArray suspectIDs) {
+		ArrayList<Suspect> suspects = new ArrayList<Suspect>();
+		for(int i=0; i<suspectIDs.size(); i++) {
+			UUID suspectID = UUID.fromString((String)suspectIDs.get(i));
+			Suspect suspect = Suspects.getInstance().getSuspect(suspectID);
+			suspects.add(suspect);
+		}
+		return suspects;
+	}
+
+	private static ArrayList<Victim> getVictimsbyID(JSONArray victimIDs) {
+		ArrayList<Victim> victims = new ArrayList<Victim>();
+		for(int i=0; i<victimIDs.size(); i++) {
+			UUID victimID = UUID.fromString((String)victimIDs.get(i));
+			Victim victim = Victims.getInstance().getVictim(victimID);
+			victims.add(victim);
+		}
+		return victims;
+	}
+
+	private static ArrayList<Witness> getWitnessesbyID(JSONArray witnessIDs) {
+		ArrayList<Witness> witnesses = new ArrayList<Witness>();
+		for(int i=0; i<witnessIDs.size(); i++) {
+			UUID witnessID = UUID.fromString((String)witnessIDs.get(i));
+			Witness witness = Witnesses.getInstance().getWitness(witnessID);
+			witnesses.add(witness);
+		}
+		return witnesses;
 	}
 
 	public static ArrayList<Suspect> getSuspects() {

@@ -47,4 +47,9 @@ public class Witness extends Details {
     public void setIsDefending(boolean isDefending) {
         this.isDefending = isDefending;
     }
+
+    public String print() {
+        String print = "\n************ Victim *************" + super.print() + "\nDetails: " + details + "\nStory: " + story + "\nDefending: " + isDefending;
+        return print;
+    }
 }

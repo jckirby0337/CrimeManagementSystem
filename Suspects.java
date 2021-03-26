@@ -39,6 +39,20 @@ public class Suspects {
 	public ArrayList<Suspect> getSuspects() {
 		return suspectList;
 	}
+
+	public Suspect getSuspect(UUID suspectID) {
+		for(Suspect suspect : suspectList) {
+			if(suspect.getSuspectID().equals(suspectID)) {
+				return suspect;
+			}
+		}
+		
+		return null;
+	}
+
+	public Suspect getLastSuspect() {
+		return suspectList.get(suspectList.size()-1);
+	}
 	
 	public boolean addSuspect(String name, int age, String sex, String race, Boolean tattoos,
     String vehicle, String licensePlate, String address, Boolean bankAccount,

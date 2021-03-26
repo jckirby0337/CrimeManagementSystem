@@ -35,6 +35,20 @@ public class Victims {
 		
 		return null;
 	}
+
+	public Victim getVictim(UUID victimID) {
+		for(Victim victim : victimList) {
+			if(victim.getVictimID().equals(victimID)) {
+				return victim;
+			}
+		}
+		
+		return null;
+	}
+
+	public Victim getLastVictim() {
+		return victimList.get(victimList.size()-1);
+	}
 	
 	public ArrayList<Victim> getVictims() {
 		return victimList;

@@ -1,10 +1,14 @@
 import java.util.UUID;
+import java.util.ArrayList;
 public class Crime {
 	private int caseNum;
 	private UUID crimeID;
-	private UUID suspectID;
+	/*private UUID suspectID;
 	private UUID victimID;
-	private UUID witnessID;
+	private UUID witnessID;*/
+	private ArrayList<Suspect> suspectID = new ArrayList<Suspect>();
+	private ArrayList<Victim> victimID = new ArrayList<Victim>();
+	private ArrayList<Witness> witnessID = new ArrayList<Witness>();
 	private String crimeCommited;
 	private String crimeLocation;
 	private String crimeDate;
@@ -26,9 +30,6 @@ public class Crime {
 	public Crime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
 		this.caseNum = caseNum;
 		this.crimeID = UUID.randomUUID();
-		this.suspectID = UUID.randomUUID();
-		this.victimID = UUID.randomUUID();
-		this.witnessID = UUID.randomUUID();
 		this.crimeCommited = crimeCommited;
 		this.crimeLocation = crimeLocation;
 		this.crimeDate = crimeDate;
@@ -37,7 +38,7 @@ public class Crime {
 		this.evidence = evidence;
 		this.isSolved = isSolved;
 	}
-	public Crime(int caseNum, UUID crimeID, UUID suspectID, UUID victimID, UUID witnessID, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+	public Crime(int caseNum, UUID crimeID, ArrayList<Suspect> suspectID, ArrayList<Victim> victimID, ArrayList<Witness> witnessID, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
 		this.caseNum = caseNum;
 		this.crimeID = crimeID;
 		this.suspectID = suspectID;
@@ -69,26 +70,26 @@ public class Crime {
 		this.crimeID = crimeID;
 	}
 
-	public UUID getSuspectID() {
+	public ArrayList<Suspect> getSuspectID() {
 		return this.suspectID;
 	}
 
-	public void setSuspectID(UUID suspectID) {
-		this.suspectID = suspectID;
+	public void setSuspectID(Suspect suspectID) {
+		this.suspectID.add(suspectID);
 	}
 
-	public UUID getVictimID() {
+	public ArrayList<Victim> getVictimID() {
 		return this.victimID;
 	}
 
-	public void setVictimID(UUID victimID) {
-		this.victimID = victimID;
+	public void setVictimID(Victim victimID) {
+		this.victimID.add(victimID);
 	}
-	public void setWitnessID(UUID witnessID) {
-		this.witnessID = witnessID;
+	public void setWitnessID(Witness witnessID) {
+		this.witnessID.add(witnessID);
 	}
 
-	public UUID getWitnessID() {
+	public ArrayList<Witness> getWitnessID() {
 		return witnessID;
 	}
 
@@ -148,14 +149,9 @@ public class Crime {
 		this.isSolved = isSolved;
 	}
 	
-	public void print() {
-		System.out.println("Case Number: " + caseNum);
-		System.out.println("Crime Commited: " + crimeCommited);
-		System.out.println("Location of Crime: " + crimeLocation);
-		System.out.println("Date Crime Occured: " + crimeDate);
-		System.out.println("Criminal Name: " + criminal);
-		System.out.println("Criminal is in Custody: " + criminalInCustody);
-		System.out.println("Evidence: " + evidence);
-		System.out.println("Is the Crime Solved: " + isSolved);
+	public String print() {
+		String print = "\n************ Crime *************" + "Case Number: " + caseNum + "Crime Commited: " + crimeCommited + "Location of Crime: " + crimeLocation + "Date Crime Occured: " + crimeDate
+		+ "Criminal Name: " + criminal + "Criminal is in Custody: " + criminalInCustody + "Evidence: " + evidence + "Is the Crime Solved: " + isSolved;
+		return print;
 	}
 }
