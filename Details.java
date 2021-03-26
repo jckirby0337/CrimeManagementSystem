@@ -3,12 +3,18 @@ public class Details {
     private int age;
     private String sex;
     private String race;
+    private String phoneNumber;
+    private String height;
+    private String email;
 
-    public Details(String name, int age, String sex, String race) {
+    public Details(String name, int age, String sex, String race, String phoneNumber, String height, String email) {
         this.name = name;
         this.age = age;
         this.sex = sex;
         this.race = race;
+        this.phoneNumber = phoneNumber;
+        this.height = height;
+        this.email = email;
     }
 
     public String getName() {
@@ -41,6 +47,30 @@ public class Details {
 
     public void setRace(String race) {
         this.race = race;
+    }
+
+    public String getPhoneNumber() {
+        return this.phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getHeight() {
+        return this.height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String print(){
