@@ -265,6 +265,7 @@ public class CrimeManagementSystemUI {
     }
     private void search(){
         boolean system = true;
+        ArrayList<String> detailInp = new Arraylist<String>();
         System.out.println("Please input details: \n"+"(Write 'STOP' to end)");
         do{
             if(input1.equalsIgnoreCase("stop")){
@@ -274,9 +275,10 @@ public class CrimeManagementSystemUI {
             int count = 1;
             System.out.println(count+": ");
             Scanner input1 = new Scanner(System.in);
+            detailInp.add(input1);
             count++;
             }
-            
+    
         }
         while(system==true)
     }
