@@ -263,6 +263,23 @@ public class CrimeManagementSystemUI {
         scanner.nextLine();
         return temp;
     }
+    private void search(){
+        boolean system = true;
+        System.out.println("Please input details: \n"+"(Write 'STOP' to end)");
+        do{
+            if(input1.equalsIgnoreCase("stop")){
+                system = false;
+            }
+            else{
+            int count = 1;
+            System.out.println(count+": ");
+            Scanner input1 = new Scanner(System.in);
+            count++;
+            }
+            
+        }
+        while(system==true)
+    }
 
     public static void main(String[] args) {
 		CrimeManagementSystemUI systemInterface = new CrimeManagementSystemUI();
