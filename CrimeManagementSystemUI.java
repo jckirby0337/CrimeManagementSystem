@@ -281,6 +281,9 @@ public class CrimeManagementSystemUI {
     
         }
         while(system==true)
+        System.out.println("Suspects with matching details:");
+        Suspects suspects = new Suspects();
+    
     }
 
     public static void main(String[] args) {
