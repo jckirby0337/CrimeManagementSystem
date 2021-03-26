@@ -3,14 +3,14 @@ public class Victim extends Details{
     private UUID victimID;
     private String details;
 
-    public Victim(String name, int age, String sex, String race, String details) {
-        super(name, age, sex, race);
+    public Victim(String name, int age, String sex, String race, String phoneNumber, String height, String email, String details) {
+        super(name, age, sex, race, phoneNumber, height, email);
         this.victimID = UUID.randomUUID();
         this.details = details;
     }
 
-    public Victim(UUID victimID, String name, int age, String sex, String race, String details) {
-        super(name, age, sex, race);
+    public Victim(UUID victimID, String name, int age, String sex, String race, String phoneNumber, String height, String email, String details) {
+        super(name, age, sex, race, phoneNumber, height, email);
         this.victimID = victimID;
         this.details = details;
     }
