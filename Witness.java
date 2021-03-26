@@ -5,15 +5,15 @@ public class Witness extends Details {
     private String story;
     private boolean isDefending;
 
-    public Witness(String name, int age, String sex, String race, String details, String story, boolean isDefending) {
-        super(name, age, sex, race);
+    public Witness(String name, int age, String sex, String race, String phoneNumber, String height, String email, String details, String story, boolean isDefending) {
+        super(name, age, sex, race, phoneNumber, height, email);
         this.witnessID = UUID.randomUUID();
         this.details = details;
         this.story = story;
         this.isDefending = isDefending;
     }
-    public Witness(UUID witnessID, String name, int age, String sex, String race, String details, String story, boolean isDefending) {
-        super(name, age, sex, race);
+    public Witness(UUID witnessID, String name, int age, String sex, String race, String phoneNumber, String height, String email, String details, String story, boolean isDefending) {
+        super(name, age, sex, race, phoneNumber, height, email);
         this.witnessID = witnessID;
         this.details = details;
         this.story = story;
