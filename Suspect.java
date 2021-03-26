@@ -1,7 +1,7 @@
 import java.util.UUID;
 public class Suspect extends Details{
     private UUID suspectID;
-    private Boolean tattoos;
+    private String tattoos;
     private String vehicle;
     private String licensePlate;
     private String address;
@@ -13,11 +13,13 @@ public class Suspect extends Details{
     private String mentalState;
     private String housingLocation;
     private String educationLevel;
-    public Suspect(String name, int age, String sex, String race, Boolean tattoos,
+    private String hairColor;
+    private String clothing;
+    public Suspect(String name, int age, String sex, String race, String phoneNumber, String height, String email, String tattoos,
                    String vehicle, String licensePlate, String address, Boolean bankAccount,
                    Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
-                   String mentalState, String housingLocation, String educationLevel) {
-        super(name, age, sex, race);
+                   String mentalState, String housingLocation, String educationLevel, String hairColor, String clothing) {
+        super(name, age, sex, race, phoneNumber, height, email);
         this.suspectID = UUID.randomUUID();
         this.tattoos = tattoos;
         this.vehicle = vehicle;
@@ -31,12 +33,14 @@ public class Suspect extends Details{
         this.mentalState = mentalState;
         this.housingLocation = housingLocation;
         this.educationLevel = educationLevel;
+        this.hairColor = hairColor;
+        this.clothing = clothing;
     }
-    public Suspect(UUID suspectID, String name, int age, String sex, String race, Boolean tattoos,
+    public Suspect(UUID suspectID, String name, int age, String sex, String race, String phoneNumber, String height, String email, String tattoos,
                    String vehicle, String licensePlate, String address, Boolean bankAccount,
                    Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
-                   String mentalState, String housingLocation, String educationLevel) {
-        super(name, age, sex, race);
+                   String mentalState, String housingLocation, String educationLevel, String hairColor, String clothing) {
+        super(name, age, sex, race, phoneNumber, height, email);
         this.suspectID = suspectID;
         this.tattoos = tattoos;
         this.vehicle = vehicle;
@@ -50,6 +54,8 @@ public class Suspect extends Details{
         this.mentalState = mentalState;
         this.housingLocation = housingLocation;
         this.educationLevel = educationLevel;
+        this.hairColor = hairColor;
+        this.clothing = clothing;
     }
     public void setSuspectID(UUID suspectID) {
         this.suspectID = suspectID;
@@ -57,8 +63,11 @@ public class Suspect extends Details{
     public UUID getSuspectID() {
         return suspectID;
     }
-    public boolean hasTattoos() {
-        return tattoos;
+    public String getTattoos() {
+        return this.tattoos;
+    }
+    public void setTattoos(String tattoos) {
+        this.tattoos = tattoos;
     }
     public String getVehicle() {
         return vehicle;
@@ -114,11 +123,23 @@ public class Suspect extends Details{
     public void setEducationLevel(String educationlevel) {
         this.educationLevel = educationlevel;
     }
-
+    public String getHairColor() {
+        return hairColor;
+    }
+    public void setHairColor(String hairColor) {
+        this.hairColor = hairColor;
+    }
+    public String getClothing() {
+        return clothing;
+    }
+    public void setClothing(String clothing) {
+        this.clothing = clothing;
+    }
     public String print() {
-        String print = "\n************ Suspect *************" + "\nTattoos: " + tattoos + "\nVehicle: " + vehicle + "\nLicense Plate: " + licensePlate
+        String print = "\n************ Suspect *************" + super.print() + "\nTattoos: " + tattoos + "\nVehicle: " + vehicle + "\nLicense Plate: " + licensePlate
         + "\nAddress: " + address + "\nBank Account: " + bankAccount + "\nCredit Card: " + creditCard + "\nArmed: " + armed + "\nPublic Risk: " + publicRisk
-        + "\nNicknames: " + nickNames + "\nMental State: " + mentalState + "\nHouseing Location: " + housingLocation + "\nEducation Level: " + educationLevel;
+        + "\nNicknames: " + nickNames + "\nMental State: " + mentalState + "\nHouseing Location: " + housingLocation + "\nEducation Level: " + educationLevel 
+        + "\nHair Color: " + hairColor + "\nClothing: " + clothing;
         return print;
     }
 }
