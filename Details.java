@@ -74,7 +74,8 @@ public class Details {
     }
 
     public String print(){
-        String print = "\nName: " + name + "\nAge: " + age + "\nSex: " + sex + "\nRace: " + race;
+        String print = "\nName: " + name + "\nAge: " + age + "\nSex: " + sex + "\nRace: " + race + "\nPhone Number: " + phoneNumber 
+        + "\nHeight: " + height + "\nEmail: " + email;
         return print;
     }
 }
