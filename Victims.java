@@ -54,10 +54,10 @@ public class Victims {
 		return victimList;
 	}
 	
-	public boolean addVictim(String name, int age, String sex, String race, String details) {
+	public boolean addVictim(String name, int age, String sex, String race, String phoneNumber, String height, String email, String details) {
 		if(haveVictim(name))return false;
 		
-		victimList.add(new Victim(name, age, sex, race, details));
+		victimList.add(new Victim(name, age, sex, race, phoneNumber, height, email, details));
 		return true;
 	}
 	

@@ -22,6 +22,9 @@ public abstract class DataConstants {
     protected static final String SUSPECT_AGE = "Age";
     protected static final String SUSPECT_SEX = "Sex";
     protected static final String SUSPECT_RACE = "Race";
+    protected static final String SUSPECT_PHONE_NUMBER = "Phone-Number";
+    protected static final String SUSPECT_HEIGHT = "Height";
+    protected static final String SUSPECT_EMAIL = "Email";
     protected static final String SUSPECT_TATTOOS = "Tattoos";
     protected static final String SUSPECT_VEHICLE = "Vehicle";
     protected static final String SUSPECT_LICENSE_PLATE = "License-Plate";
@@ -34,6 +37,8 @@ public abstract class DataConstants {
     protected static final String SUSPECT_MENTAL_STATE = "Mental-State";
     protected static final String SUSPECT_HOUSE_LOCATION = "House-Location";
     protected static final String SUSPECT_EDUCATION_LEVEL = "Education-Level";
+    protected static final String SUSPECT_HAIR_COLOR = "Hair-Color";
+    protected static final String SUSPECT_CLOTHING = "Clothing";
 
 //  Victim Fields
     protected static final String VICTIM_FILE_NAME = "CrimeManagementSystem/Victim.json";
@@ -43,6 +48,9 @@ public abstract class DataConstants {
     protected static final String VICTIM_SEX = "Sex";
     protected static final String VICTIM_RACE = "Race";
     protected static final String VICTIM_NAME = "Name";
+    protected static final String VICTIM_PHONE_NUMBER = "Phone-Number";
+    protected static final String VICTIM_HEIGHT = "Height";
+    protected static final String VICTIM_EMAIL = "Email";
 
 // User Fields 
     protected static final String USER_FILE_NAME = "CrimeManagementSystem/User.json";
@@ -62,6 +70,9 @@ public abstract class DataConstants {
     protected static final String WITNESS_AGE = "Age";
     protected static final String WITNESS_SEX = "Sex";
     protected static final String WITNESS_RACE = "Race";
+    protected static final String WITNESS_PHONE_NUMBER = "Phone-Number";
+    protected static final String WITNESS_HEIGHT = "Height";
+    protected static final String WITNESS_EMAIL = "Email";
     protected static final String WITNESS_DETAILS = "details";
     protected static final String WITNESS_STORY = "story";
     protected static final String WITNESS_ISDEFENDING = "isDefending";
