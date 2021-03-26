@@ -31,7 +31,7 @@ public class DataLoader extends DataConstants{
 				String crimeDate = (String)crimeJSON.get(CRIME_DATE);
                 String criminal = (String)crimeJSON.get(CRIMINAL);
                 boolean criminalCustody = (boolean)crimeJSON.get(CRIMINAL_CUSTODY);
-                String evidence = (String)crimeJSON.get(EVIDENCE);
+                ArrayList<String> evidence = getEvidence((JSONArray)crimeJSON.get(EVIDENCE));
                 boolean solved = (boolean)crimeJSON.get(SOLVED);
 				
 				crimes.add(new Crime(caseNum, crimeID, suspectID, victimID, witnessID, crimeCommitted, crimeLocation, crimeDate, criminal, criminalCustody, evidence, solved));
@@ -44,6 +44,14 @@ public class DataLoader extends DataConstants{
 		}
 		
 		return null;
+	}
+
+	private static ArrayList<String> getEvidence(JSONArray evidence) {
+		ArrayList<String> evidences = new ArrayList<String>();
+		for(int i=0; i<evidence.size(); i++) {
+			evidences.add((String)evidences.get(i));
+		}
+		return evidences;
 	}
 
 	private static ArrayList<Suspect> getSuspectsbyID(JSONArray suspectIDs) {
@@ -186,6 +194,7 @@ public class DataLoader extends DataConstants{
 			
 			for(int i=0; i < witnessesJSON.size(); i++) {
 				JSONObject witnessJSON = (JSONObject)witnessesJSON.get(i);
+				UUID witnessesID = UUID.fromString((String)witnessJSON.get(WITNESS_ID));
 				String name = (String)witnessJSON.get(WITNESS_NAME);
 				int age = ((Long)witnessJSON.get(WITNESS_AGE)).intValue();
 				String sex = (String)witnessJSON.get(WITNESS_SEX);
@@ -194,7 +203,7 @@ public class DataLoader extends DataConstants{
 				String story = (String)witnessJSON.get(WITNESS_STORY);
 				boolean isDefending = (boolean)witnessJSON.get(WITNESS_ISDEFENDING);
 				
-				witnesses.add(new Witness(name, age, sex, race, details, story, isDefending));
+				witnesses.add(new Witness(witnessesID, name, age, sex, race, details, story, isDefending));
 			}
 			
 			return witnesses;

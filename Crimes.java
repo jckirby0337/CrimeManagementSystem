@@ -51,7 +51,7 @@ public class Crimes {
         return crimeList;
     }
 
-    public boolean addCrime(int caseNum, UUID crimeID, ArrayList<Suspect> suspectID, ArrayList<Victim> victimID, ArrayList<Witness> witnessID, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+    public boolean addCrime(int caseNum, UUID crimeID, ArrayList<Suspect> suspectID, ArrayList<Victim> victimID, ArrayList<Witness> witnessID, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, ArrayList<String> evidence, boolean isSolved) {
         if(crimeList != null) {
             if(haveCrime(criminal)) { System.out.println("Crime already exist"); return false;}
             else if(haveCaseNum(caseNum)) { System.out.println("Case Number already exist"); return false;}
@@ -65,7 +65,7 @@ public class Crimes {
         }
     }
 
-    public boolean addCrime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+    public boolean addCrime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, ArrayList<String> evidence, boolean isSolved) {
         if(crimeList != null) {
             if(haveCrime(criminal)) { System.out.println("Crime already exist"); return false;}
             else if(haveCaseNum(caseNum)) { System.out.println("Case Number already exist"); return false;}

@@ -128,9 +128,17 @@ public class DataWriter extends DataConstants {
         crimeDetails.put(CRIME_DATE, crime.getCrimeDate());
         crimeDetails.put(CRIMINAL, crime.getCriminal());
         crimeDetails.put(CRIMINAL_CUSTODY, crime.isCriminalInCustody());
-		crimeDetails.put(EVIDENCE, crime.getEvidence());
+		crimeDetails.put(EVIDENCE, getEvidenceArray(crime.getEvidence()));
         crimeDetails.put(SOLVED, crime.isSolved());
         return crimeDetails;
+	}
+
+	public static JSONArray getEvidenceArray(ArrayList<String> evidences) {
+		JSONArray evidence = new JSONArray();
+		for(String evi : evidences) {
+			evidence.add(evi);
+		}
+		return evidence;
 	}
 
 	public static JSONArray getSuspectIDArray(ArrayList<Suspect> suspects) {

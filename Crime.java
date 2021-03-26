@@ -14,10 +14,10 @@ public class Crime {
 	private String crimeDate;
 	private String criminal;
 	private boolean criminalInCustody;
-	private String evidence;
+	private ArrayList<String> evidence = new ArrayList<String>();
 	private boolean isSolved;
 	
-	public Crime(String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+	public Crime(String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, ArrayList<String> evidence, boolean isSolved) {
 		this.crimeID = UUID.randomUUID();
 		this.crimeCommited = crimeCommited;
 		this.crimeLocation = crimeLocation;
@@ -27,7 +27,7 @@ public class Crime {
 		this.evidence = evidence;
 		this.isSolved = isSolved;
 	}
-	public Crime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+	public Crime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, ArrayList<String> evidence, boolean isSolved) {
 		this.caseNum = caseNum;
 		this.crimeID = UUID.randomUUID();
 		this.crimeCommited = crimeCommited;
@@ -38,7 +38,7 @@ public class Crime {
 		this.evidence = evidence;
 		this.isSolved = isSolved;
 	}
-	public Crime(int caseNum, UUID crimeID, ArrayList<Suspect> suspectID, ArrayList<Victim> victimID, ArrayList<Witness> witnessID, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+	public Crime(int caseNum, UUID crimeID, ArrayList<Suspect> suspectID, ArrayList<Victim> victimID, ArrayList<Witness> witnessID, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, ArrayList<String> evidence, boolean isSolved) {
 		this.caseNum = caseNum;
 		this.crimeID = crimeID;
 		this.suspectID = suspectID;
@@ -133,12 +133,12 @@ public class Crime {
 		this.criminalInCustody = criminalInCustody;
 	}
 
-	public String getEvidence() {
+	public ArrayList<String> getEvidence() {
 		return evidence;
 	}
 
 	public void setEvidence(String evidence) {
-		this.evidence = evidence;
+		this.evidence.add(evidence);
 	}
 
 	public boolean isSolved() {
@@ -148,10 +148,18 @@ public class Crime {
 	public void setSolved(boolean isSolved) {
 		this.isSolved = isSolved;
 	}
+
+	public String evidenceToString(){
+		String ev = "";
+		for(int i = 0; i<evidence.size(); i++) {
+			ev += "\nEvidence " + i + ": " + evidence.get(i);
+		}
+		return ev;
+	}
 	
 	public String print() {
 		String print = "\n************ Crime *************" + "\nCase Number: " + caseNum + "\nCrime Commited: " + crimeCommited + "\nLocation of Crime: " + crimeLocation + "\nDate Crime Occured: " + crimeDate
-		+ "\nCriminal Name: " + criminal + "\nCriminal is in Custody: " + criminalInCustody + "\nEvidence: " + evidence + "\nIs the Crime Solved: " + isSolved;
+		+ "\nCriminal Name: " + criminal + "\nCriminal is in Custody: " + criminalInCustody + evidenceToString() + "\nIs the Crime Solved: " + isSolved;
 		return print;
 	}
 }
