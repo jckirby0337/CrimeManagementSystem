@@ -150,8 +150,8 @@ public class Crime {
 	}
 	
 	public String print() {
-		String print = "\n************ Crime *************" + "Case Number: " + caseNum + "Crime Commited: " + crimeCommited + "Location of Crime: " + crimeLocation + "Date Crime Occured: " + crimeDate
-		+ "Criminal Name: " + criminal + "Criminal is in Custody: " + criminalInCustody + "Evidence: " + evidence + "Is the Crime Solved: " + isSolved;
+		String print = "\n************ Crime *************" + "\nCase Number: " + caseNum + "\nCrime Commited: " + crimeCommited + "\nLocation of Crime: " + crimeLocation + "\nDate Crime Occured: " + crimeDate
+		+ "\nCriminal Name: " + criminal + "\nCriminal is in Custody: " + criminalInCustody + "\nEvidence: " + evidence + "\nIs the Crime Solved: " + isSolved;
 		return print;
 	}
 }
