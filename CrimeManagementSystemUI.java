@@ -3,7 +3,7 @@ import java.util.UUID;
 
 public class CrimeManagementSystemUI {
     private static final String WELCOME_MESSAGE = "Welcome to the Crime Management System";
-    private String[] mainMenuOptions = {"Create Account", "Login", "Find Case", "Add Crime", "Add Suspect not connected to a crime", "Edit Crime", "Edit suspect", "Logout"};
+    private String[] mainMenuOptions = {"Create Account", "Login", "Find Case", "Add Crime", "Add Suspect not connected to a crime", "Logout"};
     private String[] crimeMenuOptions = {"Add Suspect", "Add Victim", "Add Witness", "Go back to the Main Menu"};
     private Scanner scanner;
     private CrimeManagementSystem system;
@@ -46,12 +46,6 @@ public class CrimeManagementSystemUI {
                     break;
                 case(4):
                     addSuspect(false);
-                    break;
-                case(5):
-                    editCrime();
-                    break;
-                case(6):
-                    editSuspect();
                     break;
             }
         }
@@ -234,14 +228,6 @@ public class CrimeManagementSystemUI {
         if(system.createWitness(name, age, sex, race, details, story, isDefending)) {
             System.out.println("You have successfully created a witness");
         }
-    }
-
-    private void editCrime() {
-
-    }
-
-    private void editSuspect() {
-
     }
 
     private String getField(String prompt) {
