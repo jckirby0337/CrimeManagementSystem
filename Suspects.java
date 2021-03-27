@@ -71,7 +71,6 @@ public class Suspects {
 	}
 
 	public void search(String tattoo){
-<<<<<<< HEAD
         ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
         System.out.println("The suspects matching the description: ");
         for(Suspect suspect : suspectList)
@@ -80,18 +79,7 @@ public class Suspects {
                 matchSus.add(suspect);
                	System.out.println(matchSus);
 			}
-=======
-        if(Suspects suspects.getTattoos().equalsIgnoreCase("tatto"){
-            ArrayList<String> matchSus = new ArrayList<String>();
-            System.out.println("The suspects matching the description: ");
-            for(Suspects suspects.getSuspect : suspectWTat)
-            {
-                matchSus.add(suspectWTat);
-                System.out.println(matchSus);
-            }
->>>>>>> df0b1ec25c7dd5ece76c188b2e8ac51174a61fab
-        }
-		
+		}
 
     }
 
