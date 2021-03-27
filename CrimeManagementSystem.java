@@ -1,5 +1,8 @@
 import java.util.UUID;
 import java.util.ArrayList;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 public class CrimeManagementSystem {
     private Crimes crimes;
     private Suspects suspects;
@@ -89,6 +92,44 @@ public class CrimeManagementSystem {
             return crimes.addWitnessID(currentCrimeID, currentWitness);
         }
         return false;
+    }
+
+    public String writeCrime(Crime crime) {
+        String text = "";
+        if(crime != null) {
+            text += crime.print();
+            if(crime.getSuspectID() != null) {
+                for(Suspect suspect : crime.getSuspectID()) {
+                    text += suspect.print();
+                }
+            }
+            else if(crime.getVictimID() != null) {
+                for(Victim victim : crime.getVictimID()) {
+                    text += victim.print();
+                }
+            }
+            else if(crime.getWitnessID() != null) {
+                for(Witness witness : crime.getWitnessID()) {
+                    text += witness.print();
+                }
+            }
+        }
+        return text;
+    }
+
+    public String writeSuspects(ArrayList<Suspect> foundSus) {
+        String suspects = "";
+        if(foundSus != null) {
+            for(Suspect sus : foundSus) {
+                suspects += sus.print();
+            }
+        }
+        return suspects;
+    }
+
+    public void writeToFile(String fileName, String text) throws IOException {
+        Path filePath = Path.of(fileName);
+        Files.writeString(filePath, text);
     }
 
     public void logout() {
