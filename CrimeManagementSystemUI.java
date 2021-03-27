@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -110,27 +111,11 @@ public class CrimeManagementSystemUI {
         }
     }
     
-    private void findCase() {
+    private void findCase() throws IOException {
         int caseNumber = getFieldInt("Case Number (012): ");
-        Crime crime = system.getCrime(caseNumber);
-        if(crime != null) {
-            System.out.println(crime.print());
-            if(crime.getSuspectID() != null) {
-                for(Suspect suspect : crime.getSuspectID()) {
-                    System.out.println(suspect.print());
-                }
-            }
-            else if(crime.getVictimID() != null) {
-                for(Victim victim : crime.getVictimID()) {
-                    System.out.println(victim.print());
-                }
-            }
-            else if(crime.getWitnessID() != null) {
-                for(Witness witness : crime.getWitnessID()) {
-                    System.out.println(witness.print());
-                }
-            }
-        }
+        String crime = system.writeCrime(system.getCrime(caseNumber));
+        System.out.println(crime);
+        system.writeToFile("crimeFile.txt", crime);
     }
 
     private void addCrime() {
