@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 public class CrimeManagementSystemUI {
     private static final String WELCOME_MESSAGE = "Welcome to the Crime Management System";
-    private String[] mainMenuOptions = {"Create Account", "Login", "Find Case", "Add Crime", "Add Suspect not connected to a crime", "Logout"};
+    private String[] mainMenuOptions = {"Create Account", "Login", "Find Case", "Add Crime", "Add Suspect not connected to a crime", "Search for Suspect", "Logout"};
     private String[] crimeMenuOptions = {"Add Suspect", "Add Victim", "Add Witness", "Go back to the Main Menu"};
+    private String[] searchMenuOptions = {"By Tattoo", "By Tattoo and Age", "By Tattoo, Age, and Hair", "By Tattoo, Age, Hair, and Height", "Go back to the Main Menu"};
     private Scanner scanner;
     private CrimeManagementSystem system;
     
@@ -48,6 +49,9 @@ public class CrimeManagementSystemUI {
                 case(4):
                     addSuspect(false);
                     break;
+                case(5):
+                    search();
+                    break;
             }
         }
     }
@@ -63,6 +67,14 @@ public class CrimeManagementSystemUI {
         System.out.println("\n************ Crime Menu *************");
         for(int i=0; i< crimeMenuOptions.length; i++) {
 			System.out.println((i+1) + ". " + crimeMenuOptions[i]);
+		}
+		System.out.println("\n");
+    }
+
+    private void displaySearchMenu() {
+        System.out.println("\n************ Search Menu *************");
+        for(int i=0; i< searchMenuOptions.length; i++) {
+			System.out.println((i+1) + ". " + searchMenuOptions[i]);
 		}
 		System.out.println("\n");
     }
@@ -166,6 +178,63 @@ public class CrimeManagementSystemUI {
                         addMore = false;
                         break;
                 }
+            }
+        }
+    }
+    private void search() throws IOException {
+        boolean searchMore = true;
+        while(searchMore) {
+            displaySearchMenu();
+
+            int userCommand = getUserCommand(searchMenuOptions.length);
+
+            if(userCommand == -1) {
+                System.out.println("Not a valid command");
+                continue;
+            }
+
+            if(userCommand == searchMenuOptions.length -1) {
+                break;
+            }
+
+            switch(userCommand) {
+                case(0):
+                    String tattoo = getField("Tattoo");
+                    ArrayList<Suspect> foundSus = Suspects.search(tattoo);
+                    if(getFieldTF("Would you like to download suspects")) {
+                        system.writeToFile("suspectFile.txt", system.writeSuspects(foundSus));
+                    }
+                    break;
+                case(1):
+                    String tattoo1 = getField("Tattoo");
+                    int age = getFieldInt("Age");
+                    ArrayList<Suspect> foundSus1 = Suspects.search(tattoo1, age);
+                    if(getFieldTF("Would you like to download suspects")) {
+                        system.writeToFile("suspectFile.txt", system.writeSuspects(foundSus1));
+                    }
+                    break;
+                case(2):
+                    String tattoo2 = getField("Tattoo");
+                    int age1 = getFieldInt("Age");
+                    String hair = getFieldColor("Hair");
+                    ArrayList<Suspect> foundSus2 = Suspects.search(tattoo2, age1, hair);
+                    if(getFieldTF("Would you like to download suspects")) {
+                        system.writeToFile("suspectFile.txt", system.writeSuspects(foundSus2));
+                    }
+                    break;
+                case(3):
+                    String tattoo3 = getField("Tattoo");
+                    int age2 = getFieldInt("Age");
+                    String hair1 = getFieldColor("Hair");
+                    String height = getField("Height");
+                    ArrayList<Suspect> foundSus3 = Suspects.search(tattoo3, age2, hair1, height);
+                    if(getFieldTF("Would you like to download suspects")) {
+                        system.writeToFile("suspectFile.txt", system.writeSuspects(foundSus3));
+                    }
+                    break;
+                case(4):
+                    searchMore = false;
+                    break;
             }
         }
     }

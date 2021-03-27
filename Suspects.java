@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 public class Suspects {
 	private static Suspects suspects;
-	private ArrayList<Suspect> suspectList;
+	private static ArrayList<Suspect> suspectList;
 	
 	private Suspects() {
 		suspectList = DataLoader.getSuspects();
@@ -70,7 +70,7 @@ public class Suspects {
 		DataWriter.saveSuspects();
 	}
 
-	public ArrayList<Suspect> search(String tattoo){
+	public static ArrayList<Suspect> search(String tattoo) {
         ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
         System.out.println("The suspects matching the description: ");
         for(Suspect suspect : suspectList)
@@ -83,7 +83,7 @@ public class Suspects {
 		return matchSus;
     }
 
-    public ArrayList<Suspect> search(String tattoo, int age){
+    public static ArrayList<Suspect> search(String tattoo, int age){
 		ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
         System.out.println("The suspects matching the tattoo and age description: ");
         for(Suspect suspect : suspectList)
@@ -96,7 +96,7 @@ public class Suspects {
 		return matchSus;
     }
 
-    public ArrayList<Suspect> search(String tattoo, int age, String hairC){
+    public static ArrayList<Suspect> search(String tattoo, int age, String hairC){
 		ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
         System.out.println("The suspects matching the tattoo, age, and hair description: ");
         for(Suspect suspect : suspectList)
@@ -108,7 +108,7 @@ public class Suspects {
 		}
 		return matchSus;
 	}
-	public ArrayList<Suspect> search(String tattoo, int age, String hairC, String hght){
+	public static ArrayList<Suspect> search(String tattoo, int age, String hairC, String hght){
 	ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
         System.out.println("The suspects matching the tattoo, age, hair, and height description: ");
         for(Suspect suspect : suspectList)
