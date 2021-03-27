@@ -1,4 +1,5 @@
 import java.util.UUID;
+import java.util.ArrayList;
 public class CrimeManagementSystem {
     private Crimes crimes;
     private Suspects suspects;
@@ -49,7 +50,7 @@ public class CrimeManagementSystem {
         return crimes.getCrime(caseNum);
     }
 
-    public boolean createCrime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, String evidence, boolean isSolved) {
+    public boolean createCrime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, ArrayList<String> evidence, boolean isSolved) {
         if(crimes.addCrime(caseNum, crimeCommited, crimeLocation, crimeDate, criminal, criminalInCustody, evidence, isSolved)) {
             currentCrimeID = crimes.getCrime(caseNum).getCrimeID();
             return true;
@@ -57,33 +58,33 @@ public class CrimeManagementSystem {
         return false;
     }
 
-    public boolean createSuspect(boolean isConnectedToCrime, String name, int age, String sex, String race, Boolean tattoos,
-    String vehicle, String licensePlate, String address, Boolean bankAccount,
+    public boolean createSuspect(boolean isConnectedToCrime, String name, int age, String sex, String race, String phoneNumber, String height, String email, 
+    String tattoos, String vehicle, String licensePlate, String address, Boolean bankAccount,
     Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
-    String mentalState, String housingLocation, String educationLevel) {
-        if(suspects.addSuspect(name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount, 
+    String mentalState, String housingLocation, String educationLevel, String hairColor, String clothing) {
+        if(suspects.addSuspect(name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount, 
         creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
-        educationLevel) && isConnectedToCrime) {
+        educationLevel, hairColor, clothing) && isConnectedToCrime) {
             currentSuspect = suspects.getLastSuspect();
             return crimes.addSuspectID(currentCrimeID, currentSuspect);
         }
-        else if(suspects.addSuspect(name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount, 
+        else if(suspects.addSuspect(name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount, 
         creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
-        educationLevel)) return true;
+        educationLevel, hairColor, clothing)) return true;
 
         return false;
     }
 
-    public boolean createVictim(String name, int age, String sex, String race, String details) {
-        if(victims.addVictim(name, age, sex, race, details)) {
+    public boolean createVictim(String name, int age, String sex, String race, String phoneNumber, String height, String email, String details) {
+        if(victims.addVictim(name, age, sex, race, phoneNumber, height, email, details)) {
             currentVictim = victims.getLastVictim();
             return crimes.addVictimID(currentCrimeID, currentVictim);
         }
         return false;
     }
 
-    public boolean createWitness(String name, int age, String sex, String race, String details, String story, boolean isDefending) {
-        if(witnesses.addWitness(name, age, sex, race, details, story, isDefending)) {
+    public boolean createWitness(String name, int age, String sex, String race, String phoneNumber, String height, String email, String details, String story, boolean isDefending) {
+        if(witnesses.addWitness(name, age, sex, race, phoneNumber, height, email, details, story, isDefending)) {
             currentWitness = witnesses.getLastWitness();
             return crimes.addWitnessID(currentCrimeID, currentWitness);
         }

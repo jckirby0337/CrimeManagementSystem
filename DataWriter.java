@@ -172,6 +172,9 @@ public class DataWriter extends DataConstants {
         suspectDetails.put(SUSPECT_AGE, suspect.getAge());
         suspectDetails.put(SUSPECT_SEX, suspect.getSex());
         suspectDetails.put(SUSPECT_RACE, suspect.getRace());
+		suspectDetails.put(SUSPECT_PHONE_NUMBER, suspect.getPhoneNumber());
+		suspectDetails.put(SUSPECT_HEIGHT, suspect.getHeight());
+		suspectDetails.put(SUSPECT_EMAIL, suspect.getEmail());	
 		suspectDetails.put(SUSPECT_TATTOOS, suspect.hasTattoos());
         suspectDetails.put(SUSPECT_VEHICLE, suspect.getVehicle());
 		suspectDetails.put(SUSPECT_LICENSE_PLATE, suspect.getLicensePlate());
@@ -184,6 +187,8 @@ public class DataWriter extends DataConstants {
 		suspectDetails.put(SUSPECT_MENTAL_STATE, suspect.getMentalState());
 		suspectDetails.put(SUSPECT_HOUSE_LOCATION, suspect.getHousingLocation());
 		suspectDetails.put(SUSPECT_EDUCATION_LEVEL, suspect.getEducationLevel());
+		suspectDetails.put(SUSPECT_HAIR_COLOR, suspect.getHairColor());
+		suspectDetails.put(SUSPECT_CLOTHING, suspect.getClothing());
         return suspectDetails;
 	}
 
@@ -207,6 +212,9 @@ public class DataWriter extends DataConstants {
 		victimDetails.put(VICTIM_SEX, victim.getSex());
 		victimDetails.put(VICTIM_RACE, victim.getRace());
 		victimDetails.put(VICTIM_NAME, victim.getName());
+		victimDetails.put(VICTIM_PHONE_NUMBER, victim.getPhoneNumber());
+		victimDetails.put(VICTIM_HEIGHT, victim.getHeight());
+		victimDetails.put(VICTIM_EMAIL, victim.getEmail());	
 		victimDetails.put(VICTIM_DETAILS, victim.getDetails());
 		return victimDetails;
 	}
@@ -218,6 +226,9 @@ public class DataWriter extends DataConstants {
 		witnessDetails.put(WITNESS_SEX, witness.getSex());
 		witnessDetails.put(WITNESS_RACE, witness.getRace());
 		witnessDetails.put(WITNESS_NAME, witness.getName());
+		witnessDetails.put(WITNESS_PHONE_NUMBER, witness.getPhoneNumber());
+		witnessDetails.put(WITNESS_HEIGHT, witness.getHeight());
+		witnessDetails.put(WITNESS_EMAIL, witness.getEmail());	
 		witnessDetails.put(WITNESS_DETAILS, witness.getDetails());
 		witnessDetails.put(WITNESS_STORY, witness.getStory());
 		witnessDetails.put(WITNESS_ISDEFENDING, witness.getIsDefening());

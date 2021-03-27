@@ -187,7 +187,10 @@ public class CrimeManagementSystemUI {
         int age =  getFieldInt("Age (only numbers)");
         String sex = getFieldChar("Sex (M / F)");
         String race = getField("Race");
-        boolean tattoos = getFieldTF("Tattoos");
+        String phoneNumber = getField("Phone Number");
+        String height = getField("Height");
+        String email = getField("Email");
+        String tattoos = getField("Tattoos");
         String vehicle = getField("Vehicle");
         String licensePlate = getField("License plate (ALH 833)");
         String address = getField("Address");
@@ -199,7 +202,7 @@ public class CrimeManagementSystemUI {
         String mentalState = getField("Mental state");
         String housingLocation = getField("Housing location");
         String educationLevel = getField("Education level");
-        if(system.createSuspect(isConnectedToCrime, name, age, sex, race, tattoos, vehicle, licensePlate, address, bankAccount, creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, educationLevel)) {
+        if(system.createSuspect(isConnectedToCrime, name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount, creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, educationLevel, hairColor, clothing)) {
             System.out.println("You have successfully created a suspect");
         }
     }
@@ -210,8 +213,11 @@ public class CrimeManagementSystemUI {
         int age = getFieldInt("Age (only numbers)");
         String sex = getFieldChar("Sex (M / F)");
         String race = getField("Race");
+        String phoneNumber = getField("Phone Number");
+        String height = getField("Height");
+        String email = getField("Email");
         String details = getField("Details");
-        if(system.createVictim(name, age, sex, race, details)) {
+        if(system.createVictim(name, age, sex, race, phoneNumber, height, email, details)) {
             System.out.println("You have successfully created a victim");
         }
     }
@@ -222,10 +228,13 @@ public class CrimeManagementSystemUI {
         int age = getFieldInt("Age (only numbers)");
         String sex = getFieldChar("Sex (M / F)");
         String race = getField("Race");
+        String phoneNumber = getField("Phone Number");
+        String height = getField("Height");
+        String email = getField("Email");
         String details = getField("Details");
         String story = getField("Story");
         boolean isDefending = getFieldTF("Is the witness defending (yes or no)");
-        if(system.createWitness(name, age, sex, race, details, story, isDefending)) {
+        if(system.createWitness(name, age, sex, race, phoneNumber, height, email, details, story, isDefending)) {
             System.out.println("You have successfully created a witness");
         }
     }
