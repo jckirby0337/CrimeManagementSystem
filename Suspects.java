@@ -70,7 +70,7 @@ public class Suspects {
 		DataWriter.saveSuspects();
 	}
 
-	public void search(String tattoo){
+	public ArrayList<Suspect> search(String tattoo){
         ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
         System.out.println("The suspects matching the description: ");
         for(Suspect suspect : suspectList)
@@ -80,10 +80,10 @@ public class Suspects {
                	System.out.println(matchSus);
 			}
 		}
-
+		return matchSus;
     }
 
-    public void search(String tattoo, int age){
+    public ArrayList<Suspect> search(String tattoo, int age){
 		ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
         System.out.println("The suspects matching the tattoo and age description: ");
         for(Suspect suspect : suspectList)
@@ -93,10 +93,10 @@ public class Suspects {
                	System.out.println(matchSus);
 			}
 		}
-	
+		return matchSus;
     }
 
-    public void search(String tattoo, int age, String hairC){
+    public ArrayList<Suspect> search(String tattoo, int age, String hairC){
 		ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
         System.out.println("The suspects matching the tattoo, age, and hair description: ");
         for(Suspect suspect : suspectList)
@@ -106,10 +106,11 @@ public class Suspects {
                	System.out.println(matchSus);
 			}
 		}
+		return matchSus;
 	}
-	public void search(String tattoo, int age, String hairC, String hght){
+	public ArrayList<Suspect> search(String tattoo, int age, String hairC, String hght){
 	ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
-        System.out.println("The suspects matching the tattoo description: ");
+        System.out.println("The suspects matching the tattoo, age, hair, and height description: ");
         for(Suspect suspect : suspectList)
         {
 			if(suspect.getTattoos().contains(tattoo) && suspect.getAge()==age && suspect.getHairColor().contains(hairC) 
@@ -118,19 +119,6 @@ public class Suspects {
                	System.out.println(matchSus);
 			}
 		}
-
-}
-	public void search(String tattoo, int age, String hairC, String hght){
-	ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
-        System.out.println("The suspects matching the tattoo description: ");
-        for(Suspect suspect : suspectList)
-        {
-			if(suspect.getTattoos().contains(tattoo) && suspect.getAge()==age && suspect.getHairColor().contains(hairC) 
-			&& suspect.getHeight().contains(hght)) {
-                matchSus.add(suspect);
-               	System.out.println(matchSus);
-			}
-		}
+		return matchSus;
 	}
-
 }
