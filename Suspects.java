@@ -71,14 +71,14 @@ public class Suspects {
 	}
 
 	public void search(String tattoo){
-        if(Suspects suspects.getTattoos().equalsIgnoreCase("tatto"){
-            ArrayList<String> matchSus = new ArrayList<String>();
-            System.out.println("The suspects matching the description: ");
-            for(suspects.getSuspect : suspectWTat)
-            {
-                matchSus.add(suspectWTat);
-                System.out.println(matchSus);
-            }
+        ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
+        System.out.println("The suspects matching the description: ");
+        for(Suspect suspect : suspectList)
+        {
+			if(suspect.getTattoos().contains(tattoo)) {
+                matchSus.add(suspect);
+               	System.out.println(matchSus);
+			}
         }
 
     }
