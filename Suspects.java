@@ -75,9 +75,9 @@ public class Suspects {
         System.out.println("The suspects matching the description: ");
         for(Suspect suspect : suspectList)
         {
-			if(suspect.getTattoos().contains(tattoo)) {
+			if(suspect.getTattoos().equalsIgnoreCase(tattoo)) {
                 matchSus.add(suspect);
-               	System.out.println(matchSus);
+               	System.out.println(suspect.print());
 			}
 		}
 		return matchSus;
@@ -88,7 +88,7 @@ public class Suspects {
         System.out.println("The suspects matching the tattoo and age description: ");
         for(Suspect suspect : suspectList)
         {
-			if(suspect.getTattoos().contains(tattoo) && suspect.getAge()==age) {
+			if(suspect.getTattoos().equalsIgnoreCase(tattoo) && suspect.getAge()==age) {
                 matchSus.add(suspect);
                	System.out.println(matchSus);
 			}
@@ -101,7 +101,7 @@ public class Suspects {
         System.out.println("The suspects matching the tattoo, age, and hair description: ");
         for(Suspect suspect : suspectList)
         {
-			if(suspect.getTattoos().contains(tattoo) && suspect.getAge()==age && suspect.getHairColor().contains(hairC) ) {
+			if(suspect.getTattoos().equalsIgnoreCase(tattoo) && suspect.getAge()==age && suspect.getHairColor().equalsIgnoreCase(hairC) ) {
                 matchSus.add(suspect);
                	System.out.println(matchSus);
 			}
@@ -113,8 +113,8 @@ public class Suspects {
         System.out.println("The suspects matching the tattoo, age, hair, and height description: ");
         for(Suspect suspect : suspectList)
         {
-			if(suspect.getTattoos().contains(tattoo) && suspect.getAge()==age && suspect.getHairColor().contains(hairC) 
-			&& suspect.getHeight().contains(hght)) {
+			if(suspect.getTattoos().equalsIgnoreCase(tattoo) && suspect.getAge()==age && suspect.getHairColor().equalsIgnoreCase(hairC) 
+			&& suspect.getHeight().equalsIgnoreCase(hght)) {
                 matchSus.add(suspect);
                	System.out.println(matchSus);
 			}

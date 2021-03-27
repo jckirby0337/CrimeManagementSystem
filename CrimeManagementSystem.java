@@ -100,17 +100,17 @@ public class CrimeManagementSystem {
             text += crime.print();
             if(crime.getSuspectID() != null) {
                 for(Suspect suspect : crime.getSuspectID()) {
-                    text += suspect.print();
+                    text += "\n" + suspect.print();
                 }
             }
             else if(crime.getVictimID() != null) {
                 for(Victim victim : crime.getVictimID()) {
-                    text += victim.print();
+                    text += "\n" + victim.print();
                 }
             }
             else if(crime.getWitnessID() != null) {
                 for(Witness witness : crime.getWitnessID()) {
-                    text += witness.print();
+                    text += "\n" + witness.print();
                 }
             }
         }
