@@ -1,0 +1,23 @@
+
+************ Suspect *************
+Name: Jeff
+Age: 46
+Sex: m
+Race: White
+Phone Number: null
+Height: null
+Email: null
+Tattoos: Dove
+Vehicle: white chevy van
+License Plate: 324 sdf
+Address: sumpter street
+Bank Account: true
+Credit Card: true
+Armed: true
+Public Risk: true
+Nicknames: jeffy
+Mental State: bad
+Houseing Location: sumpter street
+Education Level: middle school
+Hair Color: null
+Clothing: null

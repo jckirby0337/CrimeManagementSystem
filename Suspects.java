@@ -67,6 +67,11 @@ public class Suspects {
 	}
 	
 	public void saveSuspects() {
+		for(Suspect suspect : suspectList) {
+			if(suspect.getAge() == -1) {
+				suspectList.remove(suspectList.indexOf(suspect));
+			}
+		}
 		DataWriter.saveSuspects();
 	}
 
@@ -75,7 +80,7 @@ public class Suspects {
         System.out.println("The suspects matching the description: ");
         for(Suspect suspect : suspectList)
         {
-			if(suspect.getTattoos().equalsIgnoreCase(tattoo)) {
+			if(suspect.getTattoos().toLowerCase().contains(tattoo.toLowerCase())) {
                 matchSus.add(suspect);
                	System.out.println(suspect.print());
 			}
@@ -88,7 +93,7 @@ public class Suspects {
         System.out.println("The suspects matching the tattoo and age description: ");
         for(Suspect suspect : suspectList)
         {
-			if(suspect.getTattoos().equalsIgnoreCase(tattoo) && suspect.getAge()==age) {
+			if(suspect.getTattoos().toLowerCase().contains(tattoo.toLowerCase()) && suspect.getAge()==age) {
                 matchSus.add(suspect);
                	System.out.println(matchSus);
 			}
@@ -101,7 +106,7 @@ public class Suspects {
         System.out.println("The suspects matching the tattoo, age, and hair description: ");
         for(Suspect suspect : suspectList)
         {
-			if(suspect.getTattoos().equalsIgnoreCase(tattoo) && suspect.getAge()==age && suspect.getHairColor().equalsIgnoreCase(hairC) ) {
+			if(suspect.getTattoos().toLowerCase().contains(tattoo.toLowerCase()) && suspect.getAge()==age && suspect.getHairColor().toLowerCase().contains(hairC.toLowerCase())) {
                 matchSus.add(suspect);
                	System.out.println(matchSus);
 			}
@@ -113,7 +118,7 @@ public class Suspects {
         System.out.println("The suspects matching the tattoo, age, hair, and height description: ");
         for(Suspect suspect : suspectList)
         {
-			if(suspect.getTattoos().equalsIgnoreCase(tattoo) && suspect.getAge()==age && suspect.getHairColor().equalsIgnoreCase(hairC) 
+			if(suspect.getTattoos().toLowerCase().contains(tattoo.toLowerCase()) && suspect.getAge()==age && suspect.getHairColor().toLowerCase().contains(hairC.toLowerCase()) 
 			&& suspect.getHeight().equalsIgnoreCase(hght)) {
                 matchSus.add(suspect);
                	System.out.println(matchSus);

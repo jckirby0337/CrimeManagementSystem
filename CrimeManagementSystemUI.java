@@ -127,7 +127,7 @@ public class CrimeManagementSystemUI {
         int caseNumber = getFieldInt("Case Number (012): ");
         String crime = system.writeCrime(system.getCrime(caseNumber));
         System.out.println(crime);
-        system.writeToFile("crimeFile.txt", crime);
+        system.writeToFile("CrimeManagementSystem/crimeFiles/crimeFile.txt", crime);
     }
 
     private void addCrime() {
@@ -138,7 +138,7 @@ public class CrimeManagementSystemUI {
         String crimeDate = getField("Date crime occured");
         String criminal = getField("Suspect Name");
         boolean criminalInCustody = getFieldTF("Suspect in custody");
-        int numberOfEvidence = getFieldInt("How many pieces of evidence do you have to add: ");
+        int numberOfEvidence = getFieldAge("How many pieces of evidence do you have to add: ");
         ArrayList<String> evidence = new ArrayList<String>();
         for(int i = 1; i<numberOfEvidence; i++) {
             evidence.add(getField("Evidence: "));
@@ -202,34 +202,34 @@ public class CrimeManagementSystemUI {
                     String tattoo = getField("Tattoo");
                     ArrayList<Suspect> foundSus = Suspects.search(tattoo);
                     if(getFieldTF("Would you like to download suspects")) {
-                        system.writeToFile("suspectFile.txt", system.writeSuspects(foundSus));
+                        system.writeToFile("CrimeManagementSystem/suspectFiles/suspectFile.txt", system.writeSuspects(foundSus));
                     }
                     break;
                 case(1):
                     String tattoo1 = getField("Tattoo");
-                    int age = getFieldInt("Age");
+                    int age = getFieldAge("Age");
                     ArrayList<Suspect> foundSus1 = Suspects.search(tattoo1, age);
                     if(getFieldTF("Would you like to download suspects")) {
-                        system.writeToFile("suspectFile.txt", system.writeSuspects(foundSus1));
+                        system.writeToFile("CrimeManagementSystem/suspectFiles/suspectFile.txt", system.writeSuspects(foundSus1));
                     }
                     break;
                 case(2):
                     String tattoo2 = getField("Tattoo");
-                    int age1 = getFieldInt("Age");
+                    int age1 = getFieldAge("Age");
                     String hair = getFieldColor("Hair");
                     ArrayList<Suspect> foundSus2 = Suspects.search(tattoo2, age1, hair);
                     if(getFieldTF("Would you like to download suspects")) {
-                        system.writeToFile("suspectFile.txt", system.writeSuspects(foundSus2));
+                        system.writeToFile("CrimeManagementSystem/suspectFiles/suspectFile.txt", system.writeSuspects(foundSus2));
                     }
                     break;
                 case(3):
                     String tattoo3 = getField("Tattoo");
-                    int age2 = getFieldInt("Age");
+                    int age2 = getFieldAge("Age");
                     String hair1 = getFieldColor("Hair");
                     String height = getField("Height");
                     ArrayList<Suspect> foundSus3 = Suspects.search(tattoo3, age2, hair1, height);
                     if(getFieldTF("Would you like to download suspects")) {
-                        system.writeToFile("suspectFile.txt", system.writeSuspects(foundSus3));
+                        system.writeToFile("CrimeManagementSystem/suspectFiles/suspectFile.txt", system.writeSuspects(foundSus3));
                     }
                     break;
                 case(4):
@@ -242,11 +242,11 @@ public class CrimeManagementSystemUI {
     private void addSuspect(boolean isConnectedToCrime) {
         System.out.println("Creating suspect...");
         String name = getField("Name");
-        int age =  getFieldInt("Age (only numbers)");
+        int age =  getFieldAge("Age (only numbers)");
         String sex = getFieldChar("Sex (M / F)");
         String race = getField("Race");
         String phoneNumber = getField("Phone Number");
-        String height = getField("Height");
+        String height = getFieldHeight("Height");
         String email = getField("Email");
         String tattoos = getField("Tattoos");
         String vehicle = getField("Vehicle");
@@ -270,11 +270,11 @@ public class CrimeManagementSystemUI {
     private void addVictim() {
         System.out.println("Creating victim...");
         String name = getField("Name");
-        int age = getFieldInt("Age (only numbers)");
+        int age = getFieldAge("Age (only numbers)");
         String sex = getFieldChar("Sex (M / F)");
         String race = getField("Race");
         String phoneNumber = getField("Phone Number");
-        String height = getField("Height");
+        String height = getFieldHeight("Height");
         String email = getField("Email");
         String details = getField("Details");
         if(system.createVictim(name, age, sex, race, phoneNumber, height, email, details)) {
@@ -285,11 +285,11 @@ public class CrimeManagementSystemUI {
     public void addWitness() {
         System.out.println("Creting witness...");
         String name = getField("Name");
-        int age = getFieldInt("Age (only numbers)");
+        int age = getFieldAge("Age (only numbers)");
         String sex = getFieldChar("Sex (M / F)");
         String race = getField("Race");
         String phoneNumber = getField("Phone Number");
-        String height = getField("Height");
+        String height = getFieldHeight("Height");
         String email = getField("Email");
         String details = getField("Details");
         String story = getField("Story");
@@ -326,6 +326,13 @@ public class CrimeManagementSystemUI {
         scanner.nextLine();
         return temp;
     }
+
+    private int getFieldAge(String prompt) {
+        prompt += " (If they're a minor enter -1)";
+        return getFieldInt(prompt);
+    }
+
+
     private String getFieldChar(String prompt) {
         System.out.print(prompt + ": ");
         String temp = "" + scanner.next().charAt(0);
@@ -352,6 +359,20 @@ public class CrimeManagementSystemUI {
             getFieldColor(prompt);
             return "";
         }
+    }
+
+    public String getFieldHeight(String prompt) {
+        String height = "";
+        System.out.println(prompt + " (Example 5\'10\"): ");
+        System.out.println("Please enter the number of feet (Example 5):");
+        int userInput = scanner.nextInt();
+        scanner.nextLine();
+        height += userInput + "\'";
+        System.out.println("Please enter the feet (Example 10):");
+        userInput = scanner.nextInt();
+        scanner.nextLine();
+        height += userInput + "\"";
+        return height;
     }
 
     public static void main(String[] args) throws IOException {

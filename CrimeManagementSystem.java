@@ -1,8 +1,8 @@
 import java.util.UUID;
 import java.util.ArrayList;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 public class CrimeManagementSystem {
     private Crimes crimes;
     private Suspects suspects;
@@ -128,8 +128,9 @@ public class CrimeManagementSystem {
     }
 
     public void writeToFile(String fileName, String text) throws IOException {
-        Path filePath = Path.of(fileName);
-        Files.writeString(filePath, text);
+        BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
+        writer.write(text);
+        writer.close();
     }
 
     public void logout() {

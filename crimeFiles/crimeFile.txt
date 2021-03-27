@@ -1,0 +1,10 @@
+
+************ Crime *************
+Case Number: 0
+Crime Commited: arson
+Location of Crime: maple street
+Date Crime Occured: 06/16/2020
+Criminal Name: Robert
+Criminal is in Custody: false
+Evidence 0: Camera Footage
+Is the Crime Solved: false
