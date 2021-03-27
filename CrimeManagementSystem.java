@@ -139,3 +139,4 @@ public class CrimeManagementSystem {
         victims.saveVictims();
         witnesses.saveWitnesses();
     }
+}

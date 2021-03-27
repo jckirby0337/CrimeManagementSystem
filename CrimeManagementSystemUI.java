@@ -1,6 +1,6 @@
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.UUID;
+import java.util.ArrayList;
 
 public class CrimeManagementSystemUI {
     private static final String WELCOME_MESSAGE = "Welcome to the Crime Management System";
@@ -14,7 +14,7 @@ public class CrimeManagementSystemUI {
         system = new CrimeManagementSystem();
     }
 
-    public void run() {
+    public void run() throws IOException {
         System.out.println(WELCOME_MESSAGE);
 
         while(true) {
@@ -126,7 +126,11 @@ public class CrimeManagementSystemUI {
         String crimeDate = getField("Date crime occured");
         String criminal = getField("Suspect Name");
         boolean criminalInCustody = getFieldTF("Suspect in custody");
-        String evidence = getField("Evidence");
+        int numberOfEvidence = getFieldInt("How many pieces of evidence do you have to add: ");
+        ArrayList<String> evidence = new ArrayList<String>();
+        for(int i = 0; i<numberOfEvidence; i++) {
+            evidence.add(getField("Evidence: "));
+        }
         boolean isSolved = getFieldTF("Is the crime solved");
         
         if(system.createCrime(caseNum, crimeCommited, crimeLocation, crimeDate, criminal, criminalInCustody, evidence, isSolved)) {
@@ -187,6 +191,8 @@ public class CrimeManagementSystemUI {
         String mentalState = getField("Mental state");
         String housingLocation = getField("Housing location");
         String educationLevel = getField("Education level");
+        String hairColor = getFieldColor("Hair color");
+        String clothing = getField("Clothing");
         if(system.createSuspect(isConnectedToCrime, name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount, creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, educationLevel, hairColor, clothing)) {
             System.out.println("You have successfully created a suspect");
         }
@@ -258,7 +264,28 @@ public class CrimeManagementSystemUI {
         return temp;
     }
 
-    public static void main(String[] args) {
+    public String getFieldColor(String prompt) {
+        System.out.print(prompt + "(Black, Brunette, Blonde, Red): ");
+        String userInput = scanner.nextLine();
+        if(userInput.equalsIgnoreCase("Black")) {
+            return userInput;
+        }
+        else if(userInput.equalsIgnoreCase("Brunette")) {
+            return userInput;
+        }
+        else if(userInput.equalsIgnoreCase("Blonde")) {
+            return userInput;
+        }
+        else if(userInput.equalsIgnoreCase("Red")) {
+            return userInput;
+        }
+        else {
+            getFieldColor(prompt);
+            return "";
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
 		CrimeManagementSystemUI systemInterface = new CrimeManagementSystemUI();
 		systemInterface.run();
 	}
