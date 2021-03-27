@@ -1,5 +1,5 @@
 import java.util.UUID;
-public class Victim extends Details{
+public class Victim extends Person{
     private UUID victimID;
     private String details;
 
