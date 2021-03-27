@@ -49,7 +49,7 @@ public class DataLoader extends DataConstants{
 	private static ArrayList<String> getEvidence(JSONArray evidence) {
 		ArrayList<String> evidences = new ArrayList<String>();
 		for(int i=0; i<evidence.size(); i++) {
-			evidences.add((String)evidences.get(i));
+			evidences.add((String)evidence.get(i));
 		}
 		return evidences;
 	}
