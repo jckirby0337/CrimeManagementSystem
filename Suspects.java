@@ -69,4 +69,30 @@ public class Suspects {
 	public void saveSuspects() {
 		DataWriter.saveSuspects();
 	}
+
+	public void search(String tattoo){
+        if(Suspects suspects.getTattoos().equalsIgnoreCase("tatto"){
+            ArrayList<String> matchSus = new ArrayList<String>();
+            System.out.println("The suspects matching the description: ");
+            for(suspects.getSuspect : suspectWTat)
+            {
+                matchSus.add(suspectWTat);
+                System.out.println(matchSus);
+            }
+        }
+
+    }
+
+    public void search(){
+        
+    }
+
+    public void search(){
+        
+    }
+
+    public void search(){
+        
+    }
+}
 }

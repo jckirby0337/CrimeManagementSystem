@@ -98,24 +98,3 @@ public class CrimeManagementSystem {
         victims.saveVictims();
         witnesses.saveWitnesses();
     }
-
-    public void search(String tattoo){
-        if(suspects.getTattoos().equalsIgnoreCase(tatto){
-            System.out.println("The suspects matching the description: ");
-            system.out.println(suspects.getSuspect);
-        }
-
-    }
-
-    public void search(){
-        
-    }
-
-    public void search(){
-        
-    }
-
-    public void search(){
-        
-    }
-}
