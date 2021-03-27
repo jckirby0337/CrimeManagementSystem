@@ -368,7 +368,7 @@ public class CrimeManagementSystemUI {
         int userInput = scanner.nextInt();
         scanner.nextLine();
         height += userInput + "\'";
-        System.out.println("Please enter the feet (Example 10):");
+        System.out.println("Please enter the inches (Example 10):");
         userInput = scanner.nextInt();
         scanner.nextLine();
         height += userInput + "\"";
