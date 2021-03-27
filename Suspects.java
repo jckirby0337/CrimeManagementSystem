@@ -74,7 +74,7 @@ public class Suspects {
         if(Suspects suspects.getTattoos().equalsIgnoreCase("tatto"){
             ArrayList<String> matchSus = new ArrayList<String>();
             System.out.println("The suspects matching the description: ");
-            for(suspects.getSuspect : suspectWTat)
+            for(Suspects suspects.getSuspect : suspectWTat)
             {
                 matchSus.add(suspectWTat);
                 System.out.println(matchSus);
