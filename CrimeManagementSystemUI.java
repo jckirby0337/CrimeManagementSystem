@@ -12,7 +12,7 @@ public class CrimeManagementSystemUI {
     private static final String WELCOME_MESSAGE = "Welcome to the Crime Management System";
     private String[] mainMenuOptions = {"Create Account", "Login", "Find Case", "Add Crime", "Add Suspect not connected to a crime", "Search for Suspect", "Logout"};
     private String[] crimeMenuOptions = {"Add Suspect", "Add Victim", "Add Witness", "Go back to the Main Menu"};
-    private String[] searchMenuOptions = {"By Tattoo", "By Tattoo and Age", "By Tattoo, Age, and Hair", "By Tattoo, Age, Hair, and Height", "Go back to the Main Menu"};
+    private String[] searchMenuOptions = {"By Tattoo", "By Tattoo and Age", "By Tattoo, Age, and Hair", "By Age, Hair, and Height", "Go back to the Main Menu"};
     private Scanner scanner;
     private CrimeManagementSystem system;
     
@@ -274,11 +274,10 @@ public class CrimeManagementSystemUI {
                     }
                     break;
                 case(3):
-                    String tattoo3 = getField("Tattoo");
                     int age2 = getFieldInt("Age");
                     String hair1 = getFieldColor("Hair");
                     String height = getField("Height");
-                    ArrayList<Suspect> foundSus3 = Suspects.search(tattoo3, age2, hair1, height);
+                    ArrayList<Suspect> foundSus3 = Suspects.search(age2, hair1, height);
                     if(getFieldTF("Would you like to download suspects")) {
                         system.writeToFile("CrimeManagementSystem/suspectFiles/suspectFile.txt", system.writeSuspects(foundSus3));
                     }
