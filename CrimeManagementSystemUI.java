@@ -184,7 +184,7 @@ public class CrimeManagementSystemUI {
         boolean criminalInCustody = getFieldTF("Suspect in custody");
         int numberOfEvidence = getFieldInt("How many pieces of evidence do you have to add: ");
         ArrayList<String> evidence = new ArrayList<String>();
-        for(int i = 1; i<numberOfEvidence; i++) {
+        for(int i = 0; i<numberOfEvidence; i++) {
             evidence.add(getField("Evidence: "));
         }
         boolean isSolved = getFieldTF("Is the crime solved");
