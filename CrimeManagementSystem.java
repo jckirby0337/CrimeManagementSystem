@@ -62,8 +62,8 @@ public class CrimeManagementSystem {
     }
 
     public boolean createSuspect(boolean isConnectedToCrime, String name, int age, String sex, String race, String phoneNumber, String height, String email, 
-    String tattoos, String vehicle, String licensePlate, String address, Boolean bankAccount,
-    Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
+    String tattoos, String vehicle, String licensePlate, String address, boolean bankAccount,
+    boolean creditCard, boolean armed, Boolean publicRisk, String nickNames,
     String mentalState, String housingLocation, String educationLevel, String hairColor, String clothing) {
         if(suspects.addSuspect(name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount, 
         creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 

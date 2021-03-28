@@ -138,7 +138,7 @@ public class CrimeManagementSystemUI {
         String crimeDate = getField("Date crime occured");
         String criminal = getField("Suspect Name");
         boolean criminalInCustody = getFieldTF("Suspect in custody");
-        int numberOfEvidence = getFieldAge("How many pieces of evidence do you have to add: ");
+        int numberOfEvidence = getFieldInt("How many pieces of evidence do you have to add: ");
         ArrayList<String> evidence = new ArrayList<String>();
         for(int i = 1; i<numberOfEvidence; i++) {
             evidence.add(getField("Evidence: "));

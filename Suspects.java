@@ -67,11 +67,6 @@ public class Suspects {
 	}
 	
 	public void saveSuspects() {
-		for(Suspect suspect : suspectList) {
-			if(suspect.getAge() == -1) {
-				suspectList.remove(suspectList.indexOf(suspect));
-			}
-		}
 		DataWriter.saveSuspects();
 	}
 
