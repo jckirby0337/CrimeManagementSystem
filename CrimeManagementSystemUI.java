@@ -12,7 +12,7 @@ public class CrimeManagementSystemUI {
     private static final String WELCOME_MESSAGE = "Welcome to the Crime Management System";
     private String[] mainMenuOptions = {"Create Account", "Login", "Find Case", "Add Crime", "Add Suspect not connected to a crime", "Search for Suspect", "Logout"};
     private String[] crimeMenuOptions = {"Add Suspect", "Add Victim", "Add Witness", "Go back to the Main Menu"};
-    private String[] searchMenuOptions = {"By Tattoo", "By Tattoo and Age", "By Tattoo, Age, and Hair", "By Age, Hair, and Height", "Go back to the Main Menu"};
+    private String[] searchMenuOptions = {"By Tattoo", "By Tattoo and Age", "By Age, and Hair", "By Age, Hair, and Height", "Go back to the Main Menu"};
     private Scanner scanner;
     private CrimeManagementSystem system;
     
@@ -265,10 +265,9 @@ public class CrimeManagementSystemUI {
                     }
                     break;
                 case(2):
-                    String tattoo2 = getField("Tattoo");
                     int age1 = getFieldInt("Age");
                     String hair = getFieldColor("Hair");
-                    ArrayList<Suspect> foundSus2 = Suspects.search(tattoo2, age1, hair);
+                    ArrayList<Suspect> foundSus2 = Suspects.search(age1, hair);
                     if(getFieldTF("Would you like to download suspects")) {
                         system.writeToFile("CrimeManagementSystem/suspectFiles/suspectFile.txt", system.writeSuspects(foundSus2));
                     }
@@ -361,7 +360,7 @@ public class CrimeManagementSystemUI {
         String email = getField("Email");
         String details = getField("Details");
         String story = getField("Story");
-        boolean isDefending = getFieldTF("Is the witness defending (yes or no)");
+        boolean isDefending = getFieldTF("Is the witness defending");
         if(system.createWitness(name, age, sex, race, phoneNumber, height, email, details, story, isDefending)) {
             System.out.println("You have successfully created a witness");
         }

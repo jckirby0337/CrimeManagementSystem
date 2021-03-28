@@ -119,12 +119,12 @@ public class Suspects {
 		return matchSus;
     }
 
-    public static ArrayList<Suspect> search(String tattoo, int age, String hairC){
+    public static ArrayList<Suspect> search(int age, String hairC){
 		ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
         System.out.println("The suspects matching the tattoo, age, and hair description: ");
         for(Suspect suspect : suspectList)
         {
-			if(suspect.getTattoos().toLowerCase().contains(tattoo.toLowerCase()) && suspect.getAge()==age && suspect.getHairColor().toLowerCase().contains(hairC.toLowerCase())) {
+			if(suspect.getAge()==age && suspect.getHairColor().toLowerCase().contains(hairC.toLowerCase())) {
                 matchSus.add(suspect);
                	System.out.println(matchSus);
 			}
