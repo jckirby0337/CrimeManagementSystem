@@ -10,7 +10,7 @@ public class Witness extends Person {
     private boolean isDefending;
     
     /**
-     * Creates a Witness object with the following characteristics (parameters):
+     * Constructs a Witness object with the following characteristics (parameters):
      * @param name of the witness
      * @param age of the witness
      * @param sex of the witness
@@ -30,7 +30,7 @@ public class Witness extends Person {
         this.isDefending = isDefending;
     }
     /**
-     * Creates a Witness object with the following characteristics (parameters):
+     * Constructs a Witness object with the following characteristics (parameters):
      * @param witnessID of the witness
      * @param name of the witness
      * @param age of the witness
