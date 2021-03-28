@@ -82,7 +82,7 @@ public class Witness extends Person {
     * @return a String representation of the Witness object
     */
     public String print() {
-        String print = "\n************ Victim *************" + super.print() + "\nDetails: " + details + "\nStory: " + story + "\nDefending: " + isDefending;
+        String print = "\n************ Witness *************" + super.print() + "\nDetails: " + details + "\nStory: " + story + "\nDefending: " + isDefending;
         return print;
     }
 }

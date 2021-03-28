@@ -34,3 +34,37 @@ Hair Color: Red
 Clothing: Turtleneck with vomit on it
 Conviction: DUI, Hit and Run
 Is in prison
+
+************ Victim *************
+Name: Mary Anne
+Age: 84
+Sex: F
+Race: Black
+Phone Number: (903)234-2342
+Height: 4'8"
+Email: n/a
+Details: Was hit by a drunk driver on devine st
+
+************ Victim *************
+Name: Johnny Sins
+Age: 42
+Sex: M
+Race: White
+Phone Number: (666)666-6666
+Height: 6'0"
+Email: JohnnySins@gmail.com
+Details: Saw Mary Anne get hit by a ford Taurus on Divine St
+Story: Was walking down divine st when he saw a Ford Taurus hit a another car while running a red light
+Defending: false
+
+************ Victim *************
+Name: Tommy Chong
+Age: 82
+Sex: M
+Race: Hispanic
+Phone Number: (902)435-2342
+Height: 5'5"
+Email: Chong@gmail.com
+Details: Was on Devine st while the crime occured
+Story: Was On devine street and saw a ford taurus run a red light and hit a car while swerving
+Defending: false
