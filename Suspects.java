@@ -57,12 +57,15 @@ public class Suspects {
 	public boolean addSuspect(String name, int age, String sex, String race, String phoneNumber, String height, String email, String tattoos,
     String vehicle, String licensePlate, String address, Boolean bankAccount,
     Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
-    String mentalState, String housingLocation, String educationLevel, String hairColor, String clothing) {
-		if(haveSuspect(name)) { System.out.println("Suspect with that name already exist"); return false;}
+    String mentalState, String housingLocation, String educationLevel, String hairColor, String clothing, String conviction, boolean isInPrison) {
+		if(haveSuspect(name)) { 
+			System.out.println("Suspect with that name already exist");
+			return false;
+		}
 		
 		suspectList.add(new Suspect(name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount, 
                                     creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
-                                    educationLevel, hairColor, clothing));
+                                    educationLevel, hairColor, clothing, conviction, isInPrison));
 		return true;
 	}
 	

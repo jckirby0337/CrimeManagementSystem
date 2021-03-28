@@ -149,21 +149,23 @@ public class CrimeManagementSystem {
      * @param educationLevel
      * @param hairColor
      * @param clothing
+     * @param conviction
+     * @param isInPrison
      * @return boolean
      */
     public boolean createSuspect(boolean isConnectedToCrime, String name, int age, String sex, String race, String phoneNumber, String height, String email, 
     String tattoos, String vehicle, String licensePlate, String address, boolean bankAccount,
     boolean creditCard, boolean armed, Boolean publicRisk, String nickNames,
-    String mentalState, String housingLocation, String educationLevel, String hairColor, String clothing) {
+    String mentalState, String housingLocation, String educationLevel, String hairColor, String clothing, String conviction, boolean isInPrison) {
         if(suspects.addSuspect(name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount, 
         creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
-        educationLevel, hairColor, clothing) && isConnectedToCrime) {
+        educationLevel, hairColor, clothing, conviction, isInPrison) && isConnectedToCrime) {
             currentSuspect = suspects.getLastSuspect();
             return crimes.addSuspectID(currentCrimeID, currentSuspect);
         }
         else if(suspects.addSuspect(name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount, 
         creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
-        educationLevel, hairColor, clothing)) return true;
+        educationLevel, hairColor, clothing, conviction, isInPrison)) return true;
 
         return false;
     }
