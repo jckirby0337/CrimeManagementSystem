@@ -120,7 +120,7 @@ public class CrimeManagementSystemUI {
         while(true) {
             String username = getField("Username");
             String password = getField("Password");
-            if(!system.userCheck(username, password)) {
+            if(system.userCheck(username, password)) {
                 String name = getField("Name");
                 String title = getField("Title");
                 String race = getField("Race");
