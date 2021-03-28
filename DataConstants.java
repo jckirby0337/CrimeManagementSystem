@@ -1,7 +1,7 @@
 public abstract class DataConstants {
 
 // Crime Fields    
-    protected static final String CRIME_FILE_NAME = "CrimeManagementSystem/Crime.json";
+    protected static final String CRIME_FILE_NAME = "CrimeManagementSystem-1/Crime.json";
     protected static final String CASE_NUMBER = "case num";
     protected static final String CRIME_ID = "Crime id";
     protected static final String CRIME_SUSPECT_ID = "suspect id";
@@ -16,7 +16,7 @@ public abstract class DataConstants {
     protected static final String SOLVED = "solved";
 
 // Suspect Fields    
-    protected static final String SUSPECT_FILE_NAME = "CrimeManagementSystem/Suspect.json";
+    protected static final String SUSPECT_FILE_NAME = "CrimeManagementSystem-1/Suspect.json";
     protected static final String SUSPECT_ID = "SuspectID";
     protected static final String SUSPECT_NAME = "Name";
     protected static final String SUSPECT_AGE = "Age";
@@ -41,7 +41,7 @@ public abstract class DataConstants {
     protected static final String SUSPECT_CLOTHING = "Clothing";
 
 //  Victim Fields
-    protected static final String VICTIM_FILE_NAME = "CrimeManagementSystem/Victim.json";
+    protected static final String VICTIM_FILE_NAME = "CrimeManagementSystem-1/Victim.json";
     protected static final String VICTIM_DETAILS = "details";
     protected static final String VICTIM_ID = "VictimID";
     protected static final String VICTIM_AGE = "Age";
@@ -53,7 +53,7 @@ public abstract class DataConstants {
     protected static final String VICTIM_EMAIL = "Email";
 
 // User Fields 
-    protected static final String USER_FILE_NAME = "CrimeManagementSystem/User.json";
+    protected static final String USER_FILE_NAME = "CrimeManagementSystem-1/User.json";
     protected static final String USER_USER_ID = "UserID";
     protected static final String USER_NAME = "name";
     protected static final String USER_TITLE = "title";
@@ -64,7 +64,7 @@ public abstract class DataConstants {
     protected static final String USER_USERNAME = "Username";
 
 // Witness Fields
-    protected static final String WITNESS_FILE_NAME = "CrimeManagementSystem/Witness.json";
+    protected static final String WITNESS_FILE_NAME = "CrimeManagementSystem-1/Witness.json";
     protected static final String WITNESS_ID = "WitnessID";
     protected static final String WITNESS_NAME = "Name";
     protected static final String WITNESS_AGE = "Age";
