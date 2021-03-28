@@ -149,7 +149,7 @@ public class DataLoader extends DataConstants{
 				String details = (String)victimJSON.get(VICTIM_DETAILS);
 				UUID victimID = UUID.fromString((String)victimJSON.get(VICTIM_ID));
 				
-				victims.add(new Victim(victimID, name, age, sex, phoneNumber, height, email, race, details));
+				victims.add(new Victim(victimID, name, age, sex, race, phoneNumber, height, email, details));
 			}
 			
 			return victims;
@@ -225,15 +225,4 @@ public class DataLoader extends DataConstants{
 		
 		return null;
 	}
-
-	/*public static void main(String[] args) {
-		ArrayList<User> users = DataLoader.getUsers();
-		for(User user: users) {
-			System.out.println(user);
-		}
-		
-
-		System.out.println(UUID.randomUUID());
-	}
-	*/
 }

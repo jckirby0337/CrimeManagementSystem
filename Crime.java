@@ -1,5 +1,11 @@
 import java.util.UUID;
 import java.util.ArrayList;
+
+/**
+ * Creates a crime object that has values representing information about a crime and also suspects, victims, and witnesses
+ * @author Team Coalition
+ * 
+ */
 public class Crime {
 	private int caseNum;
 	private UUID crimeID;
@@ -14,6 +20,17 @@ public class Crime {
 	private ArrayList<String> evidence = new ArrayList<String>();
 	private boolean isSolved;
 	
+	/**
+	 * Constuctor for crime
+	 * @param caseNum
+	 * @param crimeCommited
+	 * @param crimeLocation
+	 * @param crimeDate
+	 * @param criminal
+	 * @param criminalInCustody
+	 * @param evidence
+	 * @param isSolved
+	 */
 	public Crime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, ArrayList<String> evidence, boolean isSolved) {
 		this.caseNum = caseNum;
 		this.crimeID = UUID.randomUUID();
@@ -25,6 +42,22 @@ public class Crime {
 		this.evidence = evidence;
 		this.isSolved = isSolved;
 	}
+
+	/**
+	 * Constructor for crime
+	 * @param caseNum
+	 * @param crimeID
+	 * @param suspectID
+	 * @param victimID
+	 * @param witnessID
+	 * @param crimeCommited
+	 * @param crimeLocation
+	 * @param crimeDate
+	 * @param criminal
+	 * @param criminalInCustody
+	 * @param evidence
+	 * @param isSolved
+	 */
 	public Crime(int caseNum, UUID crimeID, ArrayList<Suspect> suspectID, ArrayList<Victim> victimID, ArrayList<Witness> witnessID, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, ArrayList<String> evidence, boolean isSolved) {
 		this.caseNum = caseNum;
 		this.crimeID = crimeID;
@@ -136,6 +169,12 @@ public class Crime {
 		this.isSolved = isSolved;
 	}
 
+	
+	
+	/** 
+	 * Returns the evidence in a string format
+	 * @return String
+	 */
 	private String evidenceToString(){
 		String ev = "";
 		for(int i = 0; i<evidence.size(); i++) {
@@ -144,6 +183,11 @@ public class Crime {
 		return ev;
 	}
 	
+	
+	/** 
+	 * Returns the crime in a String format
+	 * @return String
+	 */
 	public String print() {
 		String print = "\n************ Crime *************" + "\nCase Number: " + caseNum + "\nCrime Commited: " + crimeCommited + "\nLocation of Crime: " + crimeLocation + "\nDate Crime Occured: " + crimeDate
 		+ "\nCriminal Name: " + criminal + "\nCriminal is in Custody: " + criminalInCustody + evidenceToString() + "\nIs the Crime Solved: " + isSolved;
