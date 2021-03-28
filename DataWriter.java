@@ -189,6 +189,8 @@ public class DataWriter extends DataConstants {
 		suspectDetails.put(SUSPECT_EDUCATION_LEVEL, suspect.getEducationLevel());
 		suspectDetails.put(SUSPECT_HAIR_COLOR, suspect.getHairColor());
 		suspectDetails.put(SUSPECT_CLOTHING, suspect.getClothing());
+		suspectDetails.put(SUSPECT_CONVICTION, suspect.getConviction());
+		suspectDetails.put(SUSPECT_IS_IN_PRISON, suspect.getIsInPrison());
         return suspectDetails;
 	}
 

@@ -116,9 +116,11 @@ public class DataLoader extends DataConstants{
 				String educationLevel = (String)suspectJSON.get(SUSPECT_EDUCATION_LEVEL);
 				String hairColor = (String)suspectJSON.get(SUSPECT_HAIR_COLOR);
 				String clothing = (String)suspectJSON.get(SUSPECT_CLOTHING);
+				String conviction = (String)suspectJSON.get(SUSPECT_CONVICTION);
+				boolean isInPrison = (boolean)suspectJSON.get(SUSPECT_IS_IN_PRISON);
 
 				suspects.add(new Suspect(suspectID, name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount,
-			 	creditCard, armed, publicRisk, nicknames, mentalState, housingLocation, educationLevel, hairColor, clothing));
+			 	creditCard, armed, publicRisk, nicknames, mentalState, housingLocation, educationLevel, hairColor, clothing, conviction, isInPrison));
 			}
 			
 			return suspects;

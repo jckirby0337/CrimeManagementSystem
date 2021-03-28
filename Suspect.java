@@ -15,10 +15,12 @@ public class Suspect extends Person{
     private String educationLevel;
     private String hairColor;
     private String clothing;
+    private String conviction;
+    private boolean isInPrison;
     public Suspect(String name, int age, String sex, String race, String phoneNumber, String height, String email, String tattoos,
                    String vehicle, String licensePlate, String address, Boolean bankAccount,
                    Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
-                   String mentalState, String housingLocation, String educationLevel, String hairColor, String clothing) {
+                   String mentalState, String housingLocation, String educationLevel, String hairColor, String clothing, String conviction, boolean isInPrison) {
         super(name, age, sex, race, phoneNumber, height, email);
         this.suspectID = UUID.randomUUID();
         this.tattoos = tattoos;
@@ -35,11 +37,13 @@ public class Suspect extends Person{
         this.educationLevel = educationLevel;
         this.hairColor = hairColor;
         this.clothing = clothing;
+        this.conviction = conviction;
+        this.isInPrison = isInPrison;
     }
     public Suspect(UUID suspectID, String name, int age, String sex, String race, String phoneNumber, String height, String email, String tattoos,
                    String vehicle, String licensePlate, String address, Boolean bankAccount,
                    Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
-                   String mentalState, String housingLocation, String educationLevel, String hairColor, String clothing) {
+                   String mentalState, String housingLocation, String educationLevel, String hairColor, String clothing, String conviction, boolean isInPrison) {
         super(name, age, sex, race, phoneNumber, height, email);
         this.suspectID = suspectID;
         this.tattoos = tattoos;
@@ -56,6 +60,8 @@ public class Suspect extends Person{
         this.educationLevel = educationLevel;
         this.hairColor = hairColor;
         this.clothing = clothing;
+        this.conviction = conviction;
+        this.isInPrison = isInPrison;
     }
     public void setSuspectID(UUID suspectID) {
         this.suspectID = suspectID;
@@ -135,11 +141,29 @@ public class Suspect extends Person{
     public void setClothing(String clothing) {
         this.clothing = clothing;
     }
+    public void setConviction(String conviction) {
+        this.conviction = conviction;
+    }
+    public String getConviction() {
+        return this.conviction;
+    }
+    public void setIsInPrison(boolean isInPrison) {
+        this.isInPrison = isInPrison;
+    }
+    public boolean getIsInPrison() {
+        return isInPrison;
+    }
+    public String printIsInPrison() {
+        if(isInPrison) {
+            return "Is in prison";
+        }
+        return "Not in prison";
+    }
     public String print() {
         String print = "\n************ Suspect *************" + super.print() + "\nTattoos: " + tattoos + "\nVehicle: " + vehicle + "\nLicense Plate: " + licensePlate
         + "\nAddress: " + address + "\nBank Account: " + bankAccount + "\nCredit Card: " + creditCard + "\nArmed: " + armed + "\nPublic Risk: " + publicRisk
         + "\nNicknames: " + nickNames + "\nMental State: " + mentalState + "\nHouseing Location: " + housingLocation + "\nEducation Level: " + educationLevel 
-        + "\nHair Color: " + hairColor + "\nClothing: " + clothing;
+        + "\nHair Color: " + hairColor + "\nClothing: " + clothing + "\nConviction: " + conviction + "\n" + printIsInPrison();
         return print;
     }
 }

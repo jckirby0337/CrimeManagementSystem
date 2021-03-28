@@ -320,7 +320,9 @@ public class CrimeManagementSystemUI {
         String educationLevel = getField("Education level");
         String hairColor = getFieldColor("Hair color");
         String clothing = getField("Clothing");
-        if(system.createSuspect(isConnectedToCrime, name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount, creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, educationLevel, hairColor, clothing)) {
+        String convicton = getField("Conviction");
+        boolean isInPrison = getFieldTF("Is in prison");
+        if(system.createSuspect(isConnectedToCrime, name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount, creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, educationLevel, hairColor, clothing, convicton, isInPrison)) {
             System.out.println("You have successfully created a suspect");
         }
     }
