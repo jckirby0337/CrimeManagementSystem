@@ -1,4 +1,8 @@
 import java.util.UUID;
+/**
+ * Creates the User object
+ * @author Team Coalition
+ */
 public class User {
     
     private UUID userID;
@@ -9,7 +13,15 @@ public class User {
     private String address;
     private String password;
     private String username;
-
+   /** Constructs a User object with the parameters:
+     * @param name of the user
+	 * @param title of the user
+	 * @param race of the user
+	 * @param dob of the user 
+	 * @param address of the user 
+	 * @param password of the user 
+	 * @param username of the user
+	 */
     public User(String name, String title, String race, String dob, String address, String password, String username) {
         this.userID = UUID.randomUUID();
         this.name = name;
@@ -20,6 +32,17 @@ public class User {
         this.password = password;
         this.username = username;
     }
+
+    /** Constructs a User object with the parameters:
+     * @param userID of the user
+     * @param name of the user
+	 * @param title of the user
+	 * @param race of the user
+	 * @param dob of the user 
+	 * @param address of the user 
+	 * @param password of the user 
+	 * @param username of the user
+	 */
     public User(UUID userID, String name, String title, String race, String dob, String address, String password, String username) {
         this.userID = userID;
         this.name = name;
