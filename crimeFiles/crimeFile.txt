@@ -45,7 +45,7 @@ Height: 4'8"
 Email: n/a
 Details: Was hit by a drunk driver on devine st
 
-************ Victim *************
+************ Witness *************
 Name: Johnny Sins
 Age: 42
 Sex: M
@@ -57,7 +57,7 @@ Details: Saw Mary Anne get hit by a ford Taurus on Divine St
 Story: Was walking down divine st when he saw a Ford Taurus hit a another car while running a red light
 Defending: false
 
-************ Victim *************
+************ Witness *************
 Name: Tommy Chong
 Age: 82
 Sex: M

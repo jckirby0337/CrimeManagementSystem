@@ -178,7 +178,7 @@ public class Crime {
 	private String evidenceToString(){
 		String ev = "";
 		for(int i = 0; i<evidence.size(); i++) {
-			ev += "\nEvidence " + i + ": " + evidence.get(i);
+			ev += "\nEvidence " + i+1 + ": " + evidence.get(i);
 		}
 		return ev;
 	}
