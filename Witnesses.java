@@ -9,7 +9,7 @@ public class Witnesses {
 	private ArrayList<Witness> witnessList;
 
 	/**
-	 * Creates the Witnesses object which has an arraylist of witnesses
+	 * Constructs the Witnesses object which has an arraylist of witnesses
 	 */
 	private Witnesses() {
 		witnessList = DataLoader.getWitnesses();
