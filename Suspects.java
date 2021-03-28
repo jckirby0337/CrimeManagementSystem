@@ -60,6 +60,11 @@ public class Suspects {
 		return suspectList;
 	}
 
+	/**
+	 * Searchs the suspect arraylist by UUID and if a suspect is found with that UUID then it returns the suspect
+	 * @param suspectID
+	 * @return Suspect
+	 */
 	public Suspect getSuspect(UUID suspectID) {
 		for(Suspect suspect : suspectList) {
 			if(suspect.getSuspectID().equals(suspectID)) {
@@ -70,10 +75,41 @@ public class Suspects {
 		return null;
 	}
 
+	/**
+	 * returns the last suspects in the arraylist
+	 * @return suspect
+	 */
 	public Suspect getLastSuspect() {
 		return suspectList.get(suspectList.size()-1);
 	}
 	
+	/**
+	 * Adds a suspect by the parameters given and returns false if the suspect already exist or returns true if the suspect does not already exist
+	 * @param name
+	 * @param age
+	 * @param sex
+	 * @param race
+	 * @param phoneNumber
+	 * @param height
+	 * @param email
+	 * @param tattoos
+	 * @param vehicle
+	 * @param licensePlate
+	 * @param address
+	 * @param bankAccount
+	 * @param creditCard
+	 * @param armed
+	 * @param publicRisk
+	 * @param nickNames
+	 * @param mentalState
+	 * @param housingLocation
+	 * @param educationLevel
+	 * @param hairColor
+	 * @param clothing
+	 * @param conviction
+	 * @param isInPrison
+	 * @return boolean
+	 */
 	public boolean addSuspect(String name, int age, String sex, String race, String phoneNumber, String height, String email, String tattoos,
     String vehicle, String licensePlate, String address, Boolean bankAccount,
     Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
@@ -89,10 +125,18 @@ public class Suspects {
 		return true;
 	}
 	
+	/**
+	 * Calls the save suspects method in datawriter to save the suspects
+	 */
 	public void saveSuspects() {
 		DataWriter.saveSuspects();
 	}
 
+	/**
+	 * Finds a suspects with a matching tattoo to the parameter
+	 * @param tattoo
+	 * @return ArrayList<Suspect>
+	 */
 	public static ArrayList<Suspect> search(String tattoo) {
         ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
         System.out.println("The suspects matching the description: ");
@@ -106,6 +150,12 @@ public class Suspects {
 		return matchSus;
     }
 
+	/**
+	 * Finds a suspects with a matching tattoo and age to the parameters
+	 * @param tattoo
+	 * @param age
+	 * @return ArrayList<Suspect>
+	 */
     public static ArrayList<Suspect> search(String tattoo, int age){
 		ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
         System.out.println("The suspects matching the tattoo and age description: ");
@@ -119,6 +169,12 @@ public class Suspects {
 		return matchSus;
     }
 
+	/**
+	 * Finds suspects with a matching age and hair to the parameters
+	 * @param age
+	 * @param hairC
+	 * @return ArrayList<Suspect>
+	 */
     public static ArrayList<Suspect> search(int age, String hairC){
 		ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
         System.out.println("The suspects matching the tattoo, age, and hair description: ");
@@ -131,6 +187,14 @@ public class Suspects {
 		}
 		return matchSus;
 	}
+
+	/**
+	 * Finds suspects with a matching age, hair, and height to the parameters
+	 * @param age
+	 * @param hairC
+	 * @param hght
+	 * @return ArrayList<Suspect>
+	 */
 	public static ArrayList<Suspect> search(int age, String hairC, String hght){
 	ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
         System.out.println("The suspects matching the age, hair, and height description: ");
