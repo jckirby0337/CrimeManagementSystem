@@ -39,6 +39,8 @@ public abstract class DataConstants {
     protected static final String SUSPECT_EDUCATION_LEVEL = "Education-Level";
     protected static final String SUSPECT_HAIR_COLOR = "Hair-Color";
     protected static final String SUSPECT_CLOTHING = "Clothing";
+    protected static final String SUSPECT_IS_IN_PRISON = "IsInPrison";
+    protected static final String SUSPECT_CONVICTION = "Conviction";
 
 //  Victim Fields
     protected static final String VICTIM_FILE_NAME = "CrimeManagementSystem/Victim.json";
