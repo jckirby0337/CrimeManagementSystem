@@ -165,7 +165,7 @@ public class CrimeManagementSystem {
         }
         else if(suspects.addSuspect(name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount, 
         creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
-        educationLevel, hairColor, clothing, conviction, isInPrison)) return true;
+        educationLevel, hairColor, clothing, conviction, isInPrison)) { return true;}
 
         return false;
     }

@@ -16,7 +16,7 @@ public class Crimes {
 
     
     /** 
-     * 
+     * creates a new instance of crimes
      * @return Crimes
      */
     public static Crimes getInstance() {
@@ -29,6 +29,7 @@ public class Crimes {
 
     
     /** 
+     * returns true if the name is connected to a crime
      * @param CriminalName
      * @return boolean
      */
@@ -43,6 +44,7 @@ public class Crimes {
 
     
     /** 
+     * returns true if the case number is already connected to a crime
      * @param caseNum
      * @return boolean
      */
@@ -58,6 +60,7 @@ public class Crimes {
 
     
     /** 
+     * returns a crime based off of its case number
      * @param caseNum
      * @return Crime
      */
@@ -74,6 +77,7 @@ public class Crimes {
 
     
     /** 
+     * returns the crimelist
      * @return ArrayList<Crime>
      */
     public ArrayList<Crime> getCrimes() {
@@ -82,6 +86,8 @@ public class Crimes {
 
     
     /** 
+     * Takes in parameters to create a crime and checks if a crime with that criminal already exist or if a crime with that case number had already been created then it doesn't create
+     * the crime. If they are unique then it creates a new crime and adds it to the crimelist
      * @param caseNum
      * @param crimeID
      * @param suspectID

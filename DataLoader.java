@@ -6,7 +6,17 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;;
 
+/**
+ * Loads in json files into arraylist of the given object list
+ * @author Team Coalition
+ * 
+ */
 public class DataLoader extends DataConstants{
+	
+	/** 
+	 * Reads the crime json and takes in the parameters to then make a crime object and add it to the crimelist arraylist
+	 * @return ArrayList<Crime>
+	 */
 	public static ArrayList<Crime> getCrimes() {
 		ArrayList<Crime> crimes = new ArrayList<Crime>();
 		
@@ -22,10 +32,6 @@ public class DataLoader extends DataConstants{
 				ArrayList<Suspect> suspectID = getSuspectsbyID((JSONArray)crimeJSON.get(CRIME_SUSPECT_ID));
 				ArrayList<Victim> victimID = getVictimsbyID((JSONArray)crimeJSON.get(CRIME_VICTIM_ID));
 				ArrayList<Witness> witnessID = getWitnessesbyID((JSONArray)crimeJSON.get(CRIME_WITNESS_ID));
-				/*UUID suspectID = UUID.fromString((String)crimeJSON.get(CRIME_SUSPECT_ID));
-				UUID victimID = UUID.fromString((String)crimeJSON.get(CRIME_VICTIM_ID));
-				UUID witnessID = UUID.fromString((String)crimeJSON.get(CRIME_WITNESS_ID));
-				Witness witness = Witnesses.getInstance().getWitness()*/
 				String crimeCommitted = (String)crimeJSON.get(CRIME_COMMITTED);
 				String crimeLocation = (String)crimeJSON.get(CRIME_LOCATION);
 				String crimeDate = (String)crimeJSON.get(CRIME_DATE);
@@ -46,6 +52,12 @@ public class DataLoader extends DataConstants{
 		return null;
 	}
 
+	
+	/** 
+	 * Reads the evidence json array in the json file and converts it to an arraylist of strings which it returns
+	 * @param evidence
+	 * @return ArrayList<String>
+	 */
 	private static ArrayList<String> getEvidence(JSONArray evidence) {
 		ArrayList<String> evidences = new ArrayList<String>();
 		for(int i=0; i<evidence.size(); i++) {
@@ -54,6 +66,12 @@ public class DataLoader extends DataConstants{
 		return evidences;
 	}
 
+	
+	/** 
+	 * Gets suspects from the suspects arraylist by their UUID and adds them to an arraylist of suspects in the crime object
+	 * @param suspectIDs
+	 * @return ArrayList<Suspect>
+	 */
 	private static ArrayList<Suspect> getSuspectsbyID(JSONArray suspectIDs) {
 		ArrayList<Suspect> suspects = new ArrayList<Suspect>();
 		for(int i=0; i<suspectIDs.size(); i++) {
@@ -64,6 +82,12 @@ public class DataLoader extends DataConstants{
 		return suspects;
 	}
 
+	
+	/** 
+	 * Gets victims from the victims arraylist by their UUID and adds them to an arraylist of victims in the crime object
+	 * @param victimIDs
+	 * @return ArrayList<Victim>
+	 */
 	private static ArrayList<Victim> getVictimsbyID(JSONArray victimIDs) {
 		ArrayList<Victim> victims = new ArrayList<Victim>();
 		for(int i=0; i<victimIDs.size(); i++) {
@@ -74,6 +98,12 @@ public class DataLoader extends DataConstants{
 		return victims;
 	}
 
+	
+	/** 
+	 * Gets witnesses from the witnesses arraylist by their UUID and adds them to an arraylist of witnesses in the crime object
+	 * @param witnessIDs
+	 * @return ArrayList<Witness>
+	 */
 	private static ArrayList<Witness> getWitnessesbyID(JSONArray witnessIDs) {
 		ArrayList<Witness> witnesses = new ArrayList<Witness>();
 		for(int i=0; i<witnessIDs.size(); i++) {
@@ -84,6 +114,11 @@ public class DataLoader extends DataConstants{
 		return witnesses;
 	}
 
+	
+	/** 
+	 * Reads the suspect json file and adds the suspects to an arraylist of suspect
+	 * @return ArrayList<Suspect>
+	 */
 	public static ArrayList<Suspect> getSuspects() {
 		ArrayList<Suspect> suspects = new ArrayList<Suspect>();
 		
@@ -131,6 +166,11 @@ public class DataLoader extends DataConstants{
 		
 		return null;
 	}
+	
+	/** 
+	 * Reads the victim json file and adds the victims to an arraylist of victim
+	 * @return ArrayList<Victim>
+	 */
 	public static ArrayList<Victim> getVictims() {
 		ArrayList<Victim> victims = new ArrayList<Victim>();
 		
@@ -162,6 +202,11 @@ public class DataLoader extends DataConstants{
 		
 		return null;
 	}
+	
+	/** 
+	 * Reads the user json file and adds the users to an arraylist of user
+	 * @return ArrayList<User>
+	 */
 	public static ArrayList<User> getUsers() {
 		ArrayList<User> users = new ArrayList<User>();
 		
@@ -194,6 +239,11 @@ public class DataLoader extends DataConstants{
 
 	}
 
+	
+	/** 
+	 * Reads the witness json file and adds the witnesses to an arraylist of witness
+	 * @return ArrayList<Witness>
+	 */
 	public static ArrayList<Witness> getWitnesses() {
 		ArrayList<Witness> witnesses = new ArrayList<Witness>();
 		

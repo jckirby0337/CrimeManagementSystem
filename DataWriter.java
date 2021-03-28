@@ -6,8 +6,17 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+/**
+ * Writes all the objects to json files
+ * @author Team Coalition
+ * 
+ */
 public class DataWriter extends DataConstants {
 
+	/**
+	 * The save methods call the lower methods to then write to the json files
+	 * 
+	 */
     public static void saveCrimes() {
 		Crimes crimes = Crimes.getInstance(); 
 		ArrayList<Crime> crimeList = crimes.getCrimes();
@@ -116,6 +125,12 @@ public class DataWriter extends DataConstants {
             e.printStackTrace();
         }
 	}
+	
+	/** 
+	 * Adds the crime parameters to a json object and then returns the json object
+	 * @param crime
+	 * @return JSONObject
+	 */
 	public static JSONObject getCrimeJSON(Crime crime) {
 		JSONObject crimeDetails = new JSONObject();
 		crimeDetails.put(CASE_NUMBER, crime.getCaseNum());
@@ -133,6 +148,12 @@ public class DataWriter extends DataConstants {
         return crimeDetails;
 	}
 
+	
+	/** 
+	 * converts a evidence arraylist of strings into a json array and returns the json array
+	 * @param evidences
+	 * @return JSONArray
+	 */
 	public static JSONArray getEvidenceArray(ArrayList<String> evidences) {
 		JSONArray evidence = new JSONArray();
 		for(String evi : evidences) {
@@ -141,6 +162,12 @@ public class DataWriter extends DataConstants {
 		return evidence;
 	}
 
+	
+	/** 
+	 * Adds the suspect UUID into a json array and returns the Json Array of suspect UUID
+	 * @param suspects
+	 * @return JSONArray
+	 */
 	public static JSONArray getSuspectIDArray(ArrayList<Suspect> suspects) {
 		JSONArray suspectIDs = new JSONArray();
 		for(Suspect suspect : suspects) {
@@ -149,6 +176,12 @@ public class DataWriter extends DataConstants {
 		return suspectIDs;
 	}
 
+	
+	/** 
+	 * Adds the victim UUID into a json array and returns the Json Array of victim UUID
+	 * @param victims
+	 * @return JSONArray
+	 */
 	public static JSONArray getVictimIDArray(ArrayList<Victim> victims) {
 		JSONArray victimIDs = new JSONArray();
 		for(Victim victim : victims) {
@@ -157,6 +190,12 @@ public class DataWriter extends DataConstants {
 		return victimIDs;
 	}
 
+	
+	/** 
+	 * Adds the witness UUID into a json array and returns the Json Array of witness UUID
+	 * @param witnesses
+	 * @return JSONArray
+	 */
 	public static JSONArray getWitnessIDArray(ArrayList<Witness> witnesses) {
 		JSONArray witnessIDs = new JSONArray();
 		for(Witness witness : witnesses) {
@@ -165,6 +204,12 @@ public class DataWriter extends DataConstants {
 		return witnessIDs;
 	}
 
+	
+	/** 
+	 * Writes all the parameters of a victim object into the victim json file
+	 * @param suspect
+	 * @return JSONObject
+	 */
 	public static JSONObject getSuspectJSON(Suspect suspect) {
 		JSONObject suspectDetails = new JSONObject();
         suspectDetails.put(SUSPECT_ID, suspect.getSuspectID().toString());
@@ -194,7 +239,13 @@ public class DataWriter extends DataConstants {
         return suspectDetails;
 	}
 
-    public static JSONObject getUserJSON(User user) {
+    
+	/** 
+	 * Writes all the parameters of a victim object into the victim json file
+	 * @param user
+	 * @return JSONObject
+	 */
+	public static JSONObject getUserJSON(User user) {
 		JSONObject userDetails = new JSONObject();
 		userDetails.put(USER_USER_ID, user.getUserID().toString());
 		userDetails.put(USER_NAME, user.getName());
@@ -207,6 +258,12 @@ public class DataWriter extends DataConstants {
         return userDetails;
 	}
 
+	
+	/** 
+	 * Writes all the parameters of a victim object into the victim json file
+	 * @param victim
+	 * @return JSONObject
+	 */
 	public static JSONObject getVictimJSON(Victim victim) {
 		JSONObject victimDetails = new JSONObject();
 		victimDetails.put(VICTIM_ID, victim.getVictimID().toString());
@@ -221,6 +278,12 @@ public class DataWriter extends DataConstants {
 		return victimDetails;
 	}
 
+	
+	/** 
+	 * Writes all the parameters of a witness object into the witness json file
+	 * @param witness
+	 * @return JSONObject
+	 */
 	public static JSONObject getWitnessJSON(Witness witness) {
 		JSONObject witnessDetails = new JSONObject();
 		witnessDetails.put(WITNESS_ID, witness.getWitnessID().toString());
