@@ -157,9 +157,9 @@ public class CrimeManagementSystem {
     String tattoos, String vehicle, String licensePlate, String address, boolean bankAccount,
     boolean creditCard, boolean armed, Boolean publicRisk, String nickNames,
     String mentalState, String housingLocation, String educationLevel, String hairColor, String clothing, String conviction, boolean isInPrison) {
-        if(suspects.addSuspect(name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount, 
+        if(isConnectedToCrime && suspects.addSuspect(name, age, sex, race, phoneNumber, height, email, tattoos, vehicle, licensePlate, address, bankAccount, 
         creditCard, armed, publicRisk, nickNames, mentalState, housingLocation, 
-        educationLevel, hairColor, clothing, conviction, isInPrison) && isConnectedToCrime) {
+        educationLevel, hairColor, clothing, conviction, isInPrison)) {
             currentSuspect = suspects.getLastSuspect();
             return crimes.addSuspectID(currentCrimeID, currentSuspect);
         }
