@@ -3,9 +3,6 @@ import java.util.ArrayList;
 public class Crime {
 	private int caseNum;
 	private UUID crimeID;
-	/*private UUID suspectID;
-	private UUID victimID;
-	private UUID witnessID;*/
 	private ArrayList<Suspect> suspectID = new ArrayList<Suspect>();
 	private ArrayList<Victim> victimID = new ArrayList<Victim>();
 	private ArrayList<Witness> witnessID = new ArrayList<Witness>();
@@ -17,7 +14,7 @@ public class Crime {
 	private ArrayList<String> evidence = new ArrayList<String>();
 	private boolean isSolved;
 	
-	public Crime(String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, ArrayList<String> evidence, boolean isSolved) {
+	/*public Crime(String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, ArrayList<String> evidence, boolean isSolved) {
 		this.crimeID = UUID.randomUUID();
 		this.crimeCommited = crimeCommited;
 		this.crimeLocation = crimeLocation;
@@ -27,6 +24,7 @@ public class Crime {
 		this.evidence = evidence;
 		this.isSolved = isSolved;
 	}
+	*/
 	public Crime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, ArrayList<String> evidence, boolean isSolved) {
 		this.caseNum = caseNum;
 		this.crimeID = UUID.randomUUID();
@@ -149,7 +147,7 @@ public class Crime {
 		this.isSolved = isSolved;
 	}
 
-	public String evidenceToString(){
+	private String evidenceToString(){
 		String ev = "";
 		for(int i = 0; i<evidence.size(); i++) {
 			ev += "\nEvidence " + i + ": " + evidence.get(i);
