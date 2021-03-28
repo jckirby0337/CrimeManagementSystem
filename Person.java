@@ -12,6 +12,16 @@ public class Person {
     private String height;
     private String email;
 
+    /**
+     * Constructs person with the following characteristics 
+     * @param name of the person
+     * @param age of the person
+     * @param sex of the person
+     * @param race of the person
+     * @param phoneNumber of the person
+     * @param height of the person
+     * @param email of the person
+     */
     public Person(String name, int age, String sex, String race, String phoneNumber, String height, String email) {
         this.name = name;
         this.age = age;
@@ -78,6 +88,10 @@ public class Person {
         this.email = email;
     }
 
+    /**
+     * Prints the Objects Person
+     * @return String representation of the person object
+     */
     public String print(){
         String print = "\nName: " + name + "\nAge: " + age + "\nSex: " + sex + "\nRace: " + race + "\nPhone Number: " + phoneNumber 
         + "\nHeight: " + height + "\nEmail: " + email;

@@ -74,7 +74,7 @@ public class Suspect extends Person{
     }
 
     /**
-     * consstructs suspects with the following characteristics
+     * constructs suspects with the following characteristics
      * @param name of the Suspect
      * @param age of the Suspect
      * @param sex of the Suspect
@@ -220,7 +220,7 @@ public class Suspect extends Person{
     }
 
     /**
-    * Prints the Object Subject
+    * Prints the Object Suspect
     * @return a String representation of the Suspect object
     */
     public String print() {
