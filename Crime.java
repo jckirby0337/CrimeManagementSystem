@@ -14,17 +14,6 @@ public class Crime {
 	private ArrayList<String> evidence = new ArrayList<String>();
 	private boolean isSolved;
 	
-	/*public Crime(String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, ArrayList<String> evidence, boolean isSolved) {
-		this.crimeID = UUID.randomUUID();
-		this.crimeCommited = crimeCommited;
-		this.crimeLocation = crimeLocation;
-		this.crimeDate = crimeDate;
-		this.criminal = criminal;
-		this.criminalInCustody = criminalInCustody;
-		this.evidence = evidence;
-		this.isSolved = isSolved;
-	}
-	*/
 	public Crime(int caseNum, String crimeCommited, String crimeLocation, String crimeDate, String criminal, boolean criminalInCustody, ArrayList<String> evidence, boolean isSolved) {
 		this.caseNum = caseNum;
 		this.crimeID = UUID.randomUUID();
