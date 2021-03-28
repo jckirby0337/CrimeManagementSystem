@@ -1,13 +1,23 @@
 import java.util.ArrayList;
 import java.util.UUID;
+/**
+ * Creates the Suspects Object
+ * @author Team Coalition 
+ */
 public class Suspects {
 	private static Suspects suspects;
 	private static ArrayList<Suspect> suspectList;
-	
+	/**
+	 * Constructs the Suspects Object with an arrayList of type Suspect
+	 */
 	private Suspects() {
 		suspectList = DataLoader.getSuspects();
 	}
-	
+
+	/**
+	 * Gets an instance of the Suspects Object
+	 * @return a new instance of the Suspects object
+	 */
 	public static Suspects getInstance() {
 		if(suspects == null) {
 			suspects = new Suspects();
@@ -16,6 +26,11 @@ public class Suspects {
 		return suspects;
 	}
 
+	/**
+	 * Checks if the Arraylist has a suspect with the provided name
+	 * @param name of the suspect
+	 * @return True if the arraylist has a suspect with the provided name, False if the arraylsit doesnt have the suspect with the name
+	 */
 	public boolean haveSuspect(String name) {
 		for(Suspect suspect : suspectList) {
 			if(suspect.getName().equals(name)) {
@@ -25,7 +40,12 @@ public class Suspects {
 		
 		return false;
 	}
-	
+
+	/**
+	 * Gets a Suspect Object with the name
+	 * @param name of the Suspect 
+	 * @return a Suspect Object with the name
+	 */
 	public Suspect getSuspect(String name) {
 		for(Suspect suspect : suspectList) {
 			if(suspect.getName().equals(name)) {
@@ -111,12 +131,12 @@ public class Suspects {
 		}
 		return matchSus;
 	}
-	public static ArrayList<Suspect> search(String tattoo, int age, String hairC, String hght){
+	public static ArrayList<Suspect> search(int age, String hairC, String hght){
 	ArrayList<Suspect> matchSus = new ArrayList<Suspect>();
-        System.out.println("The suspects matching the tattoo, age, hair, and height description: ");
+        System.out.println("The suspects matching the age, hair, and height description: ");
         for(Suspect suspect : suspectList)
         {
-			if(suspect.getTattoos().toLowerCase().contains(tattoo.toLowerCase()) && suspect.getAge()==age && suspect.getHairColor().toLowerCase().contains(hairC.toLowerCase()) 
+			if(suspect.getAge()==age && suspect.getHairColor().toLowerCase().contains(hairC.toLowerCase()) 
 			&& suspect.getHeight().equalsIgnoreCase(hght)) {
                 matchSus.add(suspect);
                	System.out.println(matchSus);
