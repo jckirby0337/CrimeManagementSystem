@@ -89,7 +89,7 @@ public class Witnesses {
 	}
 
 	/**
-	 * 
+	 * Adds a Witness to the ArrayList
 	 * @param name name of the witness
 	 * @param age age of the witness
 	 * @param sex sex of the witness
