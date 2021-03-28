@@ -89,7 +89,7 @@ public class Victims {
 	}
 
 	/**
-	 * 
+	 * Adds a victim to the arraylist
 	 * @param name of the victim
 	 * @param age of the victim
 	 * @param sex of the victim
