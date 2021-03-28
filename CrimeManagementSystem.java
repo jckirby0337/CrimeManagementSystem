@@ -229,12 +229,12 @@ public class CrimeManagementSystem {
                     text += "\n" + suspect.print();
                 }
             }
-            else if(crime.getVictimID() != null) {
+            if(crime.getVictimID() != null) {
                 for(Victim victim : crime.getVictimID()) {
                     text += "\n" + victim.print();
                 }
             }
-            else if(crime.getWitnessID() != null) {
+            if(crime.getWitnessID() != null) {
                 for(Witness witness : crime.getWitnessID()) {
                     text += "\n" + witness.print();
                 }

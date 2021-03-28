@@ -1,10 +1,36 @@
 
 ************ Crime *************
-Case Number: 0
-Crime Commited: arson
-Location of Crime: maple street
-Date Crime Occured: 06/16/2020
-Criminal Name: Robert
-Criminal is in Custody: false
-Evidence 0: Camera Footage
-Is the Crime Solved: false
+Case Number: 1
+Crime Commited: DUI, Hit and Run
+Location of Crime: Devine St
+Date Crime Occured: 1/15/2020
+Criminal Name: Edward
+Criminal is in Custody: true
+Evidence 0: Security Camera Footage
+Evidence 1: Licence Plate Number recorded
+Is the Crime Solved: true
+
+************ Suspect *************
+Name: Edward
+Age: 54
+Sex: M
+Race: White
+Phone Number: (234)322-2342
+Height: 5'10"
+Email: EdwardTrips@gmail.com
+Tattoos: Mushroom on his forehead
+Vehicle: Ford Taurus
+License Plate: HAS 342
+Address: 429 N. Greenrose Street Beaufort, SC 29906.
+Bank Account: true
+Credit Card: true
+Armed: false
+Public Risk: true
+Nicknames: Designated Drunk Driver
+Mental State: Crazy
+Houseing Location: 429 N. Greenrose Street Beaufort, SC 29906.
+Education Level: Never went to school 
+Hair Color: Red
+Clothing: Turtleneck with vomit on it
+Conviction: DUI, Hit and Run
+Is in prison
