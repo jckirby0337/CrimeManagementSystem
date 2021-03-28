@@ -163,7 +163,7 @@ public class Suspects {
         {
 			if(suspect.getTattoos().toLowerCase().contains(tattoo.toLowerCase()) && suspect.getAge()==age) {
                 matchSus.add(suspect);
-               	System.out.println(matchSus);
+               	System.out.println(suspect.print());
 			}
 		}
 		return matchSus;
@@ -182,7 +182,7 @@ public class Suspects {
         {
 			if(suspect.getAge()==age && suspect.getHairColor().toLowerCase().contains(hairC.toLowerCase())) {
                 matchSus.add(suspect);
-               	System.out.println(matchSus);
+               	System.out.println(suspect.print());
 			}
 		}
 		return matchSus;
@@ -203,7 +203,7 @@ public class Suspects {
 			if(suspect.getAge()==age && suspect.getHairColor().toLowerCase().contains(hairC.toLowerCase()) 
 			&& suspect.getHeight().equalsIgnoreCase(hght)) {
                 matchSus.add(suspect);
-               	System.out.println(matchSus);
+               	System.out.println(suspect.print());
 			}
 		}
 		return matchSus;

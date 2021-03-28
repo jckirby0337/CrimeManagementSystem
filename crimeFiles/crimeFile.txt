@@ -6,8 +6,8 @@ Location of Crime: Devine St
 Date Crime Occured: 1/15/2020
 Criminal Name: Edward
 Criminal is in Custody: true
-Evidence 0: Security Camera Footage
-Evidence 1: Licence Plate Number recorded
+Evidence 01: Security Camera Footage
+Evidence 11: Licence Plate Number recorded
 Is the Crime Solved: true
 
 ************ Suspect *************

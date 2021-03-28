@@ -1,23 +1,73 @@
 
 ************ Suspect *************
-Name: Jeff
-Age: 46
-Sex: m
-Race: White
-Phone Number: null
-Height: null
-Email: null
-Tattoos: Dove
-Vehicle: white chevy van
-License Plate: 324 sdf
-Address: sumpter street
+Name: Henry
+Age: 30
+Sex: M
+Race: Asian
+Phone Number: (345)389-3293
+Height: 6'2"
+Email: HenryLikesWatermelon@gmail.com
+Tattoos: No Tattoos
+Vehicle: Toyota Camry
+License Plate: DSJ 483
+Address: 55 Saffron Street Coosawhatchie, SC 29912.
 Bank Account: true
 Credit Card: true
-Armed: true
-Public Risk: true
-Nicknames: jeffy
-Mental State: bad
-Houseing Location: sumpter street
-Education Level: middle school
-Hair Color: null
-Clothing: null
+Armed: false
+Public Risk: false
+Nicknames: That guy
+Mental State: Fine
+Houseing Location: 55 Saffron Street Coosawhatchie, SC 29912.
+Education Level: High School
+Hair Color: Black
+Clothing: Flannel shirt
+Conviction: Grand Theft Auto
+Not in prison
+************ Suspect *************
+Name: Jacob
+Age: 30
+Sex: M
+Race: Black
+Phone Number: (392)032-2342
+Height: 6'2"
+Email: Jacob342@gmail.com
+Tattoos: A wolf on his left shoulder
+Vehicle: Toyota supra
+License Plate: das 234
+Address: 47 Providence St. Columbia, SC 29206.
+Bank Account: true
+Credit Card: true
+Armed: false
+Public Risk: false
+Nicknames: Jake
+Mental State: He's good
+Houseing Location: 47 Providence St. Columbia, SC 29206.
+Education Level: College
+Hair Color: Black
+Clothing: Black air forces
+Conviction: Tax Fraud
+Not in prison
+************ Suspect *************
+Name: John
+Age: 30
+Sex: M
+Race: White
+Phone Number: (234)234 0323
+Height: 6'2"
+Email: JohnLikesCows
+Tattoos: N/A
+Vehicle: Smart Car
+License Plate: ASF 234
+Address: 45 Ferry Street Eastover, SC 29044.
+Bank Account: false
+Credit Card: false
+Armed: false
+Public Risk: false
+Nicknames: John Bowden
+Mental State: Drug Addict
+Houseing Location: 45 Ferry Street Eastover, SC 29044.
+Education Level: High School
+Hair Color: Black
+Clothing: Black Hat
+Conviction: Robbed a gucci store
+Not in prison
