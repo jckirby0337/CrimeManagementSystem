@@ -1,3 +1,8 @@
+
+/**
+ * Creates the person object
+ * @author Team Coalition
+ */
 public class Person {
     private String name;
     private int age;

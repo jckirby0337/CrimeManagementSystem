@@ -1,4 +1,9 @@
 import java.util.UUID;
+
+/**
+ * Creates the suspect object
+ * @author Team Coalition
+ */
 public class Suspect extends Person{
     private UUID suspectID;
     private String tattoos;
@@ -17,6 +22,33 @@ public class Suspect extends Person{
     private String clothing;
     private String conviction;
     private boolean isInPrison;
+
+    /**
+     * consstructs suspects with the following characteristics
+     * @param name of the Suspect
+     * @param age of the Suspect
+     * @param sex of the Suspect
+     * @param race of the Suspect
+     * @param phoneNumber of the Suspect
+     * @param height of the Suspect
+     * @param email of the Suspect
+     * @param tattoos of the Suspect
+     * @param vehicle of the Suspect
+     * @param licensePlate of the Suspect
+     * @param address of the Suspect
+     * @param bankAccount of the Suspect
+     * @param creditCard of the Suspect
+     * @param armed if Supect has a weapon
+     * @param publicRisk of the Suspect
+     * @param nickNames of the Suspect
+     * @param mentalState of the Suspect
+     * @param housingLocation of the Suspect
+     * @param educationLevel of the Suspect
+     * @param hairColor of the Suspect
+     * @param clothing of the Suspect
+     * @param conviction of the Suspect
+     * @param isInPrison if suspect is in prison
+     */
     public Suspect(String name, int age, String sex, String race, String phoneNumber, String height, String email, String tattoos,
                    String vehicle, String licensePlate, String address, Boolean bankAccount,
                    Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
@@ -40,6 +72,33 @@ public class Suspect extends Person{
         this.conviction = conviction;
         this.isInPrison = isInPrison;
     }
+
+    /**
+     * consstructs suspects with the following characteristics
+     * @param name of the Suspect
+     * @param age of the Suspect
+     * @param sex of the Suspect
+     * @param race of the Suspect
+     * @param phoneNumber of the Suspect
+     * @param height of the Suspect
+     * @param email of the Suspect
+     * @param tattoos of the Suspect
+     * @param vehicle of the Suspect
+     * @param licensePlate of the Suspect
+     * @param address of the Suspect
+     * @param bankAccount of the Suspect
+     * @param creditCard of the Suspect
+     * @param armed if Supect has a weapon
+     * @param publicRisk of the Suspect
+     * @param nickNames of the Suspect
+     * @param mentalState of the Suspect
+     * @param housingLocation of the Suspect
+     * @param educationLevel of the Suspect
+     * @param hairColor of the Suspect
+     * @param clothing of the Suspect
+     * @param conviction of the Suspect
+     * @param isInPrison if suspect is in prison
+     */
     public Suspect(UUID suspectID, String name, int age, String sex, String race, String phoneNumber, String height, String email, String tattoos,
                    String vehicle, String licensePlate, String address, Boolean bankAccount,
                    Boolean creditCard, Boolean armed, Boolean publicRisk, String nickNames,
@@ -159,6 +218,11 @@ public class Suspect extends Person{
         }
         return "Not in prison";
     }
+
+    /**
+    * Prints the Object Subject
+    * @return a String representation of the Suspect object
+    */
     public String print() {
         String print = "\n************ Suspect *************" + super.print() + "\nTattoos: " + tattoos + "\nVehicle: " + vehicle + "\nLicense Plate: " + licensePlate
         + "\nAddress: " + address + "\nBank Account: " + bankAccount + "\nCredit Card: " + creditCard + "\nArmed: " + armed + "\nPublic Risk: " + publicRisk
