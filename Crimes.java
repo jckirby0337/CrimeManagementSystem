@@ -16,6 +16,7 @@ public class Crimes {
 
     
     /** 
+     * 
      * @return Crimes
      */
     public static Crimes getInstance() {
@@ -111,7 +112,8 @@ public class Crimes {
 
     
     /** 
-     * 
+     * Takes in the parameters for a crime and checks if the crime already exist or if the case number already exist.
+     * It then creates a crime with the given parameters
      * @param caseNum
      * @param crimeCommited
      * @param crimeLocation
