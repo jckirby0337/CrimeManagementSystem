@@ -13,8 +13,8 @@ class WitnessesTest {
 	@BeforeEach
 	public void setup() {
 		witnessList.clear();
-		witnessList.add(new Witness("john smith", 20, "Male", "white", "803-454-3344", "6, 3", "jsmith@email.sc.edu","was at the scene of the crime", "saw the man stealing the bike from the bike rack out front of the store", false ));
-		witnessList.add(new Witness("betty white", 23, "female", "white", "803-333-3544", "5, 2", "bwhite@email.sc.edu", "was in the grocery store", "saw someone stealing tvs", false));
+		witnessList.add(new Witness("john smith", 20, "Male", "white", "803-454-3344", "6\' 3\"", "jsmith@email.sc.edu","was at the scene of the crime", "saw the man stealing the bike from the bike rack out front of the store", false ));
+		witnessList.add(new Witness("betty white", 23, "female", "white", "803-333-3544", "5\' 2\"", "bwhite@email.sc.edu", "was in the grocery store", "saw someone stealing tvs", false));
 		DataWriter.saveUsers();
 	}
 	
