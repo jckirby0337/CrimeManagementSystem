@@ -62,8 +62,16 @@ public class SuspectsTest {
     @Test
     void testSearch(){
         ArrayList<Suspect> search = suspects.search("Sword");
-        ArrayList<Suspect> search2 = suspects.search("Sword",25);
-        ArrayList<Suspect> search3 = suspects.search(25,"Black", "5'4\"");
-        
+        assertTrue(suspectList.equals(search));
+    }
+    @Test
+    void testSearch2(){
+        ArrayList<Suspect> search = suspects.search(25,"Black");
+        assertEquals((suspectList.get(1)), search.get(0));
+    }
+    @Test
+    void testSearch3(){
+        ArrayList<Suspect> search = suspects.search(25,"Black","5'4\"");
+        assertEquals((suspectList.get(1)), search.get(0));
     }
 }
