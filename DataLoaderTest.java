@@ -27,8 +27,8 @@ class DataLoaderTest {
         witnessList.clear();
 		userList.add(new User("Amy", "Lord", "White" , "01/02/01", "Lakeland", "pwd", "asmith"));
 		userList.add(new User("Bob", "Cop", "White" , "01/02/01", "Dentsville", "pwd", "bwhite"));
-        crimeList.add(new Crime(1, "trespassing", "LaVergne, TN", "9/1/2015", "Luke Skywalker", false, null, true ));
-        crimeList.add(new Crime(2, "robbery", "Greer, SC", "3/23/2021", "Captain Price", true, null, true));
+        crimeList.add(new Crime(1, "trespassing", "LaVergne, TN", "9/1/2015", "Luke Skywalker", false, new ArrayList<String>(), true ));
+        crimeList.add(new Crime(2, "robbery", "Greer, SC", "3/23/2021", "Captain Price", true, new ArrayList<String>(), true));
         suspectList.add(new Suspect("Noneya Business", 34, "Male", "Pacific Islander", "999-999-9999", "5' 10\"", "noneyabusiness@email.sc.edu","turtle", "toyota camry", "BMT828", "ABC 123 Drive", true, true, true, true, "Anonymous", "Insane in the brain", "ABC 123 Drive Greer, SC", "College Graduate", "Brown", "Champion hoodie", "20 years in prison", true));
         suspectList.add(new Suspect("Walter White", 54, "Male", "White", "unknown", "6' 0\"", "wwhite@email.sc.edu", "none", "Pontiac Aztek", "09QSBN", "308 Negra Arroyo Lane", true, true, true, true, "Heisenburg", "Narcissistic", "Albuquerque, New Mexico", "College Graduate", "none", "khakis", "none", false));
         victimList.add(new Victim("Vin Diesel", 45, "male", "White", "unknown", "5' 11\"", "vindiesel@email.sc.edu", "was robbed by Captain Price"));

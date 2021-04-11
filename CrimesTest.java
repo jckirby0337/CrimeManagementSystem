@@ -13,8 +13,8 @@ class CrimesTest {
 	@BeforeEach
 	public void setup() {
 		crimeList.clear();
-		crimeList.add(new Crime(1, "Arson", "Maple Street", "2/14/17","Amy", false, null, false));
-		crimeList.add(new Crime(2, "Murder", "Snap Lane", "2/7/18", "Bob", true, null, false));
+		crimeList.add(new Crime(1, "Arson", "Maple Street", "2/14/17","Amy", false, new ArrayList<String>(), false));
+		crimeList.add(new Crime(2, "Murder", "Snap Lane", "2/7/18", "Bob", true, new ArrayList<String>(), false));
 		DataWriter.saveCrimes();
 	}
 	
