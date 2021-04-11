@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+
 public class SuspectsTest {
     private Suspects suspects = Suspects.getInstance();
 	private ArrayList<Suspect> suspectList = suspects.getSuspects();
@@ -13,7 +14,7 @@ public class SuspectsTest {
     @BeforeEach
     public void setup() {
         suspectList.clear();
-        suspectList.add(new Suspect("Mike",22,"Male","Asian","803-123-4567","5'7\"","mike@email.sc.edu","Bird"
+        suspectList.add(new Suspect("Mike",22,"Male","Asian","803-123-4567","5'7\"","mike@email.sc.edu","Sword"
         ,"Toyota","CBD 420", "123 Sunflower Dr", false
         ,false, false, false, "Bloodhound"
         ,"Stable","Columbia","Bachelors Degree","Black","Red cardigan","N/A",true));
@@ -58,4 +59,11 @@ public class SuspectsTest {
 		assertFalse(hasNull);
 	}
 	
+    @Test
+    void testSearch(){
+        ArrayList<Suspect> search = suspects.search("Sword");
+        ArrayList<Suspect> search2 = suspects.search("Sword",25);
+        ArrayList<Suspect> search3 = suspects.search(25,"Black", "5'4\"");
+        
+    }
 }
