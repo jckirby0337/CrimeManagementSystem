@@ -107,32 +107,32 @@ class DataWriterTest {
 
 	@Test
 	void testWritingOneCrime() {
-		crimeList.add(new Crime(1, "Arson", "Maple Street", "2/14/17","Amy", false, null, false));
+		crimeList.add(new Crime(1, "Arson", "Maple Street", "2/14/17","Amy", false, new ArrayList<String>(), false));
 		DataWriter.saveCrimes();
 		assertEquals("Amy", DataLoader.getCrimes().get(0).getCriminal());
 	}
 	
 	@Test
 	void testWritingFiveCrimes() {
-		crimeList.add(new Crime(1, "Arson", "Maple Street", "2/14/17","Amy", false, null, false));
-		crimeList.add(new Crime(1, "Arson", "Maple Street", "2/14/17","Bmy", false, null, false));
-		crimeList.add(new Crime(1, "Arson", "Maple Street", "2/14/17","Cmy", false, null, false));
-		crimeList.add(new Crime(1, "Arson", "Maple Street", "2/14/17","Dmy", false, null, false));
-		crimeList.add(new Crime(1, "Arson", "Maple Street", "2/14/17","Emy", false, null, false));
+		crimeList.add(new Crime(1, "Arson", "Maple Street", "2/14/17","Amy", false, new ArrayList<String>(), false));
+		crimeList.add(new Crime(1, "Arson", "Maple Street", "2/14/17","Bmy", false, new ArrayList<String>(), false));
+		crimeList.add(new Crime(1, "Arson", "Maple Street", "2/14/17","Cmy", false, new ArrayList<String>(), false));
+		crimeList.add(new Crime(1, "Arson", "Maple Street", "2/14/17","Dmy", false, new ArrayList<String>(), false));
+		crimeList.add(new Crime(1, "Arson", "Maple Street", "2/14/17","Emy", false, new ArrayList<String>(), false));
 		DataWriter.saveCrimes();
 		assertEquals("Emy", DataLoader.getCrimes().get(4).getCriminal());
 	}
 	
 	@Test
 	void testWritingEmptyCrime() {
-		crimeList.add(new Crime(0, "", "", "", "", false, null, false));
+		crimeList.add(new Crime(0, "", "", "", "", false, new ArrayList<String>(), false));
 		DataWriter.saveCrimes();
 		assertEquals("", DataLoader.getCrimes().get(0).getCriminal());
 	}
 	
 	@Test
 	void testWritingNullCrime() {
-		crimeList.add(new Crime(0, "", "", "", null, false, null, false));
+		crimeList.add(new Crime(0, "", "", "", null, false, new ArrayList<String>(), false));
 		DataWriter.saveCrimes();
 		assertEquals(null, DataLoader.getCrimes().get(0).getCriminal());
 	}
@@ -226,7 +226,7 @@ class DataWriterTest {
 	void testWritingOneWitness() {
 		witnessList.add(new Witness("ajohn smith", 20, "Male", "white", "803-454-3344", "6'3\"", "jsmith@email.sc.edu","was at the scene of the crime", "saw the man stealing the bike from the bike rack out front of the store", false));
 		DataWriter.saveWitnesses();
-		assertEquals("ajohn", DataLoader.getWitnesses().get(0).getName());
+		assertEquals("ajohn smith", DataLoader.getWitnesses().get(0).getName());
 	}
 	
 	@Test
