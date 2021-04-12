@@ -27,19 +27,19 @@ class VictimsTest {
 	
 	@Test
 	void testHaveVictimValidFirstItem() {
-		boolean hasDiesel = victims.haveVictim("vin diesel");
+		boolean hasDiesel = victims.haveVictim("Vin Diesel");
 		assertTrue(hasDiesel);
 	}
 	
 	@Test
 	void testHaveVictimValidLastItem() {
-		boolean hasTommy = victims.haveVictim("tommy tahren");
+		boolean hasTommy = victims.haveVictim("Tommy Lahren");
 		assertTrue(hasTommy);
 	}
 	
 	@Test
 	void testHaveVictimInValid() {
-		boolean hasLebron = victims.haveVictim("lebron james");
+		boolean hasLebron = victims.haveVictim("Lebron James");
 		assertFalse(hasLebron);
 	}
 	
