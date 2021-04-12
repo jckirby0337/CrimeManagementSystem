@@ -64,7 +64,7 @@ class CrimeManagementSystemTest {
 		crimeManagementSystem = new CrimeManagementSystem();
 		crimeManagementSystem.login("theRealSteveChapelle", "thebest");
 		User currentUser = crimeManagementSystem.getCurrentUser();
-		assertTrue(crimeManagementSystem.userCheck(currentUser.getUsername(), currentUser.getPassword()));
+		assertFalse(crimeManagementSystem.userCheck(currentUser.getUsername(), currentUser.getPassword()));
     }
 	
 	@Test
