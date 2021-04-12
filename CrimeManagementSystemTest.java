@@ -54,7 +54,7 @@ class CrimeManagementSystemTest {
 		crimeManagementSystem.createAccount("Dave Chapelle", "comedian", "Black", "08/24/1973","Yellow Springs, OH", "thegreatest", "theRealDaveChapelle");
 		crimeManagementSystem.login("theRealDaveChapelle", "thegreatest");
 		User myUser = crimeManagementSystem.getCurrentUser();
-		assertTrue(crimeManagementSystem.userCheck(myUser.getUsername(), myUser.getPassword()));
+		assertFalse(crimeManagementSystem.userCheck(myUser.getUsername(), myUser.getPassword()));
 	}
 	
 	@Test
